@@ -1,0 +1,56 @@
+{
+  "note": "TODO: Replace placeholder members with real names, roles, affiliations and headshots. Photo paths are relative to /public (e.g. /people/jane-doe.jpg). Leave 'photo' empty to show initials.",
+  "board": {
+    "title": "Conference Board",
+    "intro": "The Conference Co-Chairs oversee both the Advisory and Organization Committees, ensuring cohesive collaboration and the overall success of PharmaDS. Co-Chairs serve a two-year term.",
+    "members": [
+      { "name": "TODO Co-Chair Name", "role": "Conference Co-Chair", "affiliation": "TODO Affiliation", "photo": "" },
+      { "name": "TODO Co-Chair Name", "role": "Conference Co-Chair", "affiliation": "TODO Affiliation", "photo": "" }
+    ]
+  },
+  "advisory": {
+    "title": "Advisory Committee",
+    "intro": "Senior leaders from the pharmaceutical industry, regulatory agencies, and academia who provide strategic direction, content leadership, and mentorship to the conference.",
+    "members": [
+      { "name": "TODO Advisor Name", "role": "Advisor", "affiliation": "TODO Industry / Agency / Academia", "photo": "" },
+      { "name": "TODO Advisor Name", "role": "Advisor", "affiliation": "TODO Industry / Agency / Academia", "photo": "" },
+      { "name": "TODO Advisor Name", "role": "Advisor", "affiliation": "TODO Industry / Agency / Academia", "photo": "" }
+    ]
+  },
+  "organization": {
+    "title": "Organization Committee",
+    "intro": "Dedicated volunteers from industry, regulatory bodies, and academia who manage the execution of the conference. The committee is organized into functional subteams.",
+    "subteams": [
+      {
+        "role": "Session Organization",
+        "description": "Plans and structures conference sessions, including short courses, presentations, and poster competitions.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      },
+      {
+        "role": "Speaker Coordination",
+        "description": "Identifies, invites, and coordinates with speakers, keynote presenters, and panelists.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      },
+      {
+        "role": "Logistics & Venue",
+        "description": "Secures the conference venue and manages all day-of-event logistics.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      },
+      {
+        "role": "Volunteer Management",
+        "description": "Recruits, trains, and allocates volunteers across short courses, presentation sessions, and receptions.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      },
+      {
+        "role": "Digital Presence",
+        "description": "Maintains and updates the conference website and digital platforms.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      },
+      {
+        "role": "Financial Stewardship",
+        "description": "Identifies sponsors, secures funding, manages partner relationships, sets registration fees, and oversees the budget.",
+        "members": [ { "name": "TODO Member", "title": "Subteam Lead", "affiliation": "TODO", "photo": "" } ]
+      }
+    ]
+  }
+}

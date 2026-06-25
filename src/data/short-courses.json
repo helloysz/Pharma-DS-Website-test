@@ -1,0 +1,27 @@
+{
+  "note": "TODO: Replace with the real 2027 short courses. 'track' is one of: stat-evidence, ai-engineering, tools. 'type' is one of: theory, lab. Lab courses are hands-on; theory courses are concept-first.",
+  "tracks": [
+    {
+      "id": "stat-evidence",
+      "name": "Statistical Evidence Generation",
+      "blurb": "Rigorous methods for generating credible evidence \u2014 modern design, causal inference, real-world evidence, and analysis."
+    },
+    {
+      "id": "ai-engineering",
+      "name": "AI Engineering Crash Course",
+      "blurb": "A fast, practical ramp into building and deploying AI \u2014 from foundations to production patterns for pharma."
+    },
+    {
+      "id": "tools",
+      "name": "Tool Usage",
+      "blurb": "Hands-on training on the specific tools and platforms our community uses day to day."
+    }
+  ],
+  "courses": [
+    { "title": "TODO Short Course", "track": "stat-evidence", "type": "theory", "level": "TODO", "summary": "TODO description.", "instructor": "TODO" },
+    { "title": "TODO Short Course", "track": "stat-evidence", "type": "lab", "level": "TODO", "summary": "TODO description.", "instructor": "TODO" },
+    { "title": "TODO Short Course", "track": "ai-engineering", "type": "theory", "level": "TODO", "summary": "TODO description.", "instructor": "TODO" },
+    { "title": "TODO Short Course", "track": "ai-engineering", "type": "lab", "level": "TODO", "summary": "TODO description.", "instructor": "TODO" },
+    { "title": "TODO Tool Workshop", "track": "tools", "type": "lab", "level": "TODO", "summary": "TODO description.", "instructor": "TODO" }
+  ]
+}

@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  text?: string;
+}
+const { title, text } = Astro.props;
+---
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h2>{title}</h2>
+        {text && <p>{text}</p>}
+      </div>
+      <div class="cta-banner__actions">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 1.75rem;
+    background: var(--grad-hero);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: clamp(1.4rem, 4vw, 2.25rem);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+  .cta-banner > * { position: relative; z-index: 1; }
+  .cta-banner h2 { color: #fff; margin: 0 0 0.4rem; }
+  .cta-banner p { color: rgba(255,255,255,0.85); margin: 0; max-width: 52ch; }
+  .cta-banner__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  @media (max-width: 640px) {
+    .cta-banner__actions { width: 100%; }
+    .cta-banner__actions :global(.btn) { width: 100%; }
+  }
+</style>

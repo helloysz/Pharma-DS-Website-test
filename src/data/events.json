@@ -1,0 +1,32 @@
+{
+  "note": "TODO: Fill in dates, locations, and registration links as they are confirmed. 'status' is one of: announced, planning, open.",
+  "events": [
+    {
+      "title": "Committee Round Table @ ASA RISW",
+      "type": "Round Table",
+      "date": "Mid-September 2026 (TODO confirm)",
+      "location": "Co-located with ASA Regulatory-Industry Statistics Workshop (RISW) \u2014 TODO",
+      "status": "planning",
+      "summary": "Our first community gathering: a small, focused round-table discussion within the committee, hosted alongside the ASA RISW. This kicks off the PharmaDS community ahead of the 2027 conference.",
+      "cta": null
+    },
+    {
+      "title": "PharmaDS Community Workshops",
+      "type": "Workshop Series",
+      "date": "Following the round table (TODO)",
+      "location": "TODO (in-person / virtual)",
+      "status": "planning",
+      "summary": "A series of follow-on workshops growing out of the round table \u2014 deep dives on the topics our community cares about most. Details to be announced.",
+      "cta": null
+    },
+    {
+      "title": "PharmaDS 2027 Conference",
+      "type": "Flagship Conference",
+      "date": "TODO 2027 dates",
+      "location": "TODO 2027 venue",
+      "status": "announced",
+      "summary": "The flagship Pharmaceutical Data Science Conference returns in 2027 with a reimagined program built to advocate for our community and attract both audiences and presenters.",
+      "cta": { "label": "See the 2027 program", "href": "/program" }
+    }
+  ]
+}

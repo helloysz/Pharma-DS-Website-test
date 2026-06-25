@@ -1,0 +1,37 @@
+---
+import sessions from "../data/sessions.json";
+---
+
+<div class="formats grid grid--2">
+  {sessions.formats.map((f) => (
+    <div class="card card--hover format">
+      <span class={`pill ${f.pill}`}>{f.name}</span>
+      <p class="format__summary">{f.summary}</p>
+      <dl class="format__meta">
+        <div><dt>Duration</dt><dd>{f.duration}</dd></div>
+        <div><dt>Best for</dt><dd>{f.audience}</dd></div>
+      </dl>
+    </div>
+  ))}
+</div>
+
+<style>
+  .format { display: flex; flex-direction: column; gap: 0.8rem; }
+  .format__summary { color: var(--text-soft); margin: 0; flex: 1; }
+  .format__meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 0;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--border);
+  }
+  .format__meta dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+    font-weight: 700;
+  }
+  .format__meta dd { margin: 0.15rem 0 0; font-weight: 600; font-size: 0.92rem; }
+</style>

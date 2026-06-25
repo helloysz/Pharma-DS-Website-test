@@ -1,0 +1,76 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  height?: number;
+  /** Short helper text shown above the form. */
+  description?: string;
+}
+const { url, title, height = 760, description } = Astro.props;
+const isPlaceholder = !url || url.includes("TODO");
+---
+
+<div class="embed-form">
+  {description && <p class="embed-form__desc">{description}</p>}
+
+  {isPlaceholder ? (
+    <div class="embed-form__placeholder">
+      <span class="pill pill--amber">Form coming soon</span>
+      <h3>{title}</h3>
+      <p>
+        This form will be embedded here once the submission link is ready. Swap the
+        placeholder URL in <code>src/data/site.json</code> for the live Google Form / Formspree link.
+      </p>
+      <p class="todo-note">TODO: provide the live form URL.</p>
+    </div>
+  ) : (
+    <div class="embed-form__frame-wrap">
+      <iframe
+        src={url}
+        title={title}
+        loading="lazy"
+        width="100%"
+        height={height}
+        style="border:0;"
+      >Loading {title}…</iframe>
+      <p class="embed-form__fallback">
+        Having trouble? <a href={url} target="_blank" rel="noopener">Open the form in a new tab</a>.
+      </p>
+    </div>
+  )}
+</div>
+
+<style>
+  .embed-form { width: 100%; }
+  .embed-form__desc { color: var(--text-soft); margin-bottom: 1rem; }
+  .embed-form__placeholder {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: var(--bg-soft);
+    text-align: center;
+  }
+  .embed-form__placeholder h3 { margin: 0.8rem 0 0.4rem; }
+  .embed-form__placeholder code {
+    background: rgba(11,20,55,0.06);
+    padding: 0.1rem 0.4rem;
+    border-radius: 5px;
+    font-size: 0.85em;
+  }
+  .embed-form__frame-wrap {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+  .embed-form__frame-wrap iframe { display: block; width: 100%; }
+  .embed-form__fallback {
+    margin: 0;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+</style>

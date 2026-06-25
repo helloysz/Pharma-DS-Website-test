@@ -1,0 +1,43 @@
+{
+  "note": "TODO: Replace with the real 2027 session names. Each session lists the presentation formats it will run. 'callout: summit' marks the sessions we are specifically calling out for the summit style. All summit-style and rapid-demo sessions run hybrid (traditional + new).",
+  "formats": [
+    {
+      "id": "traditional",
+      "name": "Traditional Presentation",
+      "summary": "A full-length talk in the classic conference format \u2014 a single presenter, slides, and Q&A.",
+      "duration": "Standard slot",
+      "audience": "All topics",
+      "pill": "pill"
+    },
+    {
+      "id": "rapid-demo",
+      "name": "Rapid Demo",
+      "summary": "For production-related work. A two-hour session is split so each presenter gets 20 minutes to showcase a working solution back-to-back. Fast, concrete, demo-first.",
+      "duration": "20 min per presenter (2-hr hybrid session)",
+      "audience": "Production / applied work",
+      "pill": "pill--cyan"
+    },
+    {
+      "id": "experience-sharing",
+      "name": "Experience Sharing",
+      "summary": "For production-related topics. Practitioners share lessons learned, what worked, what didn't, and how they got real solutions into production.",
+      "duration": "Flexible slot",
+      "audience": "Production / applied work",
+      "pill": "pill--amber"
+    },
+    {
+      "id": "summit",
+      "name": "Summit Style (Hybrid)",
+      "summary": "Our flagship call-out format for selected sessions: traditional talks combined with the new rapid-demo and experience-sharing styles in one hybrid session to maximize energy and takeaways.",
+      "duration": "Hybrid (traditional + new)",
+      "audience": "Selected flagship sessions",
+      "pill": "pill--magenta"
+    }
+  ],
+  "sessions": [
+    { "name": "TODO Session Name 1", "formats": ["traditional", "rapid-demo"], "hybrid": true, "callout": "summit" },
+    { "name": "TODO Session Name 2", "formats": ["traditional", "experience-sharing"], "hybrid": true, "callout": null },
+    { "name": "TODO Session Name 3", "formats": ["rapid-demo"], "hybrid": true, "callout": null },
+    { "name": "TODO Session Name 4", "formats": ["traditional"], "hybrid": false, "callout": null }
+  ]
+}

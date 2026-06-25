@@ -1,0 +1,12 @@
+{
+  "note": "TODO: Confirm all 2027 key dates. Values below are placeholders carried forward from the 2026 cadence.",
+  "dates": [
+    { "label": "Call for Presentations & Posters opens", "value": "TODO" },
+    { "label": "Abstract submission deadline", "value": "TODO" },
+    { "label": "Conference registration opens", "value": "TODO" },
+    { "label": "Early registration closes", "value": "TODO" },
+    { "label": "Hotel discount reservation closes", "value": "TODO" },
+    { "label": "In-person registration closes", "value": "TODO" },
+    { "label": "Virtual registration closes", "value": "TODO" }
+  ]
+}

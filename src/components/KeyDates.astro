@@ -1,0 +1,42 @@
+---
+import keyDates from "../data/key-dates.json";
+---
+
+<div class="key-dates">
+  <table>
+    <tbody>
+      {keyDates.dates.map((d) => (
+        <tr>
+          <th scope="row">{d.label}</th>
+          <td class={d.value === "TODO" ? "is-todo" : ""}>
+            {d.value === "TODO" ? "To be announced" : d.value}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .key-dates {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  tr { border-bottom: 1px solid var(--border); }
+  tr:last-child { border-bottom: none; }
+  th, td { text-align: left; padding: 0.9rem 1.2rem; vertical-align: top; }
+  th { font-weight: 600; color: var(--text); }
+  td { text-align: right; font-weight: 700; color: var(--indigo-bright); white-space: nowrap; }
+  td.is-todo { color: var(--text-soft); font-weight: 600; font-style: italic; }
+
+  @media (max-width: 560px) {
+    th, td { display: block; text-align: left; padding: 0.7rem 1rem; }
+    th { padding-bottom: 0.1rem; }
+    td { padding-top: 0; }
+    tr { padding: 0.4rem 0; }
+  }
+</style>

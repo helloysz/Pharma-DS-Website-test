@@ -1,0 +1,317 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHead from "../components/SectionHead.astro";
+import KeyDates from "../components/KeyDates.astro";
+import WhoShouldAttend from "../components/WhoShouldAttend.astro";
+import PartnerLogos from "../components/PartnerLogos.astro";
+import SubscribeForm from "../components/SubscribeForm.astro";
+import StatsBand from "../components/StatsBand.astro";
+import site from "../data/site.json";
+
+const topics = [
+  "Large Language Models", "Generative AI", "Digital Twins",
+  "Synthetic Data", "Reinforcement Learning", "Federated Learning",
+  "Multimodal Learning", "Causal Deep Learning", "Explainable AI",
+  "AutoML", "AI-Driven Pharmacovigilance",
+];
+
+const highlights = [
+  { icon: "▦", title: "Reimagined program", text: "Theory + lab short courses, a keynote, a panel, rapid demos, experience sharing, and summit-style hybrid sessions.", href: "/program" },
+  { icon: "✎", title: "Call for presentations", text: "Submit your abstract for traditional talks, rapid demos, or experience sharing across our hybrid sessions.", href: "/call-for-presentations" },
+  { icon: "↗", title: "Career growth & networking", text: "Mentor short talks, project collaboration with early talent, and a network that lasts beyond the conference.", href: "/career-growth" },
+  { icon: "◎", title: "A growing community", text: "Round tables, workshops, and a year-round community — not just a once-a-year event.", href: "/community" },
+];
+---
+
+<BaseLayout description="PharmaDS 2027 — mapping the future of pharma with AI-enabled and data-driven insights, innovation, and impact.">
+  <!-- HERO -->
+  <section class="hero hero-surface">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="eyebrow">Pharmaceutical Data Science Conference 2027</span>
+        <h1>
+          Mapping the future of pharma:
+          <span class="text-gradient">AI-enabled</span> &amp;
+          <span class="text-gradient">data-driven</span> insights, innovation, and impact
+        </h1>
+        <p class="lead">
+          Gain a candid, 360° view of how data science and AI are reshaping pharmaceutical
+          development — where the biggest wins are happening, where barriers remain, and where the
+          industry is headed next.
+        </p>
+        <div class="hero__meta">
+          <span>📅 {site.dates === "TODO: 2027 dates to be provided" ? "2027 dates — to be announced" : site.dates}</span>
+          <span>📍 {site.venue === "TODO: 2027 venue / location to be provided" ? "Venue — to be announced" : site.venue}</span>
+          <span>🔀 {site.format}</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--light" href="/registration">Register</a>
+          <a class="btn btn--ghost" href="/call-for-presentations">Call for Presentations</a>
+          <a class="btn btn--ghost" href="/career-growth">Become a Mentor</a>
+        </div>
+        <p class="hero__host">{site.host}</p>
+      </div>
+      <div class="hero__graphic" aria-hidden="true">
+        <div class="hero__orb hero__orb--cyan"></div>
+        <div class="hero__orb hero__orb--indigo"></div>
+        <div class="hero__ring"></div>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand />
+
+  <!-- PARTNER STRIP -->
+  <section class="section partner-band">
+    <div class="container">
+      <p class="partner-band__label">Our 2027 partners</p>
+      <PartnerLogos variant="strip" />
+      <p class="partner-band__cta">
+        Interested in partnering with PharmaDS? <a href="/partnership">Explore partnership →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container intro-grid">
+      <div>
+        <SectionHead eyebrow="About the conference" title="Connect, learn, and lead in the age of data-driven pharma">
+          <p>
+            Join us as we explore the expanding role of AI and data science across the pharmaceutical
+            industry. From modern statistical design and real-world evidence analytics to machine
+            learning, generative AI, and automation, data-driven methods are redefining how medicines
+            are discovered, developed, and delivered.
+          </p>
+          <p>
+            This year's program emphasizes real-world learning with practical applications, hands-on
+            short courses, and industry-leading discussions — giving attendees actionable insight into
+            how data science and AI are reshaping target identification, molecule design, clinical trial
+            optimization, biomarker discovery, and safety signal detection.
+          </p>
+        </SectionHead>
+        <div class="theme-card">
+          <span class="pill pill--cyan">2027 theme</span>
+          <p class="theme-card__text">{site.theme}</p>
+        </div>
+      </div>
+      <aside class="key-dates-aside">
+        <h3>Key dates</h3>
+        <KeyDates />
+        <a class="btn btn--solid btn--sm" href="/registration" style="margin-top:1rem;">Registration details</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="Why 2027 is different" title="A program built to advocate for our community" center={true}>
+        <p class="lead" style="margin-inline:auto;">
+          We've reimagined the format to attract both audiences and presenters — more hands-on, more
+          practical, and more connected.
+        </p>
+      </SectionHead>
+      <div class="grid grid--4">
+        {highlights.map((h) => (
+          <a class="card card--hover highlight" href={h.href}>
+            <span class="highlight__icon" aria-hidden="true">{h.icon}</span>
+            <h3>{h.title}</h3>
+            <p>{h.text}</p>
+            <span class="highlight__more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="On the agenda" title="Topics we'll explore" center={true} />
+      <div class="topics">
+        {topics.map((t) => <span class="topic-chip">{t}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD ATTEND -->
+  <WhoShouldAttend />
+
+  <!-- NEWSLETTER -->
+  <section class="section">
+    <div class="container">
+      <SubscribeForm variant="band" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(2rem, 2.2vw, 2.15rem);
+  }
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .hero__copy { max-width: 680px; }
+  .hero h1 {
+    color: #fff;
+    max-width: 30ch;
+    font-size: clamp(1.9rem, 1.75vw, 2.4rem);
+  }
+  .hero .lead {
+    color: rgba(255,255,255,0.88);
+    line-height: 1.38;
+    font-size: clamp(0.95rem, 0.75vw, 1.05rem);
+  }
+  .hero .eyebrow { color: var(--cyan); }
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin: 0.75rem 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.9);
+  }
+  .hero__cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .hero__host { margin-top: 0.75rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+
+  .hero__graphic {
+    position: relative;
+    min-height: 200px;
+    display: grid;
+    place-items: center;
+  }
+  .hero__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+  }
+  .hero__orb--cyan {
+    width: 180px;
+    height: 180px;
+    top: 12%;
+    right: 18%;
+    background: radial-gradient(circle, rgba(24, 194, 201, 0.55) 0%, rgba(24, 194, 201, 0) 70%);
+    animation: float 6s ease-in-out infinite;
+  }
+  .hero__orb--indigo {
+    width: 220px;
+    height: 220px;
+    bottom: 8%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(66, 87, 224, 0.45) 0%, rgba(66, 87, 224, 0) 70%);
+    animation: float 7s ease-in-out infinite reverse;
+  }
+  .hero__ring {
+    width: min(280px, 70vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background:
+      conic-gradient(from 210deg, rgba(24, 194, 201, 0.35), rgba(66, 87, 224, 0.25), rgba(255, 182, 72, 0.2), rgba(24, 194, 201, 0.35));
+    mask: radial-gradient(circle, transparent 58%, #000 59%);
+    box-shadow: 0 0 60px rgba(24, 194, 201, 0.15);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .partner-band {
+    padding-block: clamp(1.25rem, 2.5vw, 2rem);
+    border-block: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%),
+      linear-gradient(90deg, rgba(24, 194, 201, 0.06) 0%, transparent 40%, transparent 60%, rgba(66, 87, 224, 0.06) 100%);
+    position: relative;
+  }
+  .partner-band::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(120px, 20vw);
+    height: 3px;
+    background: var(--grad-accent);
+    border-radius: 0 0 4px 4px;
+  }
+  .partner-band__label {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--indigo-bright);
+    margin-bottom: 0.85rem;
+  }
+  .partner-band__cta { text-align: center; margin: 1.1rem 0 0; font-size: 0.88rem; color: var(--text-soft); }
+
+  .intro-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1.75rem; align-items: start; }
+  .theme-card {
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--cyan);
+    border-radius: var(--radius);
+    padding: 0.95rem 1.1rem;
+    background: var(--bg-soft);
+  }
+  .theme-card__text { margin: 0.45rem 0 0; font-size: 0.98rem; font-weight: 600; color: var(--ink); }
+  .key-dates-aside h3 { margin-bottom: 0.75rem; }
+  @media (max-width: 880px) {
+    .intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__graphic { min-height: 180px; order: -1; }
+  }
+
+  .highlight { display: flex; flex-direction: column; text-decoration: none; color: var(--text); }
+  .highlight:hover { text-decoration: none; }
+  .highlight__icon {
+    display: grid; place-items: center;
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, rgba(66,87,224,0.14), rgba(24,194,201,0.12));
+    color: var(--indigo-bright);
+    font-size: 1.15rem; margin-bottom: 0.75rem;
+    border: 1px solid rgba(66, 87, 224, 0.12);
+  }
+  .highlight h3 { font-size: 1rem; }
+  .highlight p { color: var(--text-soft); flex: 1; margin-bottom: 0.55rem; font-size: 0.9rem; }
+  .highlight__more { font-weight: 700; color: var(--indigo-bright); font-size: 0.85rem; }
+
+  .topics { display: flex; flex-wrap: wrap; gap: 0.55rem; justify-content: center; }
+  .topic-chip {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.5rem 0.95rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .topic-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(66, 87, 224, 0.3);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (min-width: 1024px) {
+    .hero { padding-block: 2rem; }
+    .hero h1 { font-size: 2.35rem; }
+    .hero .lead { font-size: 1.02rem; line-height: 1.36; }
+    .hero__meta { margin: 0.6rem 0; font-size: 0.82rem; }
+    .hero__host { margin-top: 0.6rem; }
+    .hero__graphic { min-height: 175px; }
+    .intro-grid { gap: 1.5rem; }
+    .partner-band { padding-block: 1.35rem; }
+  }
+</style>

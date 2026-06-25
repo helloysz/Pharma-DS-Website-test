@@ -1,0 +1,18 @@
+{
+  "headline": "Who should attend",
+  "intro": "PharmaDS is where the people building the data-driven, AI-enabled future of pharma come together \u2014 to learn, to show their work, and to grow their network and careers.",
+  "personas": [
+    { "icon": "\u03c3", "title": "Statisticians & Data Scientists", "value": "Sharpen modern design, causal, and ML methods and see how peers put them into production." },
+    { "icon": "\u2699", "title": "AI / ML Engineers", "value": "Crash-course the engineering behind models that ship \u2014 pipelines, tooling, and deployment in a regulated world." },
+    { "icon": "\u269b", "title": "RWE & Clinical Researchers", "value": "Translate real-world and trial data into credible evidence with the latest analytics." },
+    { "icon": "\u2696", "title": "Regulatory & Safety", "value": "Track where AI-driven pharmacovigilance and evidence standards are heading, straight from peers and agencies." },
+    { "icon": "\u25c8", "title": "Leaders & Decision-Makers", "value": "Get a candid 360\u00b0 view of where the biggest wins are, where barriers remain, and where to invest next." },
+    { "icon": "\u2197", "title": "Early-Career & Academic Talent", "value": "Find mentors, real projects, and a community \u2014 our career-growth program is built for you." }
+  ],
+  "gains": [
+    "Actionable techniques you can apply on Monday morning",
+    "Hands-on labs, not just slides",
+    "A community that continues long after the conference",
+    "Direct access to mentors, collaborators, and hiring teams"
+  ]
+}

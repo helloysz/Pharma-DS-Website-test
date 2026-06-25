@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import PersonCard from "../components/PersonCard.astro";
+import CTASection from "../components/CTASection.astro";
+import committee from "../data/committee.json";
+
+const { board, advisory, organization } = committee;
+---
+
+<BaseLayout title="Committee" description="The PharmaDS committee: Conference Board, Advisory Committee, and the Organization Committee organized by functional subteam.">
+  <PageHero
+    eyebrow="Governance"
+    title="The PharmaDS committee"
+    subtitle="PharmaDS is led by a dedicated group of volunteers from industry, regulatory agencies, and academia, organized into three bodies."
+  >
+    <nav class="hero-jump" aria-label="Committee sections">
+      <a href="#board">Board</a>
+      <a href="#advisory">Advisory Committee</a>
+      <a href="#organization">Organization Committee</a>
+    </nav>
+  </PageHero>
+
+  <!-- BOARD -->
+  <section class="section" id="board">
+    <div class="container">
+      <SectionHead eyebrow="Leadership" title={board.title}>
+        <p class="lead">{board.intro}</p>
+      </SectionHead>
+      <div class="grid grid--2">
+        {board.members.map((m) => (
+          <PersonCard name={m.name} role={m.role} affiliation={m.affiliation} photo={m.photo} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORY -->
+  <section class="section section--soft" id="advisory">
+    <div class="container">
+      <SectionHead eyebrow="Strategic direction" title={advisory.title}>
+        <p class="lead">{advisory.intro}</p>
+      </SectionHead>
+      <div class="grid grid--3">
+        {advisory.members.map((m) => (
+          <PersonCard name={m.name} role={m.role} affiliation={m.affiliation} photo={m.photo} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZATION -->
+  <section class="section" id="organization">
+    <div class="container">
+      <SectionHead eyebrow="Execution" title={organization.title}>
+        <p class="lead">{organization.intro}</p>
+      </SectionHead>
+
+      <div class="subteams">
+        {organization.subteams.map((team) => (
+          <section class="subteam">
+            <div class="subteam__head">
+              <h3>{team.role}</h3>
+              <p>{team.description}</p>
+            </div>
+            <div class="grid grid--3">
+              {team.members.map((m) => (
+                <PersonCard name={m.name} title={m.title} affiliation={m.affiliation} photo={m.photo} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <p class="todo-note" style="margin-top:2rem;">TODO: replace placeholder names, roles, affiliations and headshots in <code>src/data/committee.json</code>.</p>
+    </div>
+  </section>
+
+  <CTASection title="Interested in joining the committee or volunteering?" text="We grow through people who care about the community. Reach out or sign up to volunteer.">
+    <a class="btn btn--light" href="/volunteer">Volunteer</a>
+    <a class="btn btn--ghost" href="/community">About the community</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .hero-jump { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+  .hero-jump a {
+    color: #fff; border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.4rem 0.9rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+    text-decoration: none;
+  }
+  .hero-jump a:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+
+  .subteams { display: grid; gap: 2.5rem; }
+  .subteam__head {
+    border-left: 4px solid var(--cyan);
+    padding-left: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .subteam__head h3 { margin: 0 0 0.2rem; }
+  .subteam__head p { margin: 0; color: var(--text-soft); max-width: 70ch; }
+</style>

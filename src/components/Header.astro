@@ -1,0 +1,177 @@
+---
+import site from "../data/site.json";
+
+const navItems = [
+  { label: "Program", href: "/program" },
+  { label: "Short Courses", href: "/short-courses" },
+  { label: "Call for Presentations", href: "/call-for-presentations" },
+  { label: "Career & Networking", href: "/career-growth" },
+  { label: "Committee", href: "/committee" },
+  { label: "Community", href: "/community" },
+  { label: "Partnership", href: "/partnership" },
+];
+
+const { pathname } = Astro.url;
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="PharmaDS 2027 home">
+      <span class="brand-mark" aria-hidden="true">DS</span>
+      <span class="brand-text">
+        <strong>PharmaDS</strong>
+        <span class="brand-year">2027</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class={isActive(item.href) ? "active" : ""}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a class="btn btn--primary btn--sm nav-cta" href="/registration">Register</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 56px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: var(--grad-accent);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+  .brand-text { display: flex; align-items: baseline; gap: 0.4rem; line-height: 1; }
+  .brand-text strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: -0.03em;
+  }
+  .brand-year {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cyan-deep);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .site-nav a:hover { color: var(--indigo-bright); }
+  .site-nav a.active {
+    color: var(--indigo-bright);
+    border-bottom-color: var(--indigo-bright);
+  }
+  .nav-cta { color: #fff !important; border-bottom: none !important; }
+
+  .nav-toggle { display: none; }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .nav-burger span {
+    display: block;
+    height: 2px;
+    width: 24px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  @media (max-width: 1080px) {
+    .nav-burger { display: flex; }
+    .site-nav {
+      position: fixed;
+      inset: 56px 0 auto 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 0.5rem 0 1.2rem;
+      transform: translateY(-130%);
+      transition: transform 0.25s ease;
+      max-height: calc(100vh - 56px);
+      overflow-y: auto;
+    }
+    .site-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+    .site-nav li { border-bottom: 1px solid var(--border); }
+    .site-nav ul a {
+      display: block;
+      padding: 0.9rem clamp(1rem, 4vw, 2rem);
+      font-size: 1rem;
+      border-bottom: none;
+    }
+    .nav-cta {
+      margin: 1rem clamp(1rem, 4vw, 2rem) 0;
+      justify-content: center;
+    }
+    .nav-toggle:checked ~ .site-nav { transform: translateY(0); }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+</style>

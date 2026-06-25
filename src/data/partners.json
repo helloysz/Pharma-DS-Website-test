@@ -1,0 +1,16 @@
+{
+  "note": "TODO: Add real partners. 'logo' is a path under /public (e.g. /partners/acme.svg). Leave 'logo' empty to render a text placeholder. 'tier' is one of the tier ids below.",
+  "tiers": [
+    { "id": "platinum", "name": "Platinum Partners", "blurb": "Our headline partners, front and center across the conference." },
+    { "id": "gold", "name": "Gold Partners", "blurb": "Major supporters of the PharmaDS community." },
+    { "id": "silver", "name": "Silver Partners", "blurb": "Valued contributors to the 2027 program." },
+    { "id": "community", "name": "Community & Academic Partners", "blurb": "Societies, academic groups, and community organizations we collaborate with." }
+  ],
+  "partners": [
+    { "name": "TODO Partner", "tier": "platinum", "logo": "", "url": "#" },
+    { "name": "TODO Partner", "tier": "gold", "logo": "", "url": "#" },
+    { "name": "TODO Partner", "tier": "gold", "logo": "", "url": "#" },
+    { "name": "TODO Partner", "tier": "silver", "logo": "", "url": "#" },
+    { "name": "New England Statistical Society", "tier": "community", "logo": "", "url": "https://nestat.org" }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "value": "3",
+    "unit": "days",
+    "label": "Conference experience"
+  },
+  {
+    "value": "TODO",
+    "unit": "+",
+    "label": "Attendees expected"
+  },
+  {
+    "value": "Hybrid",
+    "unit": "",
+    "label": "In-person + virtual sessions"
+  },
+  {
+    "value": "Rapid demos · Summit sessions",
+    "unit": "",
+    "label": "Short courses · Keynote · Panel"
+  }
+]

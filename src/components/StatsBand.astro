@@ -1,0 +1,110 @@
+---
+import stats from "../data/stats.json";
+---
+
+<section class="stats-band" aria-label="Conference at a glance">
+  <div class="container">
+    <ul class="stats-band__list">
+      {stats.map((stat) => (
+        <li class="stats-band__item">
+          <span class="stats-band__value">
+            {stat.value}
+            {stat.unit && <span class="stats-band__unit">{stat.unit}</span>}
+          </span>
+          <span class="stats-band__label">{stat.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .stats-band {
+    background: var(--bg-ink);
+    border-block: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(24, 194, 201, 0.12) 0%,
+      transparent 35%,
+      transparent 65%,
+      rgba(66, 87, 224, 0.14) 100%
+    );
+    pointer-events: none;
+  }
+  .stats-band__list {
+    list-style: none;
+    margin: 0;
+    padding: clamp(0.85rem, 1.2vw, 1rem) 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .stats-band__item {
+    text-align: center;
+    padding-inline: 0.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .stats-band__item:last-child {
+    border-right: none;
+  }
+  .stats-band__value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 0.95vw, 1.15rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .stats-band__unit {
+    font-size: 0.72em;
+    color: var(--cyan);
+    margin-left: 0.05em;
+  }
+  .stats-band__label {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(238, 241, 251, 0.58);
+  }
+  @media (max-width: 768px) {
+    .stats-band__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stats-band__item:nth-child(2) {
+      border-right: none;
+    }
+    .stats-band__item:nth-child(1),
+    .stats-band__item:nth-child(2) {
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+  @media (max-width: 420px) {
+    .stats-band__list {
+      grid-template-columns: 1fr;
+    }
+    .stats-band__item {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.85rem;
+    }
+    .stats-band__item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+</style>

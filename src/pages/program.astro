@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import SessionFormats from "../components/SessionFormats.astro";
+import WhoShouldAttend from "../components/WhoShouldAttend.astro";
+import CTASection from "../components/CTASection.astro";
+import sessions from "../data/sessions.json";
+
+const days = [
+  {
+    tag: "Day 1",
+    title: "Short Course Day",
+    text: "Hands-on, choose-your-track learning. Short courses are split into theory and lab across Statistical Evidence Generation, the AI Engineering crash course, and Tool Usage.",
+    items: ["Theory short courses", "Lab (hands-on) short courses", "AI engineering crash course", "Tool usage workshops"],
+    link: { label: "Browse short courses", href: "/short-courses" },
+  },
+  {
+    tag: "Day 2",
+    title: "Main Conference Day",
+    text: "A high-energy program designed to advocate for our community — opening keynote, hybrid sessions blending traditional talks with rapid demos and experience sharing, and a closing panel discussion.",
+    items: ["Opening keynote", "Hybrid sessions (traditional + new formats)", "Rapid demo showcases", "Experience-sharing talks", "Panel discussion", "Evening banquet"],
+    link: { label: "See the call for presentations", href: "/call-for-presentations" },
+  },
+];
+
+const marquee = [
+  { icon: "★", label: "Keynote", text: "One headline keynote to open the conference.", pill: "pill" },
+  { icon: "❖", label: "Panel Discussion", text: "One moderated panel bringing leaders together.", pill: "pill--cyan" },
+  { icon: "⏱", label: "Rapid Demos", text: "Production work in 20-minute back-to-back showcases.", pill: "pill--amber" },
+  { icon: "♨", label: "Banquet", text: "One evening banquet to connect and celebrate.", pill: "pill--magenta" },
+];
+
+const summitSessions = sessions.sessions.filter((s) => s.callout === "summit");
+const formatName = (id: string) => sessions.formats.find((f) => f.id === id)?.name ?? id;
+---
+
+<BaseLayout title="Program & Agenda" description="The PharmaDS 2027 program: theory + lab short courses, a keynote, panel, rapid demos, experience sharing, and summit-style hybrid sessions.">
+  <PageHero
+    eyebrow="Program & Agenda"
+    title="A 2027 program reimagined to advocate for our community"
+    subtitle="We've redesigned the format to attract both audiences and presenters — more hands-on learning, more practical sharing, and a flagship summit style for our most important sessions."
+  >
+    <p class="todo-note" style="margin-top:1.5rem; max-width:60ch;">TODO: full timed agenda, room assignments, and confirmed session times will be added once finalized.</p>
+  </PageHero>
+
+  <!-- AT A GLANCE -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="At a glance" title="What the conference looks like" center={true} />
+      <div class="grid grid--4 marquee">
+        {marquee.map((m) => (
+          <div class="card card--hover marquee__item">
+            <span class={`pill ${m.pill}`}>{m.label}</span>
+            <p>{m.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE / AGENDA -->
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="How the days are organized" title="Program structure" />
+      <div class="days">
+        {days.map((d) => (
+          <article class="day card">
+            <div class="day__tag">{d.tag}</div>
+            <div class="day__body">
+              <h3>{d.title}</h3>
+              <p>{d.text}</p>
+              <ul class="day__items">
+                {d.items.map((i) => <li>{i}</li>)}
+              </ul>
+              <a class="btn btn--ghost btn--sm" href={d.link.href}>{d.link.label}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENTATION FORMATS -->
+  <section class="section" id="formats">
+    <div class="container">
+      <SectionHead eyebrow="New for 2027" title="Presentation formats">
+        <p class="lead">
+          Alongside traditional presentations, we're introducing formats built for production-related
+          work — and a flagship summit style for selected sessions. Sessions that use the new formats
+          run in <strong>hybrid mode</strong>: traditional talks combined with the new styles.
+        </p>
+      </SectionHead>
+      <SessionFormats />
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="Sessions" title="2027 sessions">
+        <p class="lead">Session names are being finalized. Sessions tagged <em>Summit Style</em> are our specific call-outs and run hybrid.</p>
+      </SectionHead>
+      <div class="grid grid--2 sessions">
+        {sessions.sessions.map((s) => (
+          <div class="card card--hover session">
+            <div class="session__head">
+              <h3>{s.name}</h3>
+              {s.callout === "summit" && <span class="pill pill--magenta">Summit Style</span>}
+              {s.hybrid && <span class="pill pill--cyan">Hybrid</span>}
+            </div>
+            <p class="session__formats">
+              Formats: {s.formats.map((f) => formatName(f)).join(" · ")}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p class="todo-note" style="margin-top:1.5rem;">TODO: replace placeholder session names and format assignments in <code>src/data/sessions.json</code>.</p>
+    </div>
+  </section>
+
+  <!-- SUMMIT CALLOUT -->
+  {summitSessions.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="summit-callout">
+          <span class="pill pill--magenta">Specifically called out</span>
+          <h2>Summit-style sessions</h2>
+          <p>
+            For our flagship sessions, we combine traditional talks with rapid demos and
+            experience sharing in one hybrid session — maximizing energy and takeaways. We are
+            specifically calling for presentations in these sessions.
+          </p>
+          <ul>
+            {summitSessions.map((s) => <li>{s.name}</li>)}
+          </ul>
+          <a class="btn btn--primary" href="/call-for-presentations">Submit to a summit session</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <WhoShouldAttend />
+
+  <CTASection title="Want to present at PharmaDS 2027?" text="Pick the format that fits your work — traditional, rapid demo, or experience sharing — and submit your abstract.">
+    <a class="btn btn--light" href="/call-for-presentations">Call for Presentations</a>
+    <a class="btn btn--ghost" href="/registration">Register</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .marquee__item { display: flex; flex-direction: column; gap: 0.6rem; }
+  .marquee__item p { margin: 0; color: var(--text-soft); }
+
+  .days { display: grid; gap: 1.15rem; }
+  .day { display: flex; gap: 1.5rem; padding: 0; overflow: hidden; }
+  .day__tag {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 100px;
+    background: var(--grad-accent);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    writing-mode: horizontal-tb;
+  }
+  .day__body { padding: 1.25rem 1.25rem 1.25rem 0; }
+  .day__items { columns: 2; gap: 1.5rem; margin: 0.6rem 0 0.9rem; }
+  .day__items li { margin-bottom: 0.25rem; }
+
+  .session__head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+  .session__head h3 { margin: 0; font-size: 1rem; }
+  .session__formats { margin: 0.5rem 0 0; color: var(--text-soft); font-size: 0.88rem; }
+
+  .summit-callout {
+    background: var(--grad-hero);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    box-shadow: var(--shadow-md);
+  }
+  .summit-callout h2 { color: #fff; margin: 0.8rem 0 0.5rem; }
+  .summit-callout p { color: rgba(255,255,255,0.85); max-width: 60ch; }
+  .summit-callout ul { columns: 2; margin: 1rem 0 1.5rem; }
+  .summit-callout li { margin-bottom: 0.3rem; }
+
+  @media (max-width: 640px) {
+    .day { flex-direction: column; }
+    .day__tag { width: 100%; height: 52px; }
+    .day__body { padding: 0 1.4rem 1.4rem; }
+    .day__items, .summit-callout ul { columns: 1; }
+  }
+</style>

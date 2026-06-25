@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import EmbedForm from "../components/EmbedForm.astro";
+import site from "../data/site.json";
+
+const roles = [
+  { title: "Short courses", text: "Help run the theory and lab sessions — setup, check-in, and supporting instructors." },
+  { title: "Presentation sessions", text: "Support the keynote, panel, rapid demos, and experience-sharing sessions." },
+  { title: "Registration & reception", text: "Welcome attendees, manage check-in, and help the banquet and receptions run smoothly." },
+  { title: "Digital & A/V", text: "Help with the hybrid setup, streaming, and on-site tech." },
+];
+---
+
+<BaseLayout title="Volunteer" description="Volunteer at PharmaDS 2027 — help run short courses, sessions, registration, and more.">
+  <PageHero
+    eyebrow="Get involved"
+    title="Volunteer at PharmaDS 2027"
+    subtitle="The conference runs on volunteers from industry, regulatory bodies, and academia. Lend a hand and become part of the community from the inside."
+  >
+    <a class="btn btn--light" href="#signup" style="margin-top:1.5rem;">Sign up to volunteer</a>
+  </PageHero>
+
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Where we need help" title="Volunteer roles" center={true}>
+        <p class="lead" style="margin-inline:auto;">Non-student volunteers are asked to contribute a bit more time than student volunteers — every hour helps.</p>
+      </SectionHead>
+      <div class="grid grid--4">
+        {roles.map((r) => (
+          <div class="card role">
+            <h3>{r.title}</h3>
+            <p>{r.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="signup">
+    <div class="container narrow">
+      <SectionHead eyebrow="Join the team" title="Sign up to volunteer" center={true}>
+        <p class="lead" style="margin-inline:auto;">Tell us your availability and where you'd like to help.</p>
+      </SectionHead>
+      <EmbedForm
+        url={site.forms.volunteer}
+        title="PharmaDS 2027 Volunteer Sign-up Form"
+        description="Let us know your preferred roles and availability."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 820px; }
+  .role h3 { font-size: 1.05rem; }
+  .role p { color: var(--text-soft); margin: 0; }
+</style>

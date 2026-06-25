@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import EmbedForm from "../components/EmbedForm.astro";
+import site from "../data/site.json";
+
+const offerings = [
+  {
+    icon: "🎤",
+    title: "30-minute mentor short talks",
+    text: "Offline, focused 30-minute sessions where mentors share guidance on careers, skills, and navigating the field.",
+  },
+  {
+    icon: "🧪",
+    title: "Short-term project collaboration",
+    text: "Mentors pair with early talent on a bounded, short-term project — a quick, high-impact way to learn by doing.",
+  },
+  {
+    icon: "🌱",
+    title: "Long-term project collaboration",
+    text: "Deeper, ongoing collaborations between mentors and early-career talent that grow skills and networks over time.",
+  },
+  {
+    icon: "🤝",
+    title: "In-conference program",
+    text: "Dedicated career-growth and networking activities built into the conference itself — matchmaking, office hours, and meetups.",
+  },
+];
+
+const forMentors = [
+  "Give back and shape the next generation of pharma data talent",
+  "Choose your format: a single short talk or an ongoing collaboration",
+  "Flexible commitment — as little as one 30-minute session",
+  "Connect with motivated early-career professionals and students",
+];
+
+const forTalent = [
+  "Learn directly from experienced practitioners and leaders",
+  "Get hands-on with real short- and long-term projects",
+  "Build a network that lasts beyond the conference",
+  "Find guidance on skills, careers, and next steps",
+];
+---
+
+<BaseLayout title="Career Growth & Networking" description="The PharmaDS career-growth and networking program — mentor short talks, project collaboration with early talent, and in-conference activities.">
+  <PageHero
+    eyebrow="Upskill · Grow · Connect"
+    title="Career growth, upskilling & networking"
+    subtitle="PharmaDS isn't just talks — it's a program built to help people grow. We connect experienced mentors with early-career talent through short talks and real project collaboration, at the conference and year-round."
+  >
+    <a class="btn btn--light" href="#become-a-mentor" style="margin-top:1.5rem;">Become a mentor</a>
+  </PageHero>
+
+  <!-- OFFERINGS -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="The program" title="How mentorship works at PharmaDS" center={true}>
+        <p class="lead" style="margin-inline:auto;">
+          We're looking for mentors to sign up and offer guidance — from a single 30-minute short
+          talk to short- or long-term project collaboration with early talent.
+        </p>
+      </SectionHead>
+      <div class="grid grid--4">
+        {offerings.map((o) => (
+          <div class="card card--hover offering">
+            <span class="offering__icon" aria-hidden="true">{o.icon}</span>
+            <h3>{o.title}</h3>
+            <p>{o.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO AUDIENCES -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="grid grid--2">
+        <div class="card audience-card">
+          <span class="pill">For mentors</span>
+          <h3>Share what you know</h3>
+          <ul>
+            {forMentors.map((i) => <li>{i}</li>)}
+          </ul>
+          <a class="btn btn--solid" href="#become-a-mentor">Sign up to mentor</a>
+        </div>
+        <div class="card audience-card">
+          <span class="pill pill--cyan">For early talent</span>
+          <h3>Grow with guidance</h3>
+          <ul>
+            {forTalent.map((i) => <li>{i}</li>)}
+          </ul>
+          <a class="btn btn--ghost" href="/registration">Register to attend</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTOR SIGN-UP -->
+  <section class="section" id="become-a-mentor">
+    <div class="container narrow">
+      <SectionHead eyebrow="Get involved" title="Sign up to be a mentor" center={true}>
+        <p class="lead" style="margin-inline:auto;">
+          Tell us how you'd like to help — a 30-minute short talk, a short-term project, or a longer
+          collaboration. We'll match you with early-career talent.
+        </p>
+      </SectionHead>
+      <EmbedForm
+        url={site.forms.mentorSignup}
+        title="PharmaDS Mentor Sign-up Form"
+        description="Choose your preferred mentorship format and areas of expertise."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 820px; }
+  .offering__icon {
+    display: grid; place-items: center;
+    width: 46px; height: 46px; border-radius: 12px;
+    background: rgba(24,194,201,0.14); font-size: 1.4rem; margin-bottom: 0.8rem;
+  }
+  .offering h3 { font-size: 1.05rem; }
+  .offering p { color: var(--text-soft); margin: 0; }
+
+  .audience-card { display: flex; flex-direction: column; gap: 0.6rem; }
+  .audience-card h3 { margin: 0.3rem 0; }
+  .audience-card ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--text-soft); flex: 1; }
+  .audience-card li { margin-bottom: 0.4rem; }
+</style>

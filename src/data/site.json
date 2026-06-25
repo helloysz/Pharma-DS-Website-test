@@ -1,0 +1,27 @@
+{
+  "name": "PharmaDS 2027",
+  "fullName": "Pharmaceutical Data Science Conference 2027",
+  "host": "Hosted by the New England Statistical Society",
+  "tagline": "Building a community at the intersection of AI, data science, and pharmaceutical development.",
+  "theme": "TODO: 2027 conference theme to be provided",
+  "dates": "TODO: 2027 dates to be provided",
+  "venue": "TODO: 2027 venue / location to be provided",
+  "format": "In-person / Virtual (Hybrid)",
+  "domain": "phds.nestat.org",
+  "contactEmail": "TODO_contact_email@nestat.org",
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/TODO-pharmads-linkedin"
+  },
+  "forms": {
+    "abstractSubmission": "https://docs.google.com/forms/d/e/TODO_ABSTRACT_FORM_ID/viewform?embedded=true",
+    "mentorSignup": "https://docs.google.com/forms/d/e/TODO_MENTOR_FORM_ID/viewform?embedded=true",
+    "volunteer": "https://docs.google.com/forms/d/e/TODO_VOLUNTEER_FORM_ID/viewform?embedded=true",
+    "registerInterest": "https://docs.google.com/forms/d/e/TODO_REGISTER_INTEREST_FORM_ID/viewform?embedded=true",
+    "partnerInquiry": "https://docs.google.com/forms/d/e/TODO_PARTNER_FORM_ID/viewform?embedded=true",
+    "newsletter": "https://TODO_newsletter_provider/subscribe"
+  },
+  "links": {
+    "registration": "TODO_registration_url",
+    "prospectus": "TODO_partner_prospectus.pdf"
+  }
+}

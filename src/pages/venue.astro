@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import CTASection from "../components/CTASection.astro";
+import site from "../data/site.json";
+
+const venueKnown = site.venue && !site.venue.includes("TODO");
+const cards = [
+  { icon: "🏨", title: "Venue", text: venueKnown ? site.venue : "The 2027 venue will be announced soon. Check back for the conference hotel and address." },
+  { icon: "🛏", title: "Hotel & room block", text: "A discounted room block will be available. Reservation details and the cut-off date will be posted here." },
+  { icon: "✈", title: "Getting there", text: "Travel guidance — nearest airports, parking, and public transport — will be added closer to the event." },
+  { icon: "🍽", title: "On-site", text: "Information on meals, the banquet, and accessibility will be shared ahead of the conference." },
+];
+---
+
+<BaseLayout title="Venue & Travel" description="Venue, hotel, and travel information for PharmaDS 2027.">
+  <PageHero
+    eyebrow="Venue & Travel"
+    title="Where PharmaDS 2027 happens"
+    subtitle="Venue, hotel, and travel details for the 2027 conference. Final location and logistics will be confirmed soon."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="venue-banner">
+        <span class="pill pill--amber">Coming soon</span>
+        <h2>{venueKnown ? site.venue : "Venue to be announced"}</h2>
+        <p>{site.format} · {site.dates.includes("TODO") ? "Dates to be announced" : site.dates}</p>
+        <p class="todo-note">TODO: add the 2027 venue name, address, map, hotel block, and travel details (update <code>src/data/site.json</code> and this page).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="Plan your trip" title="What to know" center={true} />
+      <div class="grid grid--4">
+        {cards.map((c) => (
+          <div class="card venue-card">
+            <span class="venue-card__icon" aria-hidden="true">{c.icon}</span>
+            <h3>{c.title}</h3>
+            <p>{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection title="Ready to join us?" text="Register your interest and we'll keep you posted on venue, hotel, and travel details.">
+    <a class="btn btn--light" href="/registration">Registration</a>
+    <a class="btn btn--ghost" href="/program">View the program</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .venue-banner {
+    background: var(--grad-hero); color: #fff;
+    border-radius: var(--radius); padding: clamp(1.8rem, 5vw, 3rem); box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  .venue-banner h2 { color: #fff; margin: 0.8rem 0 0.4rem; }
+  .venue-banner p { color: rgba(255,255,255,0.85); }
+  .venue-banner .todo-note { display: inline-block; margin-top: 1rem; text-align: left; }
+
+  .venue-card { text-align: center; }
+  .venue-card__icon {
+    display: inline-grid; place-items: center;
+    width: 48px; height: 48px; border-radius: 12px;
+    background: rgba(24,194,201,0.14); font-size: 1.4rem; margin-bottom: 0.7rem;
+  }
+  .venue-card h3 { font-size: 1.05rem; }
+  .venue-card p { color: var(--text-soft); margin: 0; }
+</style>

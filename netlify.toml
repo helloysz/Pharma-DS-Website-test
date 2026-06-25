@@ -1,0 +1,9 @@
+# Netlify build configuration for the PharmaDS 2027 Astro static site.
+# Netlify auto-creates Deploy Previews for every pull request.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

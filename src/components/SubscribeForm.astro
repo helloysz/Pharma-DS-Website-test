@@ -1,0 +1,89 @@
+---
+import site from "../data/site.json";
+
+interface Props {
+  variant?: "band" | "compact";
+}
+const { variant = "band" } = Astro.props;
+const action = site.forms.newsletter;
+const isPlaceholder = !action || action.includes("TODO");
+// When the destination is a placeholder, point the button at the form anyway
+// so the markup is final; the harmless placeholder URL is easy to swap later.
+const formAction = isPlaceholder ? "#" : action;
+---
+
+<div class={`subscribe subscribe--${variant}`}>
+  <div class="subscribe__copy">
+    <h3>Stay in the loop</h3>
+    <p>Get the PharmaDS newsletter and be first to hear about the 2027 conference, round tables, and community workshops.</p>
+  </div>
+  <form class="subscribe__form" action={formAction} method="get" target="_blank" rel="noopener">
+    <label class="visually-hidden" for={`sub-email-${variant}`}>Email address</label>
+    <input
+      id={`sub-email-${variant}`}
+      type="email"
+      name="email"
+      placeholder="you@organization.com"
+      required
+      autocomplete="email"
+    />
+    <button class="btn btn--primary" type="submit">Subscribe</button>
+  </form>
+  {isPlaceholder && (
+    <p class="todo-note">TODO: connect the newsletter provider URL in <code>src/data/site.json</code> (forms.newsletter).</p>
+  )}
+</div>
+
+<style>
+  .subscribe { width: 100%; }
+  .subscribe--band {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 1.75rem;
+    background: var(--grad-hero);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3.5vw, 2rem);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  .subscribe--band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+  .subscribe--band > * { position: relative; z-index: 1; }
+  .subscribe--band h3 { color: #fff; }
+  .subscribe--band p { color: rgba(255,255,255,0.85); margin: 0; max-width: 46ch; }
+  .subscribe__copy h3 { margin: 0 0 0.3rem; }
+
+  .subscribe__form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .subscribe__form input {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    font: inherit;
+    background: #fff;
+    color: var(--text);
+  }
+  .subscribe--band .todo-note { width: 100%; }
+
+  .subscribe--compact { display: grid; gap: 0.8rem; }
+  .subscribe--compact h3 { color: #fff; font-size: 1.1rem; margin: 0; }
+  .subscribe--compact p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; }
+
+  @media (max-width: 720px) {
+    .subscribe__form { width: 100%; }
+    .subscribe__form input { flex: 1 1 100%; }
+    .subscribe__form button { width: 100%; }
+  }
+</style>

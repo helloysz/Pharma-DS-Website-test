@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import PartnerLogos from "../components/PartnerLogos.astro";
+import EmbedForm from "../components/EmbedForm.astro";
+import site from "../data/site.json";
+import partners from "../data/partners.json";
+
+const reach = [
+  { stat: "Pharma + AI", label: "A focused, senior audience at the intersection of data science and pharma" },
+  { stat: "Industry · Agency · Academia", label: "Decision-makers, practitioners, and rising talent in one room" },
+  { stat: "Hybrid", label: "In-person and virtual reach, plus year-round community visibility" },
+  { stat: "Year-round", label: "Conference, round tables, and workshops — not just one day" },
+];
+
+const benefits = [
+  "Logo and brand visibility across the website, footer, and on-site",
+  "Presence in the program and at networking moments",
+  "Connect with hard-to-reach pharma data science talent and leaders",
+  "Support early-career talent through the career-growth program",
+  "Association with a respected, NESS-hosted community",
+];
+
+const tierPerks: Record<string, string[]> = {
+  platinum: ["Headline placement everywhere", "Premium booth & speaking opportunity", "Logo on home + all key pages", "Maximum recognition on-site"],
+  gold: ["Prominent logo placement", "Booth space", "Recognition in the program", "Logo on home + partnership page"],
+  silver: ["Logo on partnership page", "Recognition in the program", "Shared exhibit space"],
+  community: ["Reciprocal community recognition", "Collaboration on content & outreach"],
+};
+
+const prospectus = site.links.prospectus;
+const prospectusReady = prospectus && !prospectus.includes("TODO");
+---
+
+<BaseLayout title="Partnership" description="Partner with PharmaDS 2027. Sponsorship tiers, audience reach, benefits, and how to become a partner.">
+  <PageHero
+    eyebrow="Partnership"
+    title="Partner with PharmaDS"
+    subtitle="Put your brand in front of the people building the data-driven, AI-enabled future of pharma — and help grow a community that lasts all year."
+  >
+    <div class="hero-actions">
+      <a class="btn btn--light" href="#become-a-partner">Become a partner</a>
+      {prospectusReady && <a class="btn btn--ghost" href={prospectus} target="_blank" rel="noopener">Download prospectus</a>}
+    </div>
+  </PageHero>
+
+  <!-- REACH -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Why partner" title="Reach an audience you can't easily reach anywhere else" center={true} />
+      <div class="grid grid--4">
+        {reach.map((r) => (
+          <div class="card card--hover reach">
+            <p class="reach__stat">{r.stat}</p>
+            <p class="reach__label">{r.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section section--soft">
+    <div class="container benefits-grid">
+      <div>
+        <SectionHead eyebrow="What you get" title="Partnership benefits" />
+        <ul class="benefits">
+          {benefits.map((b) => <li>{b}</li>)}
+        </ul>
+      </div>
+      <div class="card benefits-cta">
+        <h3>Ready to talk?</h3>
+        <p>Tell us about your goals and we'll find the right fit. Custom packages are welcome.</p>
+        <a class="btn btn--solid" href="#become-a-partner">Start the conversation</a>
+        {prospectusReady
+          ? <a class="btn btn--ghost btn--sm" href={prospectus} target="_blank" rel="noopener">Download prospectus</a>
+          : <p class="todo-note">TODO: add the partner prospectus PDF (links.prospectus in <code>src/data/site.json</code>).</p>}
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Sponsorship tiers" title="Choose your level" center={true}>
+        <p class="lead" style="margin-inline:auto;">Flexible tiers to match your goals and budget. Pricing is shared in the prospectus.</p>
+      </SectionHead>
+      <div class="grid grid--4 tiers">
+        {partners.tiers.map((tier) => (
+          <div class={`card card--hover tier tier--${tier.id}`}>
+            <span class="pill">{tier.name}</span>
+            <p class="tier__blurb">{tier.blurb}</p>
+            <ul>
+              {(tierPerks[tier.id] ?? []).map((p) => <li>{p}</li>)}
+            </ul>
+            <a class="btn btn--ghost btn--sm" href="#become-a-partner">Enquire</a>
+          </div>
+        ))}
+      </div>
+      <p class="todo-note" style="margin-top:1.5rem;">TODO: confirm tier names, perks, and pricing.</p>
+    </div>
+  </section>
+
+  <!-- CURRENT PARTNERS -->
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="Thank you" title="Our partners" center={true}>
+        <p class="lead" style="margin-inline:auto;">We're grateful to the organizations that make PharmaDS possible.</p>
+      </SectionHead>
+      <PartnerLogos variant="wall" />
+      <p class="todo-note" style="margin-top:1.5rem;">TODO: add real partners, logos, and tiers in <code>src/data/partners.json</code>.</p>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section class="section" id="become-a-partner">
+    <div class="container narrow">
+      <SectionHead eyebrow="Become a partner" title="Partner inquiry" center={true}>
+        <p class="lead" style="margin-inline:auto;">Send us your details and we'll be in touch with packages and next steps.</p>
+      </SectionHead>
+      <EmbedForm
+        url={site.forms.partnerInquiry}
+        title="PharmaDS 2027 Partner Inquiry Form"
+        description="Tell us about your organization and partnership interests."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+  .narrow { max-width: 820px; }
+
+  .reach { text-align: center; }
+  .reach__stat { font-size: 1.15rem; font-weight: 800; color: var(--indigo-bright); margin: 0 0 0.4rem; }
+  .reach__label { color: var(--text-soft); margin: 0; font-size: 0.92rem; }
+
+  .benefits-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+  .benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+  .benefits li { position: relative; padding-left: 1.8rem; font-weight: 500; }
+  .benefits li::before { content: "✦"; position: absolute; left: 0; color: var(--cyan); }
+  .benefits-cta { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+  .benefits-cta h3 { margin: 0; }
+  .benefits-cta p { color: var(--text-soft); margin: 0; }
+
+  .tiers { align-items: stretch; }
+  .tier { display: flex; flex-direction: column; gap: 0.6rem; }
+  .tier__blurb { color: var(--text-soft); margin: 0; }
+  .tier ul { margin: 0.4rem 0 1rem; padding-left: 1.2rem; flex: 1; color: var(--text-soft); font-size: 0.92rem; }
+  .tier ul li { margin-bottom: 0.35rem; }
+  .tier--platinum { border-top: 4px solid var(--indigo-bright); }
+  .tier--gold { border-top: 4px solid var(--amber); }
+  .tier--silver { border-top: 4px solid var(--cyan); }
+  .tier--community { border-top: 4px solid var(--magenta); }
+
+  @media (max-width: 860px) { .benefits-grid { grid-template-columns: 1fr; gap: 2rem; } }
+</style>

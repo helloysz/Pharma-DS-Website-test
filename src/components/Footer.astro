@@ -1,0 +1,139 @@
+---
+import site from "../data/site.json";
+import SubscribeForm from "./SubscribeForm.astro";
+import PartnerLogos from "./PartnerLogos.astro";
+
+const year = new Date().getFullYear();
+const linkedin = site.social.linkedin;
+
+const cols = [
+  {
+    title: "Conference",
+    links: [
+      { label: "Program & Agenda", href: "/program" },
+      { label: "Short Courses", href: "/short-courses" },
+      { label: "Call for Presentations", href: "/call-for-presentations" },
+      { label: "Registration", href: "/registration" },
+      { label: "Venue & Travel", href: "/venue" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { label: "Career & Networking", href: "/career-growth" },
+      { label: "Community & Events", href: "/community" },
+      { label: "Committee", href: "/committee" },
+      { label: "Partnership", href: "/partnership" },
+      { label: "Volunteer", href: "/volunteer" },
+    ],
+  },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="PharmaDS 2027 home">
+          <span class="brand-mark" aria-hidden="true">DS</span>
+          <span class="brand-text"><strong>PharmaDS</strong> <span class="brand-year">2027</span></span>
+        </a>
+        <p>{site.tagline}</p>
+        <p class="footer-host">{site.host}</p>
+        <a class="btn btn--solid btn--sm linkedin-btn" href={linkedin} target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg>
+          Follow us on LinkedIn
+        </a>
+      </div>
+
+      {cols.map((col) => (
+        <nav class="footer-col" aria-label={col.title}>
+          <h4>{col.title}</h4>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </nav>
+      ))}
+
+      <div class="footer-subscribe">
+        <SubscribeForm variant="compact" />
+      </div>
+    </div>
+
+    <div class="footer-partners">
+      <span class="footer-partners__label">Our partners</span>
+      <PartnerLogos variant="strip" compact={true} />
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} Pharmaceutical Data Science Conference · {site.host}.</p>
+      <p>
+        <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+        · <a href={linkedin} target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bg-ink);
+    color: var(--text-invert);
+    padding-block: clamp(2rem, 2.5vw, 2.5rem) 1.15rem;
+    margin-top: auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+    gap: 2rem;
+  }
+  .footer-brand .brand { color: #fff; margin-bottom: 0.8rem; }
+  .footer-brand p { color: rgba(238,241,251,0.72); font-size: 0.92rem; max-width: 32ch; }
+  .footer-host { font-size: 0.85rem !important; color: rgba(238,241,251,0.55) !important; }
+  .linkedin-btn { margin-top: 0.6rem; }
+  .brand-text strong { color: #fff; }
+  .brand-year { color: var(--cyan); }
+
+  .footer-col h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.8rem; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .footer-col a { color: rgba(238,241,251,0.72); font-size: 0.92rem; }
+  .footer-col a:hover { color: #fff; }
+
+  .footer-partners {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    text-align: center;
+  }
+  .footer-partners__label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(238,241,251,0.55);
+    margin-bottom: 1rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 0.82rem;
+    color: rgba(238,241,251,0.55);
+  }
+  .footer-bottom p { margin: 0; }
+  .footer-bottom a { color: rgba(238,241,251,0.72); }
+
+  @media (max-width: 900px) {
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-brand, .footer-subscribe { grid-column: 1 / -1; }
+  }
+  @media (max-width: 520px) {
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>

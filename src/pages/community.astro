@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import SubscribeForm from "../components/SubscribeForm.astro";
+import CTASection from "../components/CTASection.astro";
+import eventsData from "../data/events.json";
+
+const statusLabel: Record<string, string> = {
+  announced: "Announced",
+  planning: "In planning",
+  open: "Registration open",
+};
+const statusPill: Record<string, string> = {
+  announced: "pill",
+  planning: "pill--amber",
+  open: "pill--cyan",
+};
+
+const pillars = [
+  { icon: "◎", title: "Round tables", text: "Small, focused discussions that start within the committee and grow outward." },
+  { icon: "▦", title: "Workshops", text: "Hands-on deep dives on the topics our community cares about most." },
+  { icon: "★", title: "Annual conference", text: "Our flagship gathering — the high point of the community year." },
+  { icon: "↗", title: "Year-round networking", text: "Mentorship, collaboration, and connections that don't stop when the conference ends." },
+];
+---
+
+<BaseLayout title="Community & Events" description="PharmaDS is becoming a year-round community — starting with a committee round table at ASA RISW, follow-on workshops, and the 2027 conference.">
+  <PageHero
+    eyebrow="More than a conference"
+    title="PharmaDS is becoming a community"
+    subtitle="We're not just hosting one conference a year. PharmaDS is growing into a year-round community — starting small with a committee round table, followed by workshops, and anchored by our annual conference."
+  />
+
+  <!-- PILLARS -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="How we gather" title="The shape of the community" center={true} />
+      <div class="grid grid--4">
+        {pillars.map((p) => (
+          <div class="card pillar">
+            <span class="pillar__icon" aria-hidden="true">{p.icon}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section class="section section--soft" id="events">
+    <div class="container">
+      <SectionHead eyebrow="Mark your calendar" title="Upcoming events">
+        <p class="lead">Here's what's coming up as we build the community toward PharmaDS 2027.</p>
+      </SectionHead>
+
+      <div class="events">
+        {eventsData.events.map((e) => (
+          <article class="event card">
+            <div class="event__meta">
+              <span class={`pill ${statusPill[e.status] ?? "pill"}`}>{statusLabel[e.status] ?? e.status}</span>
+              <span class="event__type">{e.type}</span>
+            </div>
+            <div class="event__body">
+              <h3>{e.title}</h3>
+              <p class="event__when">📅 {e.date} &nbsp;·&nbsp; 📍 {e.location}</p>
+              <p>{e.summary}</p>
+              {e.cta && <a class="btn btn--ghost btn--sm" href={e.cta.href}>{e.cta.label}</a>}
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="todo-note" style="margin-top:1.5rem;">TODO: confirm dates, locations, and links in <code>src/data/events.json</code> as details with ASA RISW and the workshop series firm up.</p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT: ROUND TABLE -->
+  <section class="section">
+    <div class="container">
+      <div class="highlight-card">
+        <div>
+          <span class="pill pill--amber">First community gathering</span>
+          <h2>Committee round table @ ASA RISW</h2>
+          <p>
+            Our community begins with a small, focused round-table discussion within the committee,
+            planned to be hosted alongside the ASA Regulatory-Industry Statistics Workshop (RISW) in
+            mid-September. Workshops will follow. Details to come — subscribe to be the first to know.
+          </p>
+          <p class="todo-note">TODO: confirm ASA RISW co-location, exact dates, and venue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="section">
+    <div class="container">
+      <SubscribeForm variant="band" />
+    </div>
+  </section>
+
+  <CTASection title="Be part of the PharmaDS community" text="Follow along, join an event, or get involved with the committee.">
+    <a class="btn btn--light" href="/volunteer">Get involved</a>
+    <a class="btn btn--ghost" href="/career-growth">Mentorship program</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .pillar__icon {
+    display: grid; place-items: center;
+    width: 46px; height: 46px; border-radius: 12px;
+    background: rgba(66,87,224,0.1); color: var(--indigo-bright);
+    font-size: 1.4rem; margin-bottom: 0.8rem;
+  }
+  .pillar h3 { font-size: 1.05rem; }
+  .pillar p { color: var(--text-soft); margin: 0; }
+
+  .events { display: grid; gap: 1.5rem; }
+  .event { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .event__meta { display: flex; flex-direction: column; gap: 0.5rem; flex: 0 0 auto; min-width: 130px; }
+  .event__type { font-size: 0.82rem; font-weight: 700; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .event__body h3 { margin: 0 0 0.4rem; }
+  .event__when { color: var(--text-soft); font-size: 0.9rem; margin: 0 0 0.6rem; }
+  .event__body p { margin: 0 0 0.8rem; }
+
+  .highlight-card {
+    background: var(--grad-hero); color: #fff;
+    border-radius: var(--radius); padding: clamp(1.8rem, 5vw, 3rem); box-shadow: var(--shadow-md);
+  }
+  .highlight-card h2 { color: #fff; margin: 0.7rem 0 0.5rem; }
+  .highlight-card p { color: rgba(255,255,255,0.85); max-width: 65ch; }
+  .highlight-card .todo-note { color: #ffe; background: rgba(255,182,72,0.18); }
+
+  @media (max-width: 620px) {
+    .event { flex-direction: column; gap: 0.8rem; }
+    .event__meta { flex-direction: row; min-width: 0; align-items: center; }
+  }
+</style>

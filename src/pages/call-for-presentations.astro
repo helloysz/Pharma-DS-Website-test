@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import SessionFormats from "../components/SessionFormats.astro";
+import EmbedForm from "../components/EmbedForm.astro";
+import site from "../data/site.json";
+import sessions from "../data/sessions.json";
+
+const steps = [
+  { n: "1", title: "Pick your format", text: "Choose traditional, rapid demo, or experience sharing — whichever fits your work best." },
+  { n: "2", title: "Submit your abstract", text: "Fill out the submission form below with your title, abstract, and preferred session." },
+  { n: "3", title: "Review & notification", text: "The committee reviews submissions and notifies presenters. Hybrid and summit-style sessions are curated." },
+];
+
+const summitSessions = sessions.sessions.filter((s) => s.callout === "summit");
+---
+
+<BaseLayout title="Call for Presentations" description="Submit your abstract for PharmaDS 2027 — traditional talks, rapid demos, experience sharing, and summit-style hybrid sessions.">
+  <PageHero
+    eyebrow="Call for Presentations & Posters"
+    title="Share your work at PharmaDS 2027"
+    subtitle="We're calling for presentations across new and traditional formats. Whether you have rigorous methodology or a production solution worth showing off, there's a format for you."
+  >
+    <div class="hero-actions">
+      <a class="btn btn--light" href="#submit">Submit an abstract</a>
+      <a class="btn btn--ghost" href="#formats">See the formats</a>
+    </div>
+  </PageHero>
+
+  <!-- WHY PRESENT -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Why present" title="Get your work in front of the people who matter" center={true}>
+        <p class="lead" style="margin-inline:auto;">
+          Reach pharma statisticians, data scientists, AI engineers, regulatory and clinical leaders,
+          and academic talent — and help shape where the field goes next.
+        </p>
+      </SectionHead>
+    </div>
+  </section>
+
+  <!-- FORMATS -->
+  <section class="section section--soft" id="formats">
+    <div class="container">
+      <SectionHead eyebrow="Choose your format" title="Presentation formats">
+        <p class="lead">
+          New for 2027: in addition to traditional presentations, we're calling for
+          <strong>rapid demos</strong> and <strong>experience sharing</strong> for production-related
+          work. Selected sessions run as <strong>summit-style hybrids</strong> (traditional + new).
+        </p>
+      </SectionHead>
+      <SessionFormats />
+    </div>
+  </section>
+
+  <!-- SUMMIT CALLOUT -->
+  {summitSessions.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="summit-callout">
+          <div>
+            <span class="pill pill--magenta">Special call-out</span>
+            <h2>We're specifically calling for summit-style sessions</h2>
+            <p>These flagship sessions blend traditional talks with rapid demos and experience sharing. If your work fits, flag it in your submission.</p>
+          </div>
+          <ul>
+            {summitSessions.map((s) => <li>{s.name}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- HOW IT WORKS -->
+  <section class="section section--soft">
+    <div class="container">
+      <SectionHead eyebrow="How it works" title="Three steps to present" center={true} />
+      <div class="grid grid--3">
+        {steps.map((s) => (
+          <div class="card step">
+            <span class="step__n">{s.n}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMISSION FORM -->
+  <section class="section" id="submit">
+    <div class="container narrow">
+      <SectionHead eyebrow="Submit" title="Abstract submission" center={true}>
+        <p class="lead" style="margin-inline:auto;">Ready to share your work? Submit your abstract below. Deadlines are on the registration and key-dates list.</p>
+      </SectionHead>
+      <EmbedForm
+        url={site.forms.abstractSubmission}
+        title="PharmaDS 2027 Abstract Submission Form"
+        description="Tell us about your presentation — title, abstract, preferred format, and session."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+  .narrow { max-width: 820px; }
+
+  .step__n {
+    display: grid; place-items: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--grad-accent); color: #fff; font-weight: 800;
+    margin-bottom: 0.8rem;
+  }
+  .step p { color: var(--text-soft); margin: 0; }
+
+  .summit-callout {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center;
+    background: var(--grad-hero); color: #fff;
+    border-radius: var(--radius); padding: clamp(1.8rem, 5vw, 3rem); box-shadow: var(--shadow-md);
+  }
+  .summit-callout h2 { color: #fff; margin: 0.7rem 0 0.5rem; }
+  .summit-callout p { color: rgba(255,255,255,0.85); margin: 0; }
+  .summit-callout ul { margin: 0; padding-left: 1.2rem; }
+  .summit-callout li { margin-bottom: 0.4rem; font-weight: 600; }
+  @media (max-width: 760px) { .summit-callout { grid-template-columns: 1fr; gap: 1.2rem; } }
+</style>

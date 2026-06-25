@@ -1,0 +1,86 @@
+---
+import audience from "../data/audience.json";
+import SectionHead from "./SectionHead.astro";
+---
+
+<section class="section section--soft" id="who-should-attend">
+  <div class="container">
+    <SectionHead eyebrow="For the whole pharma data community" title={audience.headline} center={true}>
+      <p class="lead" style="margin-inline:auto;">{audience.intro}</p>
+    </SectionHead>
+
+    <div class="grid grid--3 personas">
+      {audience.personas.map((p) => (
+        <div class="card card--hover persona">
+          <span class="persona__icon" aria-hidden="true">{p.icon}</span>
+          <h3>{p.title}</h3>
+          <p>{p.value}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="gains">
+      <span class="gains__label">What you'll walk away with</span>
+      <ul>
+        {audience.gains.map((g) => <li>{g}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .persona__icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: var(--grad-accent);
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .persona h3 { font-size: 1.05rem; }
+  .persona p { color: var(--text-soft); margin: 0; font-size: 0.92rem; }
+
+  .gains {
+    margin-top: 2rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3.5vw, 1.65rem);
+    box-shadow: var(--shadow-sm);
+  }
+  .gains__label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--cyan-deep);
+    margin-bottom: 1rem;
+  }
+  .gains ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem 1.5rem;
+  }
+  .gains li {
+    position: relative;
+    padding-left: 1.8rem;
+    font-weight: 500;
+  }
+  .gains li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+    font-size: 1rem;
+  }
+  @media (max-width: 600px) {
+    .gains ul { grid-template-columns: 1fr; }
+  }
+</style>

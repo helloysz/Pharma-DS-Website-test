@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import CTASection from "../components/CTASection.astro";
+import data from "../data/short-courses.json";
+
+const typeLabel: Record<string, string> = { theory: "Theory", lab: "Lab" };
+const typePill: Record<string, string> = { theory: "pill", lab: "pill--cyan" };
+
+const coursesByTrack = data.tracks.map((track) => ({
+  ...track,
+  courses: data.courses.filter((c) => c.track === track.id),
+}));
+---
+
+<BaseLayout title="Short Courses" description="PharmaDS 2027 short courses — theory and lab tracks across Statistical Evidence Generation, the AI Engineering crash course, and tool usage.">
+  <PageHero
+    eyebrow="Short Courses"
+    title="Theory and lab short courses, organized by track"
+    subtitle="For 2027 we clearly split each course into Theory (concept-first) and Lab (hands-on) — across Statistical Evidence Generation, an AI Engineering crash course, and practical tool usage."
+  />
+
+  <!-- LEGEND -->
+  <section class="section">
+    <div class="container">
+      <div class="legend">
+        <div class="legend__item">
+          <span class="pill">Theory</span>
+          <p>Concept-first sessions that build the foundations and intuition behind the methods.</p>
+        </div>
+        <div class="legend__item">
+          <span class="pill pill--cyan">Lab</span>
+          <p>Hands-on, bring-your-laptop sessions where you build and run things yourself.</p>
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter short courses">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="theory">Theory</button>
+        <button class="filter-btn" data-filter="lab">Lab</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  {coursesByTrack.map((track, i) => (
+    <section class={`section ${i % 2 === 1 ? "section--soft" : ""}`} id={track.id}>
+      <div class="container">
+        <SectionHead eyebrow={`Track ${i + 1}`} title={track.name}>
+          <p class="lead">{track.blurb}</p>
+        </SectionHead>
+        <div class="grid grid--2 course-grid">
+          {track.courses.map((c) => (
+            <article class="card card--hover course" data-type={c.type}>
+              <div class="course__head">
+                <span class={`pill ${typePill[c.type]}`}>{typeLabel[c.type]}</span>
+                {c.level && c.level !== "TODO" && <span class="pill pill--amber">{c.level}</span>}
+              </div>
+              <h3>{c.title}</h3>
+              <p class="course__summary">{c.summary}</p>
+              <p class="course__instructor">Instructor: {c.instructor === "TODO" ? "To be announced" : c.instructor}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="container">
+      <p class="todo-note">TODO: replace placeholder courses, levels, instructors and summaries in <code>src/data/short-courses.json</code>.</p>
+    </div>
+  </section>
+
+  <CTASection title="Want to teach a short course?" text="We're always looking for instructors for theory and lab sessions. Get in touch through the call for presentations.">
+    <a class="btn btn--light" href="/call-for-presentations">Propose a course</a>
+    <a class="btn btn--ghost" href="/registration">Register to attend</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .legend__item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--bg-soft); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.2rem;
+  }
+  .legend__item p { margin: 0; color: var(--text-soft); }
+
+  .filters { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .filter-btn {
+    font: inherit; font-weight: 700; font-size: 0.9rem;
+    padding: 0.5rem 1.1rem; border-radius: 999px;
+    border: 2px solid var(--border); background: #fff; color: var(--text);
+    cursor: pointer; transition: all 0.15s ease;
+  }
+  .filter-btn:hover { border-color: var(--indigo-bright); color: var(--indigo-bright); }
+  .filter-btn.is-active { background: var(--indigo-bright); border-color: var(--indigo-bright); color: #fff; }
+
+  .course__head { display: flex; gap: 0.5rem; margin-bottom: 0.7rem; }
+  .course__summary { color: var(--text-soft); }
+  .course__instructor { margin: 0; font-size: 0.88rem; color: var(--text-soft); font-weight: 600; }
+  .course.is-hidden { display: none; }
+
+  @media (max-width: 640px) { .legend { grid-template-columns: 1fr; } }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const courses = document.querySelectorAll(".course");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        buttons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        courses.forEach((c) => {
+          const match = filter === "all" || c.getAttribute("data-type") === filter;
+          c.classList.toggle("is-hidden", !match);
+        });
+      });
+    });
+  });
+</script>

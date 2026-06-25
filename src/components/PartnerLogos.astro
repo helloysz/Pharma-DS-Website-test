@@ -1,0 +1,115 @@
+---
+import partners from "../data/partners.json";
+
+interface Props {
+  /** "strip" = single row of logos; "wall" = grouped by tier. */
+  variant?: "strip" | "wall";
+  compact?: boolean;
+}
+const { variant = "strip", compact = false } = Astro.props;
+
+const list = partners.partners;
+---
+
+{variant === "strip" ? (
+  <div class={`logo-strip ${compact ? "logo-strip--compact" : ""}`}>
+    {list.map((p) => (
+      <a class="logo-chip" href={p.url} target="_blank" rel="noopener" title={p.name}>
+        {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span>{p.name}</span>}
+      </a>
+    ))}
+  </div>
+) : (
+  <div class="logo-wall">
+    {partners.tiers.map((tier) => {
+      const tierPartners = list.filter((p) => p.tier === tier.id);
+      if (tierPartners.length === 0) return null;
+      return (
+        <div class="logo-wall__tier">
+          <div class="logo-wall__head">
+            <h3>{tier.name}</h3>
+            <p>{tier.blurb}</p>
+          </div>
+          <div class="logo-wall__grid">
+            {tierPartners.map((p) => (
+              <a class="logo-card" href={p.url} target="_blank" rel="noopener" title={p.name}>
+                {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span>{p.name}</span>}
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+)}
+
+<style>
+  .logo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+  }
+  .logo-chip {
+    display: grid;
+    place-items: center;
+    min-width: 118px;
+    height: 54px;
+    padding: 0 1rem;
+    background: linear-gradient(180deg, #fff 0%, #f4f7ff 100%);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: var(--text-soft);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .logo-chip:hover {
+    box-shadow: 0 10px 28px rgba(66, 87, 224, 0.14);
+    transform: translateY(-3px);
+    border-color: rgba(66, 87, 224, 0.3);
+    text-decoration: none;
+  }
+  .logo-chip img { max-height: 36px; width: auto; }
+  .logo-strip--compact .logo-chip { height: 44px; min-width: 92px; font-size: 0.72rem; }
+
+  .logo-wall { display: grid; gap: 2rem; }
+  .logo-wall__head { text-align: center; margin-bottom: 0.85rem; }
+  .logo-wall__head h3 {
+    margin-bottom: 0.15rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  }
+  .logo-wall__head p { color: var(--text-soft); margin: 0; font-size: 0.92rem; }
+  .logo-wall__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.85rem;
+  }
+  .logo-card {
+    display: grid;
+    place-items: center;
+    height: 100px;
+    background: linear-gradient(180deg, #fff 0%, #f8faff 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-soft);
+    font-weight: 700;
+    text-align: center;
+    padding: 0.85rem;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .logo-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: rgba(66, 87, 224, 0.25);
+    text-decoration: none;
+  }
+  .logo-card img { max-height: 58px; width: auto; }
+</style>
