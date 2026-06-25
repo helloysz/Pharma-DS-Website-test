@@ -1,0 +1,145 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           PharmaDS 2027 WEBSITE - QUICK START CHECKLIST                   ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+⏱️ TOTAL TIME TO LAUNCH: ~5 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 PREREQUISITES (Check these FIRST):
+
+  □ Node.js 18+ installed?
+    Run: node --version
+    If not: https://nodejs.org/
+
+  □ npm available?
+    Run: npm --version
+    (Comes with Node.js)
+
+  □ You have the project folder?
+    /Users/E0443159/Library/CloudStorage/OneDrive-Sanofi/Documents/Non-project/Pharma\ DS/2027/Website\ VS\ Code/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 INITIALIZATION (Do these steps IN ORDER):
+
+  1. OPEN TERMINAL
+     ✓ Launch Terminal or Command Prompt
+
+  2. NAVIGATE TO PROJECT
+     Run this exact command:
+
+     cd "/Users/E0443159/Library/CloudStorage/OneDrive-Sanofi/Documents/Non-project/Pharma DS/2027/Website VS Code"
+
+  3. INSTALL DEPENDENCIES
+     Run:
+     npm install
+     
+     ⏳ Wait 1-2 minutes...
+     ✓ You should see: "added X packages"
+
+  4. START DEV SERVER
+     Run:
+     npm run dev
+
+     ✓ You should see:
+       ➜  Local:     http://localhost:3000/
+
+  5. OPEN BROWSER
+     Go to: http://localhost:3000
+     
+     ✅ You should see the PharmaDS home page!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 NEXT: UPDATE YOUR CONTENT
+
+  Once dev server is running, edit these files:
+
+  1. Conference Details
+     → src/data/key-dates.json
+     Change: theme, dates, location, registration info
+
+  2. Committee Members
+     → src/data/committee.json
+     Add: Board co-chairs, advisory members, org committee
+
+  3. Sessions
+     → src/data/sessions.json
+     Add: Session titles, speakers, formats
+
+  4. Short Courses
+     → src/data/short-courses.json
+     Add: Course titles, instructors, descriptions
+
+  5. Events
+     → src/data/events.json
+     Add: Upcoming community events
+
+  6. Partners/Sponsors
+     → src/data/partners.json
+     Add: Partner names, logos, sponsorship tiers
+
+  7. Form URLs
+     Search for "TODO:" in src/pages/
+     Replace with your Google Form or Formspree URLs
+
+  ✨ TIP: Changes auto-save! Refresh browser to see updates.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TESTING & DEPLOYMENT
+
+  TEST ON MOBILE:
+  • Press F12 in browser (Developer Tools)
+  • Click device icon (mobile view)
+  • Test all pages at different screen sizes
+
+  BUILD FOR PRODUCTION:
+  • Stop dev server: Ctrl+C
+  • Run: npm run build
+  • Creates: dist/ folder with static HTML
+
+  DEPLOY:
+  • Netlify: Drag & drop dist/ folder
+  • Vercel: Upload dist/ folder or connect GitHub
+  • Traditional host: Upload dist/ via FTP/SCP
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆘 TROUBLESHOOTING
+
+  "npm: command not found"
+  → Install Node.js: https://nodejs.org/
+  → Restart terminal
+  → Try again
+
+  "Port 3000 already in use"
+  → Use different port: npm run dev -- --port 3001
+  → Or kill process: lsof -i :3000 && kill -9 <PID>
+
+  "Changes not showing"
+  → Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+  → Check terminal for errors
+  → Restart: Ctrl+C, then npm run dev
+
+  "Module not found"
+  → Reinstall: rm -rf node_modules package-lock.json
+  → Then: npm install && npm run dev
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 FULL DOCUMENTATION
+
+  See: SETUP.md (detailed guide with examples)
+  See: README.md (complete project documentation)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ YOU'RE READY TO GO!
+
+Start with: npm install && npm run dev
+
+Questions? See SETUP.md or README.md in the project folder.
+
+═══════════════════════════════════════════════════════════════════════════════
