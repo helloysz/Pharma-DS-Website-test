@@ -1,0 +1,54 @@
+{
+  "courses": [
+    {
+      "id": "stats-theory-1",
+      "title": "TODO: Statistical Course Title TBD",
+      "track": "statistical-evidence-generation",
+      "type": "theory",
+      "instructor": "TODO: Instructor Name",
+      "description": "TODO: Description",
+      "duration": "2 hours",
+      "level": "intermediate"
+    },
+    {
+      "id": "stats-lab-1",
+      "title": "TODO: Statistical Lab Title TBD",
+      "track": "statistical-evidence-generation",
+      "type": "lab",
+      "instructor": "TODO: Instructor Name",
+      "description": "TODO: Description",
+      "duration": "2 hours",
+      "level": "intermediate"
+    },
+    {
+      "id": "ai-theory-1",
+      "title": "TODO: AI/ML Theory Title TBD",
+      "track": "ai-engineering",
+      "type": "theory",
+      "instructor": "TODO: Instructor Name",
+      "description": "TODO: Description",
+      "duration": "2 hours",
+      "level": "intermediate"
+    },
+    {
+      "id": "ai-lab-1",
+      "title": "TODO: AI/ML Lab Title TBD",
+      "track": "ai-engineering",
+      "type": "lab",
+      "instructor": "TODO: Instructor Name",
+      "description": "TODO: Description",
+      "duration": "2 hours",
+      "level": "intermediate"
+    },
+    {
+      "id": "tools-1",
+      "title": "TODO: Tool Usage Title TBD",
+      "track": "tool-usage",
+      "type": "lab",
+      "instructor": "TODO: Instructor Name",
+      "description": "TODO: Description",
+      "duration": "2 hours",
+      "level": "beginner"
+    }
+  ]
+}

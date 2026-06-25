@@ -1,0 +1,17 @@
+{
+  "name": "pharmads-2027-website",
+  "version": "1.0.0",
+  "description": "PharmaDS 2027 Conference & Community Website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "latest"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

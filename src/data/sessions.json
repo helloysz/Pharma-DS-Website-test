@@ -1,0 +1,49 @@
+{
+  "sessions": [
+    {
+      "id": "keynote-1",
+      "title": "TODO: Keynote Title TBD",
+      "format": "keynote",
+      "speakers": ["TODO: Speaker Name"],
+      "description": "TODO: Description",
+      "time": "TODO: Time TBD",
+      "hybrid": true
+    },
+    {
+      "id": "panel-1",
+      "title": "TODO: Panel Discussion Title TBD",
+      "format": "panel",
+      "speakers": ["TODO: Panelist 1", "TODO: Panelist 2", "TODO: Panelist 3"],
+      "description": "TODO: Description",
+      "time": "TODO: Time TBD",
+      "hybrid": true
+    },
+    {
+      "id": "traditional-1",
+      "title": "TODO: Traditional Session Title TBD",
+      "format": "traditional",
+      "speakers": ["TODO: Speaker Name"],
+      "description": "TODO: Description",
+      "time": "TODO: Time TBD",
+      "hybrid": false
+    },
+    {
+      "id": "rapid-demo-1",
+      "title": "TODO: Rapid Demo Session TBD",
+      "format": "rapid-demo",
+      "speakers": ["TODO: Speaker Name"],
+      "description": "TODO: Description",
+      "time": "TODO: Time TBD",
+      "hybrid": false
+    },
+    {
+      "id": "experience-sharing-1",
+      "title": "TODO: Experience Sharing Session TBD",
+      "format": "experience-sharing",
+      "speakers": ["TODO: Speaker Name"],
+      "description": "TODO: Description",
+      "time": "TODO: Time TBD",
+      "hybrid": false
+    }
+  ]
+}

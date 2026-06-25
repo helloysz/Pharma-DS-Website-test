@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import committee from '../data/committee.json';
+---
+
+<BaseLayout title="Committee" description="Meet the PharmaDS 2027 organizing committee">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Organizing Committee</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      The PharmaDS 2027 conference is led by a diverse committee of industry leaders and professionals committed to advancing data science in pharmaceuticals.
+    </p>
+
+    <!-- Board (Co-Chairs) -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--color-primary);">Board Co-Chairs</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        {committee.board.map((member) => (
+          <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; text-align: center;">
+            {member.photoUrl && (
+              <img src={member.photoUrl} alt={member.name} style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: var(--spacing-md); object-fit: cover;"/>
+            )}
+            {!member.photoUrl && (
+              <div style="width: 120px; height: 120px; background-color: var(--color-border); border-radius: 50%; margin: 0 auto var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-light); font-size: var(--font-size-2xl);">👤</span>
+              </div>
+            )}
+            <h3 style="margin-bottom: var(--spacing-sm);">{member.name}</h3>
+            <p style="font-weight: 600; color: var(--color-primary); margin-bottom: var(--spacing-md);">{member.role}</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">{member.affiliation}</p>
+            {member.bio && <p style="font-size: var(--font-size-sm); color: var(--color-text-light); margin-top: var(--spacing-md);">{member.bio}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Advisory Committee -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--color-primary);">Advisory Committee</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        {committee.advisory.map((member) => (
+          <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; text-align: center;">
+            {member.photoUrl && (
+              <img src={member.photoUrl} alt={member.name} style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: var(--spacing-md); object-fit: cover;"/>
+            )}
+            {!member.photoUrl && (
+              <div style="width: 100px; height: 100px; background-color: var(--color-border); border-radius: 50%; margin: 0 auto var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-light); font-size: var(--font-size-2xl);">👤</span>
+              </div>
+            )}
+            <h3 style="margin-bottom: var(--spacing-sm); font-size: var(--font-size-lg);">{member.name}</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-primary); font-weight: 600; margin-bottom: var(--spacing-sm);">{member.role}</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">{member.affiliation}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Organization Committee (by subteam) -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl); color: var(--color-primary);">Organization Committee</h2>
+      
+      {['Session Organization', 'Speaker Coordination', 'Logistics & Venue', 'Volunteer Management', 'Digital Presence', 'Financial Stewardship'].map((subteam) => {
+        const members = committee.organization.filter(m => m.subteam === subteam);
+        return (
+          <div style="margin-bottom: var(--spacing-2xl);">
+            <h3 style="background-color: var(--color-primary-light); color: white; padding: var(--spacing-md); border-radius: 0.375rem; margin-bottom: var(--spacing-lg);">
+              {subteam}
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg);">
+              {members.map((member) => (
+                <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+                  {member.photoUrl && (
+                    <img src={member.photoUrl} alt={member.name} style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: var(--spacing-md); object-fit: cover;"/>
+                  )}
+                  {!member.photoUrl && (
+                    <div style="width: 80px; height: 80px; background-color: var(--color-border); border-radius: 50%; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                      <span style="color: var(--color-text-light); font-size: var(--font-size-xl);">👤</span>
+                    </div>
+                  )}
+                  <h4 style="margin-bottom: var(--spacing-sm);">{member.name}</h4>
+                  <p style="font-size: var(--font-size-sm); font-weight: 600; color: var(--color-primary); margin-bottom: var(--spacing-sm);">{member.role}</p>
+                  <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">{member.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  </div>
+</BaseLayout>

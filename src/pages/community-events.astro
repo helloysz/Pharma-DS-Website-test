@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import events from '../data/events.json';
+---
+
+<BaseLayout title="Community & Events" description="PharmaDS community events and networking opportunities">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Community & Events</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      PharmaDS is more than a conference—it's a vibrant community of professionals committed to advancing data science in pharmaceuticals. Join us for events, workshops, and meaningful connections year-round.
+    </p>
+
+    <!-- Community Vision -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Our Community Vision</h2>
+      <p style="margin-bottom: var(--spacing-md);">
+        The PharmaDS community brings together statisticians, data scientists, AI engineers, regulatory professionals, and academic leaders to:
+      </p>
+      <ul style="list-style: none; display: grid; gap: var(--spacing-md);">
+        <li>✓ Advance statistical and data science methodologies in pharmaceutical research and development</li>
+        <li>✓ Foster collaboration and knowledge sharing across industry, academia, and regulatory bodies</li>
+        <li>✓ Support early-career talent through mentorship and professional development</li>
+        <li>✓ Drive innovation in real-world evidence, AI/ML applications, and emerging technologies</li>
+        <li>✓ Build a diverse, inclusive, and connected global community</li>
+      </ul>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Upcoming Events</h2>
+      <div style="display: grid; gap: var(--spacing-lg);">
+        {events.events.map((event) => (
+          <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-md);">
+              <div style="flex: 1;">
+                <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">{event.title}</h3>
+                <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">
+                  <strong>Date:</strong> {event.date} | <strong>Location:</strong> {event.location}
+                </p>
+              </div>
+              <span style="background-color: var(--color-primary-light); color: white; padding: var(--spacing-xs) var(--spacing-md); border-radius: 0.25rem; font-size: var(--font-size-sm); white-space: nowrap; margin-left: var(--spacing-md); text-transform: capitalize;">
+                {event.type}
+              </span>
+            </div>
+            <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">{event.description}</p>
+            <a href={event.registrationLink} style="color: var(--color-primary); font-weight: 600;">
+              Learn More & Register →
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pre-Conference & Workshops -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Pre-Conference & Workshops</h2>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem;">
+        <p style="margin-bottom: var(--spacing-lg);">
+          In September 2026, we'll host the <strong>ASA RISW (Real-world evidence, Informatics, Safety, and Workforce) Round Table Discussion</strong>, bringing together thought leaders to discuss emerging topics in real-world evidence and pharmaceutical data science.
+        </p>
+        <p style="margin-bottom: var(--spacing-lg);">
+          Additional pre-conference and post-conference workshops will be announced, covering specialized topics in statistical methods, AI/ML applications, tool usage, and career development.
+        </p>
+        <a href="mailto:community@pharmads.org" style="color: var(--color-primary); font-weight: 600;">Questions about events? Email us →</a>
+      </div>
+    </section>
+
+    <!-- Community Channels -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); text-align: center; margin-bottom: var(--spacing-lg);">Stay Connected</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        <a href="https://linkedin.com/company/pharmads" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; text-align: center; transition: all 0.3s ease;">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-md);">🔗</div>
+            <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">LinkedIn</h3>
+            <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">Follow us for updates, insights, and community highlights.</p>
+          </div>
+        </a>
+
+        <a href="mailto:info@pharmads.org" style="text-decoration: none;">
+          <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; text-align: center;">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-md);">✉️</div>
+            <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Newsletter</h3>
+            <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">Subscribe to our monthly newsletter for news and announcements.</p>
+          </div>
+        </a>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; text-align: center;">
+          <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-md);">💬</div>
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Join Events</h3>
+          <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">Attend our community events, round tables, and workshops.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

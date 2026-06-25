@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import keyDates from '../data/key-dates.json';
+---
+
+<BaseLayout title="Venue & Travel" description="PharmaDS 2027 Venue and Travel Information">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Venue & Travel</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      Information about the 2027 conference location, venue, and travel logistics.
+    </p>
+
+    <!-- Venue Placeholder -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0; border-left: 4px solid var(--color-primary);">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Conference Location</h2>
+      <div style="display: grid; gap: var(--spacing-md);">
+        <div>
+          <strong>City:</strong>
+          <p style="color: var(--color-text-light);">{keyDates.location.city} (TODO: Exact location TBD)</p>
+        </div>
+        <div>
+          <strong>Venue:</strong>
+          <p style="color: var(--color-text-light);">{keyDates.location.venue} (TODO: Venue name TBD)</p>
+        </div>
+        <div>
+          <strong>Address:</strong>
+          <p style="color: var(--color-text-light);">{keyDates.location.address} (TODO: Address TBD)</p>
+        </div>
+        <div>
+          <strong>Dates:</strong>
+          <p style="color: var(--color-text-light);">{keyDates.dates.conferenceStart} – {keyDates.dates.conferenceEnd}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotel Information -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Hotel Accommodations</h2>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem;">
+        <p style="margin-bottom: var(--spacing-lg);">
+          We have arranged a special group rate with the following hotel partner(s) for conference attendees:
+        </p>
+        <div style="background-color: white; padding: var(--spacing-lg); border-radius: 0.375rem; border: 1px solid var(--color-border);">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">TODO: Hotel Name TBD</h3>
+          <p style="margin-bottom: var(--spacing-md);">
+            <strong>Group Rate:</strong> TODO: Rate TBD per night
+          </p>
+          <p style="margin-bottom: var(--spacing-md);">
+            <strong>Booking Link:</strong> <a href="#" style="color: var(--color-primary); font-weight: 600;">Book Your Room</a>
+          </p>
+          <p style="margin-bottom: var(--spacing-md);">
+            <strong>Group Code:</strong> TODO: Code TBD
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">
+            * Rates are available until TODO: Cutoff Date TBD
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting There -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Getting There</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">✈️ By Air</h3>
+          <p style="margin-bottom: var(--spacing-md); color: var(--color-text-light);">
+            The nearest airport is TODO: Airport Name TBD (TODO: Code TBD), approximately TODO: Distance TBD from the venue.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">
+            Shuttle services and ground transportation recommendations will be provided.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">🚗 By Car</h3>
+          <p style="margin-bottom: var(--spacing-md); color: var(--color-text-light);">
+            TODO: Driving directions and parking information TBD.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">
+            On-site parking may be available. Details coming soon.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">🚆 By Train/Transit</h3>
+          <p style="margin-bottom: var(--spacing-md); color: var(--color-text-light);">
+            TODO: Public transportation information TBD.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">
+            Transit directions and metro/transit passes will be provided to attendees.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visa Information -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem); margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Visa & Travel Documents</h2>
+      <p style="margin-bottom: var(--spacing-lg);">
+        International attendees may require a visa to enter the country. We recommend checking with your local embassy or consulate.
+      </p>
+      <p style="margin-bottom: var(--spacing-lg);">
+        Conference organizers can provide a letter of invitation if needed for visa applications. <a href="mailto:travel@pharmads.org" style="color: var(--color-primary); font-weight: 600;">Contact us</a> for details.
+      </p>
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">
+        * Visa support is provided as a courtesy; individual travelers are responsible for ensuring they meet all entry requirements.
+      </p>
+    </section>
+
+    <!-- Questions -->
+    <section style="text-align: center; background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Travel Questions?</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Our travel coordinators are here to help with accommodation and logistics questions.</p>
+      <a href="mailto:travel@pharmads.org" style="color: var(--color-primary); font-weight: 600; font-size: var(--font-size-lg);">travel@pharmads.org</a>
+    </section>
+  </div>
+</BaseLayout>

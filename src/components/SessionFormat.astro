@@ -1,0 +1,110 @@
+---
+export interface Format {
+  name: string;
+  duration: string;
+  description: string;
+  icon?: string;
+}
+
+export interface Props {
+  formats?: Format[];
+}
+
+const { formats = [
+  {
+    name: "Traditional Session",
+    duration: "45-60 minutes",
+    description: "A single speaker presents research, methodology, or case study with Q&A. Standard conference format for in-depth technical presentations.",
+    icon: "📊"
+  },
+  {
+    name: "Rapid Demo (Production)",
+    duration: "15-20 minutes",
+    description: "Fast-paced live demonstration of tools, software, or workflows. Perfect for showcasing practical applications and getting immediate feedback.",
+    icon: "⚡"
+  },
+  {
+    name: "2-Hour Session with 20-min Showcases",
+    duration: "120 minutes total",
+    description: "Multiple speakers (4-5) each present 20 minutes on related topics. Ideal for exploring different perspectives on a common theme.",
+    icon: "🎯"
+  },
+  {
+    name: "Experience Sharing (Production)",
+    duration: "30-45 minutes",
+    description: "Speaker shares real-world experiences, lessons learned, and practical insights from a specific project or initiative.",
+    icon: "💡"
+  },
+  {
+    name: "Summit-Style Hybrid Session",
+    duration: "60 minutes",
+    description: "Combines traditional presentation + live Q&A + interactive components. Engaging and accessible to both in-person and virtual audiences.",
+    icon: "🌐"
+  }
+] } = Astro.props;
+---
+
+<section class="session-formats">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Session Formats</h2>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl);">
+      PharmaDS 2027 features diverse presentation formats to showcase innovation and foster engagement.
+    </p>
+
+    <div class="formats-grid">
+      {formats.map((format) => (
+        <div class="format-card">
+          {format.icon && <div class="format-icon">{format.icon}</div>}
+          <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm);">{format.name}</h3>
+          <p style="font-weight: 600; color: var(--color-primary); margin-bottom: var(--spacing-md); font-size: var(--font-size-sm);">
+            {format.duration}
+          </p>
+          <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">{format.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .session-formats {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--color-bg);
+  }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  @media (min-width: 768px) {
+    .formats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .formats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .format-card {
+    background-color: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+  }
+
+  .format-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+  }
+
+  .format-icon {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+  }
+</style>

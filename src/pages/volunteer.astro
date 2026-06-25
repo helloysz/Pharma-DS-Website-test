@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmbedForm from '../components/EmbedForm.astro';
+---
+
+<BaseLayout title="Volunteer" description="Volunteer opportunities for PharmaDS 2027">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Volunteer with PharmaDS</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      Help make PharmaDS 2027 a success! We're looking for enthusiastic volunteers to support various aspects of the conference. Join our team and make a difference in the community!
+    </p>
+
+    <!-- Volunteer Opportunities -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); text-align: center; margin-bottom: var(--spacing-2xl);">Volunteer Roles</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-primary);">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">�� Registration Check-In</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Help attendees register and check in on conference days. Friendly faces and good communication skills essential!
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Conference days only</p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-secondary);">
+          <h3 style="color: var(--color-secondary); margin-bottom: var(--spacing-md);">🎤 Session Support</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Assist speakers and session chairs, manage timing, and support A/V setup in breakout rooms.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Multiple sessions throughout conference</p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #059669;">
+          <h3 style="color: #059669; margin-bottom: var(--spacing-md);">🎉 Event Support</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Help coordinate networking events, receptions, and meals. Create a welcoming atmosphere for attendees.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Evening events & breaks</p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #f59e0b;">
+          <h3 style="color: #f59e0b; margin-bottom: var(--spacing-md);">📋 Information Desk</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Staff the information booth to answer questions about sessions, venue, and conference logistics.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Throughout conference days</p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #8b5cf6;">
+          <h3 style="color: #8b5cf6; margin-bottom: var(--spacing-md);">📸 Social Media & Photography</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Help capture and share conference highlights on social media. Photography skills a plus but not required.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Throughout conference</p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #ec4899;">
+          <h3 style="color: #ec4899; margin-bottom: var(--spacing-md);">🤝 Mentor Coordinator</h3>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">
+            Help coordinate mentorship sessions, manage schedules, and facilitate connections between mentors and mentees.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-light); font-weight: 600;">Timing: Conference days + pre-conference</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Benefits -->
+    <section style="background-color: var(--color-primary-light); color: white; padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-lg);">Volunteer Benefits</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); max-width: 800px; margin: 0 auto;">
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ Full Conference Access</h3>
+          <p>Attend sessions when not actively volunteering (subject to volunteer assignments).</p>
+        </div>
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ Volunteer Badge</h3>
+          <p>Special recognition as a conference volunteer and community supporter.</p>
+        </div>
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ Meals & Refreshments</h3>
+          <p>Complimentary meals and beverages during your volunteer shifts.</p>
+        </div>
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ Networking</h3>
+          <p>Connect with peers, speakers, and community members in a meaningful way.</p>
+        </div>
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ Certificate</h3>
+          <p>Certificate of participation for your professional record.</p>
+        </div>
+        <div>
+          <h3 style="color: white; margin-bottom: var(--spacing-md);">✓ T-Shirt & Swag</h3>
+          <p>Exclusive volunteer t-shirt and conference merchandise.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Sign-Up -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <EmbedForm 
+        title="Volunteer Sign-Up"
+        description="Ready to help? Fill out the form below to apply as a volunteer for PharmaDS 2027."
+        formUrl="TODO: Volunteer Form URL"
+        embedType="google-form"
+      />
+    </section>
+
+    <!-- Requirements -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Volunteer Requirements</h2>
+      <ul style="list-style: none; display: grid; gap: var(--spacing-md);">
+        <li>✓ Passion for pharmaceutical data science and the PharmaDS community</li>
+        <li>✓ Enthusiasm and a positive attitude</li>
+        <li>✓ Reliability and commitment to assigned volunteer shifts</li>
+        <li>✓ Professional communication and interpersonal skills</li>
+        <li>✓ Ability to work as part of a team</li>
+        <li>✓ Willingness to learn and adapt to changing needs</li>
+      </ul>
+    </section>
+
+    <!-- Questions -->
+    <section style="text-align: center; background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Questions about Volunteering?</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Contact our volunteer coordinator for more information.</p>
+      <a href="mailto:volunteers@pharmads.org" style="color: var(--color-primary); font-weight: 600; font-size: var(--font-size-lg);">volunteers@pharmads.org</a>
+    </section>
+  </div>
+</BaseLayout>

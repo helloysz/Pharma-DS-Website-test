@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmbedForm from '../components/EmbedForm.astro';
+---
+
+<BaseLayout title="Career Growth & Networking" description="Mentorship programs and career development at PharmaDS 2027">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Career Growth & Networking</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      PharmaDS 2027 offers comprehensive career development, mentorship, and networking opportunities to help you advance your professional journey in pharmaceutical data science.
+    </p>
+
+    <!-- Mentorship Program -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Mentorship Program</h2>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem;">
+        <h3 style="margin-bottom: var(--spacing-lg);">Connect with Industry Leaders</h3>
+        <p style="margin-bottom: var(--spacing-md);">
+          Our mentorship program pairs early-career professionals and students with experienced practitioners in pharmaceutical data science. Get guidance on career development, technical skills, and navigating the industry.
+        </p>
+        <ul style="list-style: none; display: grid; gap: var(--spacing-md);">
+          <li>✓ <strong>30-minute office hour sessions</strong> with mentors during the conference</li>
+          <li>✓ <strong>Short-term project collaboration</strong> (1-3 months) on specific initiatives</li>
+          <li>✓ <strong>Long-term mentorship</strong> relationships for ongoing professional development</li>
+          <li>✓ <strong>Monthly community calls</strong> to maintain connections post-conference</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- In-Conference Career Activities -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">In-Conference Career Activities</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-primary);">
+          <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Career Panels</h3>
+          <p style="color: var(--color-text-light);">
+            Hear from industry leaders about career paths, skills development, and opportunities in pharmaceutical data science.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-secondary);">
+          <h3 style="color: var(--color-secondary); margin-bottom: var(--spacing-md);">Networking Mixer</h3>
+          <p style="color: var(--color-text-light);">
+            Connect with peers, mentors, and professionals from leading pharmaceutical organizations.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #059669;">
+          <h3 style="color: #059669; margin-bottom: var(--spacing-md);">Company Showcases</h3>
+          <p style="color: var(--color-text-light);">
+            Learn about career opportunities at leading pharma and biotech companies.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #f59e0b;">
+          <h3 style="color: #f59e0b; margin-bottom: var(--spacing-md);">Resume Clinic</h3>
+          <p style="color: var(--color-text-light);">
+            Get feedback on your resume and CV from career coaches and mentors.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #8b5cf6;">
+          <h3 style="color: #8b5cf6; margin-bottom: var(--spacing-md);">Skill-Building Workshops</h3>
+          <p style="color: var(--color-text-light);">
+            Develop technical and soft skills with specialized workshops on communication, leadership, and technical topics.
+          </p>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid #ec4899;">
+          <h3 style="color: #ec4899; margin-bottom: var(--spacing-md);">Social Events</h3>
+          <p style="color: var(--color-text-light);">
+            Relax and connect over casual meals, networking receptions, and community banquets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sign Up -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); padding: var(--spacing-2xl); border-radius: 0.5rem; color: white;">
+        <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-lg);">Become a Mentor</h2>
+        <p style="text-align: center; margin-bottom: var(--spacing-lg);">
+          Are you an experienced data scientist or statistician? Join our mentor network and help shape the next generation of pharma professionals!
+        </p>
+        <EmbedForm 
+          title="Mentor Sign-Up Form"
+          description="Express your interest in becoming a mentor for PharmaDS 2027."
+          formUrl="TODO: Mentor Form URL"
+          embedType="google-form"
+        />
+      </div>
+    </section>
+
+    <!-- Find a Mentor -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <EmbedForm 
+        title="Find a Mentor"
+        description="Early-career professionals: Apply to be matched with a mentor!"
+        formUrl="TODO: Mentee Form URL"
+        embedType="google-form"
+      />
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "id": "asa-risw-roundtable",
+      "title": "ASA RISW Round Table Discussion",
+      "date": "September 2026",
+      "location": "Virtual / In-Person TBD",
+      "description": "Pre-conference community discussion on real-world evidence and statistical innovation.",
+      "type": "community",
+      "registrationLink": "TODO: Registration Link TBD"
+    },
+    {
+      "id": "workshop-1",
+      "title": "TODO: Pre-Conference Workshop Title TBD",
+      "date": "TODO: Date TBD",
+      "location": "TODO: Location TBD",
+      "description": "TODO: Workshop description",
+      "type": "workshop",
+      "registrationLink": "TODO: Registration Link TBD"
+    },
+    {
+      "id": "workshop-2",
+      "title": "TODO: Post-Conference Workshop Title TBD",
+      "date": "TODO: Date TBD",
+      "location": "TODO: Location TBD",
+      "description": "TODO: Workshop description",
+      "type": "workshop",
+      "registrationLink": "TODO: Registration Link TBD"
+    }
+  ]
+}

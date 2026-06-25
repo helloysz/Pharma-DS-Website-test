@@ -1,0 +1,81 @@
+{
+  "partners": [
+    {
+      "id": "partner-platinum-1",
+      "name": "TODO: Platinum Partner 1 Name TBD",
+      "tier": "platinum",
+      "logoUrl": "TODO: Logo URL",
+      "website": "TODO: Website URL",
+      "description": "TODO: Partner description"
+    },
+    {
+      "id": "partner-platinum-2",
+      "name": "TODO: Platinum Partner 2 Name TBD",
+      "tier": "platinum",
+      "logoUrl": "TODO: Logo URL",
+      "website": "TODO: Website URL",
+      "description": "TODO: Partner description"
+    },
+    {
+      "id": "partner-gold-1",
+      "name": "TODO: Gold Partner 1 Name TBD",
+      "tier": "gold",
+      "logoUrl": "TODO: Logo URL",
+      "website": "TODO: Website URL",
+      "description": "TODO: Partner description"
+    },
+    {
+      "id": "partner-silver-1",
+      "name": "TODO: Silver Partner 1 Name TBD",
+      "tier": "silver",
+      "logoUrl": "TODO: Logo URL",
+      "website": "TODO: Website URL",
+      "description": "TODO: Partner description"
+    },
+    {
+      "id": "partner-community-1",
+      "name": "TODO: Community Partner Name TBD",
+      "tier": "community",
+      "logoUrl": "TODO: Logo URL",
+      "website": "TODO: Website URL",
+      "description": "TODO: Partner description"
+    }
+  ],
+  "sponsorshipTiers": [
+    {
+      "name": "Platinum",
+      "price": "TODO: Price TBD",
+      "benefits": [
+        "Logo on all marketing materials",
+        "Keynote or featured speaking slot",
+        "Booth space",
+        "VIP table at banquet"
+      ]
+    },
+    {
+      "name": "Gold",
+      "price": "TODO: Price TBD",
+      "benefits": [
+        "Logo on conference materials",
+        "Speaking opportunity",
+        "Booth space"
+      ]
+    },
+    {
+      "name": "Silver",
+      "price": "TODO: Price TBD",
+      "benefits": [
+        "Logo on website",
+        "Booth space"
+      ]
+    },
+    {
+      "name": "Community",
+      "price": "TODO: Price TBD",
+      "benefits": [
+        "Logo on website",
+        "Social media mention"
+      ]
+    }
+  ]
+}

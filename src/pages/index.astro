@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhoShouldAttend from '../components/WhoShouldAttend.astro';
+import PartnerLogos from '../components/PartnerLogos.astro';
+import EmbedForm from '../components/EmbedForm.astro';
+import keyDates from '../data/key-dates.json';
+import partners from '../data/partners.json';
+---
+
+<BaseLayout title="Home" description="PharmaDS 2027 Conference - Advancing Data Science in Pharma">
+  <div class="container" style="padding-top: var(--spacing-2xl);">
+    <!-- Hero Section -->
+    <section style="text-align: center; padding: var(--spacing-3xl) 0;">
+      <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: var(--spacing-lg); color: var(--color-primary);">
+        PharmaDS 2027
+      </h1>
+      <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-xl); color: var(--color-secondary);">
+        {keyDates.theme}
+      </h2>
+      <p style="font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 800px; margin: 0 auto var(--spacing-2xl);">
+        Join the premier conference connecting pharmaceutical statisticians, data scientists, and AI engineers for three days of innovation, collaboration, and professional growth.
+      </p>
+
+      <!-- Hero CTAs -->
+      <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; margin: var(--spacing-2xl) 0;">
+        <a href="/registration" style="display: inline-block;">
+          <button class="btn-primary">Register for 2027</button>
+        </a>
+        <a href="/call-for-presentations" style="display: inline-block;">
+          <button class="btn-secondary">Call for Presentations</button>
+        </a>
+        <a href="/career-growth" style="display: inline-block;">
+          <button class="btn-primary">Become a Mentor</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Dates -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Important Dates</h2>
+      <div style="display: grid; gap: var(--spacing-md);">
+        <div>
+          <strong style="color: var(--color-primary);">Call for Presentations Opens:</strong> {keyDates.dates.callForPresentationsOpen}
+        </div>
+        <div>
+          <strong style="color: var(--color-primary);">Abstract Submission Deadline:</strong> {keyDates.dates.abstractSubmissionDeadline}
+        </div>
+        <div>
+          <strong style="color: var(--color-primary);">Conference Dates:</strong> {keyDates.dates.conferenceStart} – {keyDates.dates.conferenceEnd}
+        </div>
+        <div>
+          <strong style="color: var(--color-primary);">Location:</strong> {keyDates.location.city} ({keyDates.location.venue})
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Who Should Attend -->
+  <WhoShouldAttend />
+
+  <!-- Conference Topics -->
+  <section class="container" style="padding: var(--spacing-2xl) 0;">
+    <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Conference Topics</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">📊 Statistical Innovation</h3>
+        <p>Advanced methods for evidence generation, Bayesian approaches, adaptive designs, and real-world evidence analysis.</p>
+      </div>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">🤖 AI & Machine Learning</h3>
+        <p>Applications of AI/ML in drug discovery, patient stratification, and predictive analytics in pharmaceutical operations.</p>
+      </div>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">🔬 Regulatory & Safety</h3>
+        <p>Regulatory perspectives on new methods, safety analytics, and emerging data science applications in compliance.</p>
+      </div>
+      <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem;">
+        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">💼 Career & Community</h3>
+        <p>Networking, mentorship opportunities, career development, and building the next generation of pharma data science leaders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Strip -->
+  <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl) 0; margin: var(--spacing-2xl) 0;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Our 2027 Partners</h2>
+      <PartnerLogos partners={partners.partners} displayType="strip" />
+      <div style="text-align: center; margin-top: var(--spacing-lg);">
+        <a href="/partnership" style="color: var(--color-primary); font-weight: 600;">Become a Partner →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="container" style="padding: var(--spacing-2xl) 0;">
+    <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); padding: var(--spacing-2xl); border-radius: 0.5rem; color: white; text-align: center;">
+      <h2 style="color: white; margin-bottom: var(--spacing-md);">Stay Updated</h2>
+      <p style="margin-bottom: var(--spacing-lg);">Subscribe to receive updates about the 2027 conference, workshops, and community events.</p>
+      <form style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center;">
+        <input type="email" placeholder="Your email address" style="padding: var(--spacing-md); border: none; border-radius: 0.375rem; min-width: 250px; font-size: var(--font-size-base);" required>
+        <button type="submit" style="background-color: var(--color-accent); color: white; padding: var(--spacing-md) var(--spacing-lg); border-radius: 0.375rem; font-weight: 600; border: none; cursor: pointer;">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

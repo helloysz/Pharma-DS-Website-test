@@ -1,0 +1,231 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'PharmaDS 2027 Conference & Community' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title} | PharmaDS 2027</title>
+  <style>
+    /* Header Styles */
+    header {
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--spacing-md);
+      padding-bottom: var(--spacing-md);
+    }
+
+    .logo {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .nav-button {
+      background: none;
+      border: none;
+      font-size: var(--font-size-2xl);
+      cursor: pointer;
+      display: block;
+      padding: 0;
+      color: var(--color-text);
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--spacing-md);
+    }
+
+    nav.open {
+      display: block;
+    }
+
+    nav a {
+      display: block;
+      padding: var(--spacing-sm) 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    @media (min-width: 768px) {
+      .nav-button {
+        display: none;
+      }
+
+      nav {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        gap: var(--spacing-lg);
+        align-items: center;
+      }
+
+      nav a {
+        border: none;
+        padding: 0;
+        font-size: var(--font-size-base);
+      }
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--color-bg-light);
+      border-top: 1px solid var(--color-border);
+      padding: var(--spacing-2xl) var(--spacing-md);
+      margin-top: var(--spacing-3xl);
+    }
+
+    footer .container {
+      display: grid;
+      gap: var(--spacing-lg);
+    }
+
+    @media (min-width: 768px) {
+      footer .container {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .footer-section h4 {
+      margin-bottom: var(--spacing-md);
+      font-size: var(--font-size-base);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .footer-links a {
+      color: var(--color-text);
+      font-size: var(--font-size-sm);
+    }
+
+    .partner-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      justify-content: center;
+      align-items: center;
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .partner-logo-small {
+      height: 40px;
+      max-width: 100px;
+      object-fit: contain;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--color-border);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">PharmaDS</div>
+      <button class="nav-button" id="nav-toggle">☰</button>
+      <nav id="nav-menu">
+        <a href="/">Home</a>
+        <a href="/program">Program</a>
+        <a href="/short-courses">Short Courses</a>
+        <a href="/call-for-presentations">Call for Presentations</a>
+        <a href="/committee">Committee</a>
+        <a href="/career-growth">Career Growth</a>
+        <a href="/community-events">Community & Events</a>
+        <a href="/registration">Registration</a>
+        <a href="/venue">Venue & Travel</a>
+        <a href="/partnership">Partnership</a>
+        <a href="/volunteer">Volunteer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="mailto:info@pharmads.org">info@pharmads.org</a>
+          <a href="https://linkedin.com/company/pharmads" target="_blank">LinkedIn: PharmaDS</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="/registration">Register</a>
+          <a href="/call-for-presentations">Submit Abstract</a>
+          <a href="/volunteer">Volunteer</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">Subscribe for updates on the 2027 conference.</p>
+        <!-- Newsletter form will be embedded here -->
+        <form style="margin-top: var(--spacing-md);">
+          <input type="email" placeholder="Your email" style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--color-border); border-radius: 0.375rem; font-size: var(--font-size-sm);" required>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: var(--spacing-sm);">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="partner-strip">
+      <p style="font-size: var(--font-size-sm); color: var(--color-text-light); margin-right: var(--spacing-md);">Our Partners:</p>
+      <!-- Partner logos will be rendered here -->
+      <img src="TODO: Partner Logo 1" alt="Partner 1" class="partner-logo-small">
+      <img src="TODO: Partner Logo 2" alt="Partner 2" class="partner-logo-small">
+      <img src="TODO: Partner Logo 3" alt="Partner 3" class="partner-logo-small">
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2027 PharmaDS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', () => {
+      const menu = document.getElementById('nav-menu');
+      menu?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+---
+import type { AnyARecord } from 'dns';
+
+export interface Props {
+  partners: any[];
+  displayType?: 'strip' | 'wall';
+  tier?: string;
+}
+
+const { partners, displayType = 'strip', tier } = Astro.props;
+
+let filteredPartners = partners;
+if (tier) {
+  filteredPartners = partners.filter(p => p.tier === tier);
+}
+---
+
+{displayType === 'strip' ? (
+  <div class="logo-strip">
+    {filteredPartners.map((partner) => (
+      <a href={partner.website || '#'} target="_blank" rel="noopener noreferrer" title={partner.name}>
+        <img 
+          src={partner.logoUrl || 'TODO: Logo URL'} 
+          alt={partner.name}
+          class="logo-image-strip"
+        />
+      </a>
+    ))}
+  </div>
+) : (
+  <div class="logo-wall">
+    {filteredPartners.map((partner) => (
+      <div class="partner-card">
+        <a href={partner.website || '#'} target="_blank" rel="noopener noreferrer">
+          <img 
+            src={partner.logoUrl || 'TODO: Logo URL'} 
+            alt={partner.name}
+            class="logo-image-wall"
+          />
+        </a>
+        <h4 style="text-align: center; margin-top: var(--spacing-md);">{partner.name}</h4>
+        {partner.description && (
+          <p style="font-size: var(--font-size-sm); text-align: center; color: var(--color-text-light);">
+            {partner.description}
+          </p>
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+<style>
+  .logo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .logo-image-strip {
+    max-height: 60px;
+    max-width: 150px;
+    object-fit: contain;
+  }
+
+  .logo-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .partner-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background-color: var(--color-bg-light);
+    transition: all 0.3s ease;
+  }
+
+  .partner-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo-image-wall {
+    max-height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+</style>

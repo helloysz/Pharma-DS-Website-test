@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmbedForm from '../components/EmbedForm.astro';
+import keyDates from '../data/key-dates.json';
+---
+
+<BaseLayout title="Registration" description="Register for PharmaDS 2027">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Registration</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      Be part of PharmaDS 2027! Registration opens soon. Early bird rates available for a limited time.
+    </p>
+
+    <!-- Key Registration Dates -->
+    <section style="background-color: var(--color-primary-light); color: white; padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-lg);">Important Dates</h2>
+      <div style="display: grid; gap: var(--spacing-md); max-width: 600px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between;">
+          <strong>Conference Dates:</strong>
+          <span>{keyDates.dates.conferenceStart} – {keyDates.dates.conferenceEnd}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <strong>Location:</strong>
+          <span>{keyDates.location.city}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <strong>Early Bird Registration:</strong>
+          <span>TODO: Date TBD</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <strong>Standard Registration Deadline:</strong>
+          <span>TODO: Date TBD</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Tiers -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Registration Options</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border: 2px solid var(--color-border);">
+          <h3 style="text-align: center; margin-bottom: var(--spacing-md); color: var(--color-primary);">Professional</h3>
+          <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+            <p style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-primary);">TODO</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">Early bird rate</p>
+          </div>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+            <li>✓ Full conference access</li>
+            <li>✓ All short courses (additional fee)</li>
+            <li>✓ Networking events</li>
+            <li>✓ Conference materials</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%;">Register Now</button>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border: 2px solid var(--color-primary);">
+          <h3 style="text-align: center; margin-bottom: var(--spacing-md); color: var(--color-primary);">Student</h3>
+          <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+            <p style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-primary);">TODO</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">Valid student ID required</p>
+          </div>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+            <li>✓ Full conference access</li>
+            <li>✓ All short courses (additional fee)</li>
+            <li>✓ Networking events</li>
+            <li>✓ Career development activities</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%;">Register Now</button>
+        </div>
+
+        <div style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border: 2px solid var(--color-border);">
+          <h3 style="text-align: center; margin-bottom: var(--spacing-md); color: var(--color-primary);">One-Day Pass</h3>
+          <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+            <p style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-primary);">TODO</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-light);">Choose your day</p>
+          </div>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+            <li>✓ One day of sessions</li>
+            <li>✓ Networking events</li>
+            <li>✓ Conference materials</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%;">Register Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included -->
+    <section style="background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-lg);">Conference Includes</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md);">
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">📊 Access</h4>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm);">
+            <li>✓ All keynotes</li>
+            <li>✓ Presentation sessions</li>
+            <li>✓ Panel discussions</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">🤝 Networking</h4>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm);">
+            <li>✓ Welcome reception</li>
+            <li>✓ Lunch & learn</li>
+            <li>✓ Closing banquet</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">📚 Materials</h4>
+          <ul style="list-style: none; display: grid; gap: var(--spacing-sm);">
+            <li>✓ Digital proceedings</li>
+            <li>✓ Speaker slides</li>
+            <li>✓ Resource guide</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register Interest Form -->
+    <section style="margin: var(--spacing-2xl) 0;">
+      <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); padding: var(--spacing-2xl); border-radius: 0.5rem; color: white;">
+        <h2 style="color: white; text-align: center; margin-bottom: var(--spacing-lg);">Registration Not Yet Open?</h2>
+        <p style="text-align: center; margin-bottom: var(--spacing-lg);">
+          Enter your email to be notified as soon as registration opens and to receive early bird updates.
+        </p>
+        <EmbedForm 
+          title="Register Your Interest"
+          description="We'll notify you when registration opens and keep you updated on conference details."
+          formUrl="TODO: Interest Form URL"
+          embedType="google-form"
+        />
+      </div>
+    </section>
+
+    <!-- Questions -->
+    <section style="text-align: center; background-color: var(--color-bg-light); padding: var(--spacing-2xl); border-radius: 0.5rem; margin: var(--spacing-2xl) 0;">
+      <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Questions about Registration?</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Contact our registration team for assistance.</p>
+      <a href="mailto:registration@pharmads.org" style="color: var(--color-primary); font-weight: 600; font-size: var(--font-size-lg);">registration@pharmads.org</a>
+    </section>
+  </div>
+</BaseLayout>

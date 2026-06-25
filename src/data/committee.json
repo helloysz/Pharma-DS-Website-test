@@ -1,0 +1,80 @@
+{
+  "board": [
+    {
+      "id": "co-chair-1",
+      "name": "TODO: Co-Chair Name 1",
+      "role": "Co-Chair",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null,
+      "bio": "TODO: Bio"
+    },
+    {
+      "id": "co-chair-2",
+      "name": "TODO: Co-Chair Name 2",
+      "role": "Co-Chair",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null,
+      "bio": "TODO: Bio"
+    }
+  ],
+  "advisory": [
+    {
+      "id": "advisor-1",
+      "name": "TODO: Advisory Member Name",
+      "role": "Advisory Committee Member",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null,
+      "bio": "TODO: Bio"
+    }
+  ],
+  "organization": [
+    {
+      "id": "org-1",
+      "name": "TODO: Member Name",
+      "role": "Session Organization Lead",
+      "subteam": "Session Organization",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    },
+    {
+      "id": "org-2",
+      "name": "TODO: Member Name",
+      "role": "Speaker Coordination Lead",
+      "subteam": "Speaker Coordination",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    },
+    {
+      "id": "org-3",
+      "name": "TODO: Member Name",
+      "role": "Logistics & Venue Lead",
+      "subteam": "Logistics & Venue",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    },
+    {
+      "id": "org-4",
+      "name": "TODO: Member Name",
+      "role": "Volunteer Management Lead",
+      "subteam": "Volunteer Management",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    },
+    {
+      "id": "org-5",
+      "name": "TODO: Member Name",
+      "role": "Digital Presence Lead",
+      "subteam": "Digital Presence",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    },
+    {
+      "id": "org-6",
+      "name": "TODO: Member Name",
+      "role": "Financial Stewardship Lead",
+      "subteam": "Financial Stewardship",
+      "affiliation": "TODO: Affiliation",
+      "photoUrl": null
+    }
+  ]
+}

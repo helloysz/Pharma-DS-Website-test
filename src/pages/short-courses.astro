@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import shortCourses from '../data/short-courses.json';
+---
+
+<BaseLayout title="Short Courses" description="Pre-conference workshops and hands-on training">
+  <div class="container" style="padding: var(--spacing-2xl) 0;">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Short Courses</h1>
+    <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--spacing-2xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+      Pre-conference hands-on training across three tracks. Choose from Theory or Lab sessions to enhance your skills before the main conference.
+    </p>
+
+    <!-- Track Tabs -->
+    <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin: var(--spacing-2xl) 0; justify-content: center;">
+      <button class="track-filter" data-track="statistical-evidence-generation" style="padding: var(--spacing-md) var(--spacing-lg); border: 2px solid var(--color-primary); background-color: var(--color-primary); color: white; border-radius: 0.375rem; cursor: pointer;">
+        Statistical Evidence Generation
+      </button>
+      <button class="track-filter" data-track="ai-engineering" style="padding: var(--spacing-md) var(--spacing-lg); border: 2px solid var(--color-primary); background-color: transparent; color: var(--color-primary); border-radius: 0.375rem; cursor: pointer;">
+        AI Engineering
+      </button>
+      <button class="track-filter" data-track="tool-usage" style="padding: var(--spacing-md) var(--spacing-lg); border: 2px solid var(--color-primary); background-color: transparent; color: var(--color-primary); border-radius: 0.375rem; cursor: pointer;">
+        Tool Usage
+      </button>
+    </div>
+
+    <!-- Course Grid -->
+    <div class="courses-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+      {shortCourses.courses.map((course) => (
+        <div class="course-card" data-track={course.track} style="background-color: var(--color-bg-light); padding: var(--spacing-lg); border-radius: 0.5rem; border-left: 4px solid var(--color-primary);">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-md);">
+            <h3 style="flex: 1;">{course.title}</h3>
+            <span style="background-color: var(--color-primary-light); color: white; padding: var(--spacing-xs) var(--spacing-md); border-radius: 0.25rem; font-size: var(--font-size-sm); white-space: nowrap; margin-left: var(--spacing-md);">
+              {course.type}
+            </span>
+          </div>
+          <p style="color: var(--color-text-light); margin-bottom: var(--spacing-md);">{course.description}</p>
+          <div style="font-size: var(--font-size-sm); color: var(--color-text-light); display: grid; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+            <div><strong>Instructor:</strong> {course.instructor}</div>
+            <div><strong>Duration:</strong> {course.duration}</div>
+            <div><strong>Level:</strong> {course.level}</div>
+          </div>
+          <button class="btn-primary" style="width: 100%; font-size: var(--font-size-sm);">Register for Course</button>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align: center; margin-top: var(--spacing-2xl); padding: var(--spacing-2xl); background-color: var(--color-bg-light); border-radius: 0.5rem;">
+      <h3 style="margin-bottom: var(--spacing-md);">Questions?</h3>
+      <p style="color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Contact us for more information about course content and registration.</p>
+      <a href="mailto:courses@pharmads.org" style="color: var(--color-primary); font-weight: 600;">courses@pharmads.org</a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.track-filter').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const track = this.dataset.track;
+        document.querySelectorAll('.track-filter').forEach(b => {
+          b.style.backgroundColor = b === this ? 'var(--color-primary)' : 'transparent';
+          b.style.color = b === this ? 'white' : 'var(--color-primary)';
+        });
+        document.querySelectorAll('.course-card').forEach(card => {
+          if (track === 'all' || card.dataset.track === track) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

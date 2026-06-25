@@ -1,0 +1,24 @@
+{
+  "event": "PharmaDS 2027 Conference",
+  "theme": "TODO: 2027 Theme TBD",
+  "dates": {
+    "callForPresentationsOpen": "TODO: Opening Date TBD",
+    "callForPresentationsDeadline": "TODO: Deadline TBD",
+    "abstractSubmissionDeadline": "TODO: Deadline TBD",
+    "conferenceStart": "TODO: Start Date TBD",
+    "conferenceEnd": "TODO: End Date TBD"
+  },
+  "location": {
+    "city": "TODO: City TBD",
+    "venue": "TODO: Venue TBD",
+    "address": "TODO: Address TBD",
+    "hotelPartner": "TODO: Hotel TBD"
+  },
+  "registration": {
+    "status": "coming_soon",
+    "earlyBirdPrice": "TODO: Price TBD",
+    "standardPrice": "TODO: Price TBD",
+    "studentPrice": "TODO: Price TBD",
+    "registrationLink": "TODO: Registration Link TBD"
+  }
+}

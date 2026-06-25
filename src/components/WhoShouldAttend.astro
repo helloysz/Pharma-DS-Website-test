@@ -1,0 +1,118 @@
+---
+export interface Persona {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+export interface Props {
+  personas?: Persona[];
+}
+
+const { personas = [
+  {
+    title: "Pharma Statisticians & Data Scientists",
+    description: "Advance your statistical methods and learn cutting-edge approaches in evidence generation and real-world data analysis."
+  },
+  {
+    title: "ML/AI Engineers",
+    description: "Explore applications of machine learning and AI in pharmaceutical research, development, and operations."
+  },
+  {
+    title: "RWE & Clinical Researchers",
+    description: "Connect with leaders in real-world evidence and clinical research to discuss innovations and best practices."
+  },
+  {
+    title: "Regulatory & Safety Professionals",
+    description: "Understand regulatory perspectives on new statistical methods and emerging data science applications."
+  },
+  {
+    title: "Academia & Early-Career Talent",
+    description: "Network with industry professionals and explore career opportunities in pharma data science."
+  },
+  {
+    title: "Community Members",
+    description: "Build connections with peers, stay current on industry trends, and contribute to the growing PharmaDS community."
+  }
+] } = Astro.props;
+---
+
+<section class="who-should-attend">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: var(--spacing-2xl);">Who Should Attend</h2>
+    
+    <div class="personas-grid">
+      {personas.map((persona) => (
+        <div class="persona-card">
+          {persona.icon && (
+            <div class="persona-icon">{persona.icon}</div>
+          )}
+          <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-md);">{persona.title}</h3>
+          <p style="color: var(--color-text-light);">{persona.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="summary-box">
+      <h3 style="text-align: center; margin-bottom: var(--spacing-md);">What You'll Gain</h3>
+      <ul style="list-style: none; display: grid; gap: var(--spacing-md);">
+        <li>✓ Access to cutting-edge research and industry innovations</li>
+        <li>✓ Networking with leading professionals in pharmaceutical data science</li>
+        <li>✓ Practical skills through workshops and hands-on demonstrations</li>
+        <li>✓ Career growth and mentorship opportunities</li>
+        <li>✓ Community engagement and lasting professional relationships</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .who-should-attend {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--color-bg-light);
+  }
+
+  .personas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .personas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .personas-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .persona-card {
+    background-color: white;
+    padding: var(--spacing-lg);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-primary);
+    transition: all 0.3s ease;
+  }
+
+  .persona-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .persona-icon {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .summary-box {
+    background-color: white;
+    padding: var(--spacing-2xl);
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-primary-light);
+  }
+</style>
