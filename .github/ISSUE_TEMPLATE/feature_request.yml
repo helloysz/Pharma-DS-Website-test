@@ -20,36 +20,6 @@ body:
         - label: I searched existing open and closed issues and did not find an existing request for the same feature.
           required: true
 
-  - type: dropdown
-    id: section
-    attributes:
-      label: Section
-      description: Which part of the site does this feature relate to? This will also go in the issue title as `[Section]`.
-      options:
-        - Home
-        - Call for Presentations
-        - Career Growth
-        - Committee
-        - Community
-        - Partnership
-        - Program
-        - Registration
-        - Short Courses
-        - Venue
-        - Volunteer
-        - Site-wide / Other
-    validations:
-      required: true
-
-  - type: input
-    id: feature-title
-    attributes:
-      label: Requested Feature (short title)
-      description: A short name for the feature. This will also go in the issue title as `[Requested Feature]`.
-      placeholder: e.g. Add speaker filtering by track
-    validations:
-      required: true
-
   - type: textarea
     id: feature-idea
     attributes:
@@ -66,4 +36,4 @@ body:
     attributes:
       value: |
         ---
-        **Reminder:** please make sure your issue title follows the `[Section][Requested Feature]` format (auto-filled above) before submitting.
+        **Reminder:** please edit the issue title above to follow the `[Section][Requested Feature]` format before submitting.
