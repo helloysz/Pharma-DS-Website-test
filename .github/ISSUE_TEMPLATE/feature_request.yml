@@ -1,0 +1,69 @@
+name: "✨ Feature Request"
+description: Suggest a new feature or improvement for the PharmaDS 2027 site.
+title: "[Section][Requested Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a feature!
+
+        **Before you submit:** please search the [existing issues](../../issues?q=is%3Aissue) (open *and* closed) to check whether the same feature has already been requested.
+        If you find an existing issue that covers the same idea, please add a 👍 reaction or a comment there instead of opening a new one.
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      description: Confirm you've searched before submitting.
+      options:
+        - label: I searched existing open and closed issues and did not find an existing request for the same feature.
+          required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      description: Which part of the site does this feature relate to? This will also go in the issue title as `[Section]`.
+      options:
+        - Home
+        - Call for Presentations
+        - Career Growth
+        - Committee
+        - Community
+        - Partnership
+        - Program
+        - Registration
+        - Short Courses
+        - Venue
+        - Volunteer
+        - Site-wide / Other
+    validations:
+      required: true
+
+  - type: input
+    id: feature-title
+    attributes:
+      label: Requested Feature (short title)
+      description: A short name for the feature. This will also go in the issue title as `[Requested Feature]`.
+      placeholder: e.g. Add speaker filtering by track
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-idea
+    attributes:
+      label: Feature idea
+      description: Describe the feature you'd like to see. What problem does it solve, and who benefits from it?
+      placeholder: |
+        What should happen?
+        Why is it useful?
+        Any examples, mockups, or links that help explain it?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Reminder:** please make sure your issue title follows the `[Section][Requested Feature]` format (auto-filled above) before submitting.
