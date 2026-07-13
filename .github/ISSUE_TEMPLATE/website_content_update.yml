@@ -1,0 +1,130 @@
+name: "📝 Website Content Update"
+description: Request a content change to a page on the PharmaDS 2027 site (owned by your workstream).
+title: "[Content][<page>] "
+labels: ["type: content", "status: needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to ask the **Conference Website** workstream to update a page with content your workstream owns.
+
+        **Before you submit:** search the [existing issues](../../issues?q=is%3Aissue) (open *and* closed) for the same page/topic.
+        If a matching request already exists, add a 👍 or a comment there instead of opening a new one. GitHub will also
+        suggest similar issues as you type the title above.
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      description: Confirm you've searched before submitting.
+      options:
+        - label: I searched existing open and closed issues and did not find a request for the same change.
+          required: true
+
+  - type: dropdown
+    id: workstream
+    attributes:
+      label: Requesting workstream
+      description: Which workstream owns this content?
+      options:
+        - Conference Venue
+        - Theme & Session Planning
+        - Speaker & Instructor Invitation
+        - Conference Website
+        - Advertising & Outreach
+        - Sponsorship
+        - 2028 Venue Research
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Target page(s)
+      description: Which page(s) should change? (Choose all that apply.)
+      multiple: true
+      options:
+        - "Home (index)"
+        - "Program"
+        - "Short courses"
+        - "Call for presentations"
+        - "Registration"
+        - "Partnership"
+        - "Career growth"
+        - "Community"
+        - "Volunteer"
+        - "Committee"
+        - "Venue"
+        - "Site-wide / formatting"
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: Describe the current content and the exact new content. Paste final copy where possible.
+      placeholder: |
+        Current: "2027 dates — to be announced"
+        New: "September 14–16, 2027 · Boston, MA"
+        (Attach or link any images/logos/PDFs and the URLs they should point to.)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: content-ready
+    attributes:
+      label: Content readiness
+      description: Help the website team know if this is ready to build.
+      options:
+        - label: Final text/copy is included above (not a draft)
+        - label: Images / logos / files are attached or linked
+        - label: All links have been verified
+
+  - type: textarea
+    id: formatting
+    attributes:
+      label: Formatting & color notes
+      description: Any layout, emphasis, or color guidance (e.g. highlight a topic, badge color, section order).
+      placeholder: "Make the LLM / Generative AI topic tags stand out; keep brand blue for headings."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "High — blocking / time-sensitive"
+        - "Medium — needed soon"
+        - "Low — nice to have"
+    validations:
+      required: true
+
+  - type: input
+    id: golive
+    attributes:
+      label: Target go-live date
+      description: When does this need to be live? (YYYY-MM-DD, or "ASAP" / "no hard deadline")
+      placeholder: "2026-09-01"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: downstream
+    attributes:
+      label: Downstream actions once this is live
+      description: Check what other workstreams should do after the change ships. See the WORKSTREAM_PLAYBOOK for the full list.
+      options:
+        - label: "Outreach: publish LinkedIn post"
+        - label: "Outreach: send newsletter blast"
+        - label: "Outreach: update partner/attendee network"
+        - label: "Sponsorship: notify prospects / sponsors"
+        - label: "Website: update member roster / partner logos"
+        - label: "None — content only"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Reminder:** edit the issue title to follow `[Content][<page>]` (e.g. `[Content][Registration] Open the register portal`) before submitting.

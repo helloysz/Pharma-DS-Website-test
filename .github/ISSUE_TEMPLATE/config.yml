@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "📖 Workstream playbook"
+    url: https://github.com/helloysz/Pharma-DS-Website-test/blob/main/.github/WORKSTREAM_PLAYBOOK.md
+    about: How workstreams request website updates and hand off downstream activities.
+  - name: "🔎 Track open & closed requests"
+    url: https://github.com/helloysz/Pharma-DS-Website-test/issues
+    about: Search existing requests (open = pending, closed = live/handled) before opening a new one.
+  - name: "✉️ Email the conference team"
+    url: mailto:TODO_contact_email@nestat.org
+    about: For anything that isn't a website update request.
+  - name: "🔗 PharmaDS on LinkedIn"
+    url: https://www.linkedin.com/company/TODO-pharmads-linkedin
+    about: Follow for outreach posts and announcements.

@@ -62,6 +62,25 @@ All content that changes year to year lives in `src/data/*.json`:
 - LinkedIn company URL
 - Partner names, logos (`public/partners/`), tiers, and the prospectus PDF
 
+## Contributing website updates (workstreams)
+
+Website changes are coordinated through GitHub Issues so the seven conference workstreams and the
+website maintainer share one workflow. **Don't edit content by DM or email** — open an issue:
+
+1. Go to the [**Issues** tab → **New issue**](../../issues/new/choose) and pick a template:
+   - **📝 Website Content Update** — change copy/assets on a page (main one).
+   - **💡 Topic / Feedback** — an early idea before final copy exists.
+   - **🎨 Formatting / Styling Fix** — how a page looks (color, layout, spacing).
+   - **🔗 Downstream Activity** — a follow-up (e.g. an Outreach LinkedIn post) triggered once a change is live.
+2. Each request moves through visible `status:` labels; **open = pending, closed = live/handled**.
+3. Once a change ships, downstream activities are opened as new linked issues so nothing gets lost.
+
+See the [**Workstream Playbook**](.github/WORKSTREAM_PLAYBOOK.md) for page ownership, the request
+lifecycle, downstream triggers, and ready-made [request-tracking searches](.github/WORKSTREAM_PLAYBOOK.md#track-requests).
+
+Colored labels (`ws:`, `type:`, `status:`, `priority:`) are defined in
+[`.github/labels.yml`](.github/labels.yml); create them in the repo once with `bash scripts/setup-labels.sh`.
+
 ## Forms
 
 Forms are handled by third-party services (Google Forms / Formspree). Each form is rendered by the
