@@ -48,7 +48,10 @@ flowchart LR
 - **needs-review** — built; requesting workstream signs off.
 - **live** — shipped. **Close the issue.** Closed = live/handled.
 
-The maintainer also applies the requesting `ws:` label and a `priority:` label at triage.
+**Who updates what:** the **Conference Website** maintainer owns all `status:` transitions and applies
+the `ws:` and `priority:` labels at triage. The **requesting workstream** provides the final content
+(moving it out of `needs-content`) and gives sign-off during `needs-review`. Only the maintainer sets
+`status: live` and closes the issue.
 
 ## Downstream triggers (what happens once a page is live)
 

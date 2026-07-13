@@ -10,7 +10,7 @@ body:
         portal goes live and **Advertising & Outreach** starts LinkedIn posts. Link it back to the change that
         triggered it so nothing is lost when the original request is closed.
 
-        See the [WORKSTREAM_PLAYBOOK](../../blob/main/.github/WORKSTREAM_PLAYBOOK.md) for the standard triggers.
+        See the [WORKSTREAM_PLAYBOOK](https://github.com/helloysz/Pharma-DS-Website-test/blob/main/.github/WORKSTREAM_PLAYBOOK.md) for the standard triggers.
 
   - type: checkboxes
     id: duplicate-check
