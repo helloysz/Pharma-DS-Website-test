@@ -1,0 +1,69 @@
+name: "🎨 Formatting / Styling Fix"
+description: Report a layout, color, spacing, or styling problem on a page.
+title: "[Formatting][<page>] "
+labels: ["type: formatting", "status: needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for how a page *looks* (color, layout, spacing, broken styling) rather than what it *says*.
+
+        **Before you submit:** search the [existing issues](../../issues?q=is%3Aissue) (open *and* closed) for the same problem.
+        GitHub will also suggest similar issues as you type the title above.
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      description: Confirm you've searched before submitting.
+      options:
+        - label: I searched existing open and closed issues and did not find the same formatting problem.
+          required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Page
+      options:
+        - "Home (index)"
+        - "Program"
+        - "Short courses"
+        - "Call for presentations"
+        - "Registration"
+        - "Partnership"
+        - "Career growth"
+        - "Community"
+        - "Volunteer"
+        - "Committee"
+        - "Venue"
+        - "Site-wide"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What looks wrong?
+      description: Describe the current look and the desired look. Screenshots help a lot.
+      placeholder: "The topic tags wrap awkwardly on mobile and the accent color is too faint to read."
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / browser (if relevant)
+      placeholder: "iPhone Safari, Chrome desktop, etc."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "High — looks broken / unreadable"
+        - "Medium — noticeable polish"
+        - "Low — minor nit"
+    validations:
+      required: true

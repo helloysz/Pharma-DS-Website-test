@@ -1,0 +1,76 @@
+name: "💡 Topic / Feedback"
+description: Share a topic, idea, or feedback item for the site (lighter than a full content update).
+title: "[Topic] "
+labels: ["type: topic", "status: needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for early ideas, feedback, or topics to explore — before the final copy exists.
+
+        **Before you submit:** search the [existing issues](../../issues?q=is%3Aissue) (open *and* closed) so we don't
+        collect the same idea twice. GitHub will also suggest similar issues as you type the title above.
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      description: Confirm you've searched before submitting.
+      options:
+        - label: I searched existing open and closed issues and did not find the same topic/feedback.
+          required: true
+
+  - type: dropdown
+    id: workstream
+    attributes:
+      label: Your workstream
+      options:
+        - Conference Venue
+        - Theme & Session Planning
+        - Speaker & Instructor Invitation
+        - Conference Website
+        - Advertising & Outreach
+        - Sponsorship
+        - 2028 Venue Research
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Page / area this relates to
+      description: Best guess is fine.
+      options:
+        - "Home (index)"
+        - "Program"
+        - "Short courses"
+        - "Call for presentations"
+        - "Registration"
+        - "Partnership"
+        - "Career growth"
+        - "Community"
+        - "Volunteer"
+        - "Committee"
+        - "Venue"
+        - "Site-wide / general"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: The topic / feedback
+      description: What's the idea or feedback?
+      placeholder: "Add a 'Digital Twins' topic tag to the agenda; the current list feels light on modeling."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What problem does it solve or who benefits?
+    validations:
+      required: false
