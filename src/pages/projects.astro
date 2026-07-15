@@ -1,0 +1,303 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import CTASection from "../components/CTASection.astro";
+import data from "../data/projects.json";
+
+const projectsByTrack = data.tracks.map((track) => ({
+  ...track,
+  projects: data.projects.filter((p) => p.track === track.id),
+}));
+
+const total = data.projects.length;
+const shortCount = data.projects.filter((p) => p.horizon === "Short-term").length;
+const longCount = data.projects.filter((p) => p.horizon === "Long-term").length;
+---
+
+<BaseLayout title="AI Projects" description="AI projects for early-career talent in the PharmaDS mentorship program — short-term (4 weeks) and long-term (10-12 weeks) collaborations with concrete statistical deliverables.">
+  <PageHero
+    eyebrow="Career & Networking"
+    title="AI projects for early talent"
+    subtitle="Hands-on projects that pair a mentor with early-career talent. Each one is scoped to finish inside its timeframe and produces real statistical deliverables — a visualization dashboard and documented evaluation results."
+  />
+
+  <!-- OVERVIEW + FILTER -->
+  <section class="section">
+    <div class="container">
+      <p class="lead narrow">{data.intro}</p>
+
+      <div class="summary">
+        <div class="summary__item">
+          <span class="summary__num">{total}</span>
+          <span class="summary__label">Projects</span>
+        </div>
+        <div class="summary__item">
+          <span class="summary__num">{shortCount}</span>
+          <span class="summary__label">Short-term · 4 weeks</span>
+        </div>
+        <div class="summary__item">
+          <span class="summary__num">{longCount}</span>
+          <span class="summary__label">Long-term · 10–12 weeks</span>
+        </div>
+        <div class="summary__item">
+          <span class="summary__num">{data.tracks.length}</span>
+          <span class="summary__label">Tracks</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>
+          Every project needs a <strong>mentor</strong> and one or more <strong>students</strong> —
+          both are marked <em>to be identified</em> below. Short-term projects are single-deliverable
+          sprints; long-term projects are phased builds. Expand any topic to see the full plan.
+        </p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects by horizon">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Short-term">Short-term</button>
+        <button class="filter-btn" data-filter="Long-term">Long-term</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  {projectsByTrack.map((track, i) => (
+    <section class={`section project-track ${i % 2 === 0 ? "section--soft" : ""}`} id={track.id} data-track>
+      <div class="container">
+        <SectionHead eyebrow={`Track ${i + 1}`} title={track.name}>
+          <p class="lead">{track.blurb}</p>
+        </SectionHead>
+
+        <div class="project-list">
+          {track.projects.map((p) => (
+            <details class="card project" data-horizon={p.horizon}>
+              <summary class="project__summary">
+                <span class="project__title">{p.title}</span>
+                <span class="project__tags">
+                  <span class={`pill ${p.horizon === "Short-term" ? "pill--cyan" : ""}`}>{p.horizon} · {p.duration}</span>
+                  <span class="pill pill--amber">{p.level}</span>
+                </span>
+                <span class="project__chevron" aria-hidden="true">+</span>
+              </summary>
+
+              <div class="project__body">
+                <p><strong>The gap.</strong> {p.problem}</p>
+                <p><strong>What you build.</strong> {p.build}</p>
+
+                <div class="project__deliverables">
+                  <h4>Deliverables</h4>
+                  <ul>
+                    {p.deliverables.map((d) => <li>{d}</li>)}
+                  </ul>
+                </div>
+
+                <div class="project__cols">
+                  <div>
+                    <h4>{p.horizon === "Short-term" ? "Plan · 4 weeks" : "Plan · 10–12 weeks"}</h4>
+                    <ol class="plan">
+                      {p.plan.map((step) => <li>{step}</li>)}
+                    </ol>
+                  </div>
+                  <div>
+                    <h4>Industry impact</h4>
+                    <ul>
+                      {p.impact.map((m) => <li>{m}</li>)}
+                    </ul>
+                    <h4 class="mt">Skills you gain</h4>
+                    <div class="skill-tags">
+                      {p.skills.map((s) => <span class="pill">{s}</span>)}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="roles">
+                  <div class="roles__item">
+                    <span class="roles__label">Mentor</span>
+                    <span class="roles__value">{p.roles.mentor}</span>
+                  </div>
+                  <div class="roles__item">
+                    <span class="roles__label">Student(s)</span>
+                    <span class="roles__value">{p.roles.students}</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <CTASection title="Want to mentor or take on a project?" text="Sign up through the mentorship program and tell us which project or track fits you best.">
+    <a class="btn btn--light" href="/career-growth#become-a-mentor">Sign up to mentor</a>
+    <a class="btn btn--ghost" href="/registration">Register to attend</a>
+  </CTASection>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 68ch; }
+
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.4rem 0 1.2rem;
+  }
+  .summary__item {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1rem;
+    text-align: center;
+  }
+  .summary__num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--indigo-bright);
+    line-height: 1;
+  }
+  .summary__label {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    font-weight: 600;
+  }
+
+  .callout {
+    border-left: 4px solid var(--cyan);
+    background: rgba(24, 194, 201, 0.08);
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.4rem;
+  }
+  .callout p { margin: 0; color: var(--text); font-size: 0.92rem; }
+
+  .filters { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .filter-btn {
+    font: inherit; font-weight: 700; font-size: 0.9rem;
+    padding: 0.5rem 1.1rem; border-radius: 999px;
+    border: 2px solid var(--border); background: #fff; color: var(--text);
+    cursor: pointer; transition: all 0.15s ease;
+  }
+  .filter-btn:hover { border-color: var(--indigo-bright); color: var(--indigo-bright); }
+  .filter-btn.is-active { background: var(--indigo-bright); border-color: var(--indigo-bright); color: #fff; }
+
+  .project-list { display: grid; gap: 0.9rem; }
+
+  /* Accordion card */
+  .project { padding: 0; overflow: hidden; }
+  .project__summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.15rem;
+  }
+  .project__summary::-webkit-details-marker { display: none; }
+  .project__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    flex: 1;
+    min-width: 0;
+  }
+  .project__tags { display: inline-flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
+  .project__chevron {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--indigo-bright);
+    line-height: 1;
+    flex: 0 0 auto;
+    transition: transform 0.2s ease;
+  }
+  .project[open] .project__chevron { transform: rotate(45deg); }
+  .project[open] .project__summary { border-bottom: 1px solid var(--border); }
+
+  .project__body { padding: 0.4rem 1.15rem 1.2rem; }
+  .project__body > p { color: var(--text); margin: 0.7rem 0; }
+  .project__body h4 { margin: 0 0 0.4rem; }
+  .project__body ul, .project__body ol { margin: 0; color: var(--text-soft); }
+  .project__body li { margin-bottom: 0.3rem; }
+  .mt { margin-top: 0.9rem !important; }
+
+  .project__deliverables {
+    border-left: 3px solid var(--cyan);
+    background: rgba(24, 194, 201, 0.06);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.9rem 0;
+  }
+  .project__deliverables h4 { color: var(--cyan-deep); }
+
+  .project__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+    margin-top: 0.4rem;
+  }
+  .plan { padding-left: 1.15rem; }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-top: 1.1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+  }
+  .roles__label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+    font-weight: 700;
+  }
+  .roles__value { font-weight: 600; color: var(--ink); }
+
+  .project.is-hidden, .project-track.is-hidden { display: none; }
+
+  @media (max-width: 720px) {
+    .summary { grid-template-columns: repeat(2, 1fr); }
+    .project__cols { grid-template-columns: 1fr; gap: 0.8rem; }
+    .project__summary { flex-wrap: wrap; }
+    .project__tags { justify-content: flex-start; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project");
+    const tracks = document.querySelectorAll("[data-track]");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        buttons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+
+        projects.forEach((p) => {
+          const match = filter === "all" || p.getAttribute("data-horizon") === filter;
+          p.classList.toggle("is-hidden", !match);
+          if (!match) p.removeAttribute("open");
+        });
+
+        tracks.forEach((t) => {
+          const visible = t.querySelectorAll(".project:not(.is-hidden)").length;
+          t.classList.toggle("is-hidden", visible === 0);
+        });
+      });
+    });
+  });
+</script>

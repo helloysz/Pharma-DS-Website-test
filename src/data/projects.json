@@ -1,0 +1,741 @@
+{
+  "note": "AI project catalog for the Career & Networking mentorship program. 'track' is one of the track ids below. 'horizon' is 'Short-term' (4 weeks) or 'Long-term' (10-12 weeks). Each project pairs one mentor with one or more students; both roles are to be identified. Add new projects by appending to the 'projects' array with a valid 'track' id.",
+  "intro": "A catalog of achievable, industry-relevant AI projects that pair a mentor with early-career talent. Every project is scoped to finish inside its timeframe and produces concrete statistical deliverables — an interactive visualization dashboard and documented evaluation results — so students leave with something real to show.",
+  "tracks": [
+    {
+      "id": "clinical-ops",
+      "name": "Clinical Operations",
+      "blurb": "AI for clinical operations and process optimization — document generation, programming automation, study design, and end-to-end workflows."
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence Generation",
+      "blurb": "Advanced methods and AI for generating credible evidence — modern modeling, causal inference, real-world evidence, and multimodal data."
+    },
+    {
+      "id": "trust",
+      "name": "Trust & Validation",
+      "blurb": "Making AI outputs trustworthy — reproducibility, benchmarking, human-in-the-loop sign-off, and quality control across the data flow."
+    },
+    {
+      "id": "regulatory",
+      "name": "Regulatory Science",
+      "blurb": "Regulatory science in the AI era — applying FDA/EMA/PMDA guidance, submission quality, and AI-native regulatory workflows."
+    },
+    {
+      "id": "workforce",
+      "name": "Workforce & Skills",
+      "blurb": "The augmented workforce — evolving roles, blended stats/ML/domain skills, and structured upskilling paths."
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy & Adoption",
+      "blurb": "Adoption, strategy, and business context — scaling from pilot to enterprise, vendor landscape, and serving small and mid-size organizations."
+    }
+  ],
+  "projects": [
+    {
+      "id": "doc-drafting",
+      "track": "clinical-ops",
+      "title": "Regulatory Document Auto-Drafting",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "Writing Informed Consent Forms and SAP sections is slow, templated, and repetitive. Teams re-draft the same boilerplate for every study.",
+      "build": "A retrieval-augmented LLM pipeline that drafts a single, well-bounded document type from structured inputs, grounded on prior approved examples, with a human-in-the-loop review step.",
+      "deliverables": [
+        "Interactive review dashboard that shows the draft next to its source passages and a section-by-section completeness score",
+        "Evaluation results: rubric scores (completeness, accuracy, tone) vs. gold documents, with agreement statistics",
+        "Reusable drafting pipeline and prompt library"
+      ],
+      "plan": [
+        "Week 1 — Pick one document type; collect a small corpus of public/sample templates",
+        "Week 2 — Build a retrieval index and a baseline drafting prompt",
+        "Week 3 — Prompt-chain a full draft from structured study inputs",
+        "Week 4 — Score drafts against gold examples and build the review dashboard"
+      ],
+      "skills": ["LLM prompting", "Retrieval-augmented generation", "Document parsing", "Evaluation rubrics"],
+      "impact": [
+        "Cuts drafting time and improves consistency for one high-volume document",
+        "Faster study start-up, with the author still accountable for sign-off"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "qc-diff",
+      "track": "clinical-ops",
+      "title": "Statistical Programming QC-Diff Assistant",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "QC double-programming of CDISC datasets is costly, and errors accumulate across the SDTM to ADaM to TLF flow.",
+      "build": "For a single ADaM dataset (e.g., ADSL), a developer step generates derivation code and an independent QC step re-derives the output and diffs the two, producing an output-consistency score.",
+      "deliverables": [
+        "Dashboard visualizing variable-level discrepancies between developer and QC outputs",
+        "Evaluation results: consistency score and a discrepancy report across repeated runs",
+        "Reproducible dev + QC code and a sample specification-to-dataset workflow"
+      ],
+      "plan": [
+        "Week 1 — Choose one ADaM dataset and spec; stand up sample SDTM input",
+        "Week 2 — Generate derivation code from the spec",
+        "Week 3 — Build an independent QC re-derivation and an automated diff",
+        "Week 4 — Compute the consistency score and build the discrepancy dashboard"
+      ],
+      "skills": ["CDISC (SDTM/ADaM)", "Code-generation agents", "Dual-agent QC pattern", "R / SAS"],
+      "impact": [
+        "Reduces programming and QC hours on a concrete, bounded task",
+        "Directly targets the top named trust blocker: validating non-deterministic output"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "study-recommender",
+      "track": "clinical-ops",
+      "title": "Study-Design Recommender",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "Designing a new study often reinvents prior work; it is hard to quickly find analogous trials and learn from their endpoints, arms, and sample sizes.",
+      "build": "A similarity search over a slice of ClinicalTrials.gov: given a draft synopsis, return the most similar prior trials with a summary of their design decisions.",
+      "deliverables": [
+        "Interactive dashboard: enter a synopsis, see ranked similar trials and a visual comparison of their design features",
+        "Evaluation results: retrieval relevance (precision@k) on a set of known analogous trials",
+        "Reusable embedding index and search code over the trial corpus"
+      ],
+      "plan": [
+        "Week 1 — Pull a ClinicalTrials.gov slice; parse key design fields",
+        "Week 2 — Embed protocol text and build cosine-similarity search",
+        "Week 3 — Return top-k similar trials with a design summary for a query synopsis",
+        "Week 4 — Evaluate relevance on known cases and build the lookup dashboard"
+      ],
+      "skills": ["Embeddings & semantic search", "Recommendation systems", "Data wrangling", "Evaluation"],
+      "impact": [
+        "Speeds up study design and grounds it in precedent",
+        "A reusable internal tool for protocol and biostatistics teams"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "protocol-usdm",
+      "track": "clinical-ops",
+      "title": "Protocol to Structured Study Definition (USDM)",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Protocols are free text, but downstream automation needs a structured study definition (CDISC USDM). Manual conversion is slow, and this structured backbone is a prerequisite for automating the rest of the pipeline.",
+      "build": "An extraction pipeline that reads a protocol and emits a USDM-aligned JSON of design elements, variables, and values, validated against the schema, with coverage and accuracy metrics.",
+      "deliverables": [
+        "Dashboard visualizing extraction coverage and confidence across USDM entities",
+        "Evaluation results: field-level extraction accuracy, coverage, and error-mode breakdown vs. a hand-labeled set",
+        "Validated extraction pipeline producing schema-conformant USDM JSON"
+      ],
+      "plan": [
+        "Weeks 1–2 — Study the CDISC USDM structure and target entities; assemble sample protocols",
+        "Weeks 3–5 — Build information extraction over protocol text (NER + mapping)",
+        "Weeks 6–8 — Map extracted entities to USDM JSON and validate against schema",
+        "Weeks 9–10 — Measure extraction coverage/accuracy and characterize error modes",
+        "Weeks 11–12 — Extend toward Analysis Results Data (ARD) and build the coverage dashboard"
+      ],
+      "skills": ["Information extraction / NLP", "Data modeling & schema validation", "CDISC USDM / ARD"],
+      "impact": [
+        "A structured backbone unlocks automation across the whole pipeline",
+        "Foundation for AI-native, machine-readable submissions"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "agentic-orchestration",
+      "track": "clinical-ops",
+      "title": "Agentic Orchestration Harness",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Individual AI tools exist, but handoffs between spec, programming, QC, and review are still manual. The future operating model requires agents that collaborate reliably.",
+      "build": "An orchestration harness where specialized agents (spec-reader, programmer, QC, reviewer) collaborate to take a small study spec through to a validated TLF, with logging and human checkpoints.",
+      "deliverables": [
+        "Dashboard visualizing the end-to-end run: agent steps, handoffs, checkpoints, and where humans intervened",
+        "Evaluation results: end-to-end success rate, error-recovery rate, and human-intervention counts across runs",
+        "Reusable multi-agent harness with logging and human-in-the-loop checkpoints"
+      ],
+      "plan": [
+        "Weeks 1–2 — Define agent roles and an agent-to-agent communication protocol",
+        "Weeks 3–6 — Build the harness on an orchestration framework",
+        "Weeks 7–9 — Run it on a small end-to-end toy pipeline",
+        "Weeks 10–12 — Add human checkpoints, logging, and the run dashboard with success metrics"
+      ],
+      "skills": ["Multi-agent systems", "Orchestration frameworks", "Workflow design", "Observability"],
+      "impact": [
+        "Demonstrates the future operating model of augmented statistics teams",
+        "A flagship, portfolio-defining systems project"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "baseline-drift",
+      "track": "evidence",
+      "title": "Baseline-Drift Monitoring Dashboard",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "Baseline covariate distributions can drift as enrollment progresses, threatening comparability and interpretation — but drift is rarely monitored in real time.",
+      "build": "A monitoring tool that tracks baseline distribution drift over cumulative simulated enrollment, with statistical drift metrics and alerting.",
+      "deliverables": [
+        "Interactive monitoring dashboard showing distribution drift over cumulative enrollment with alert flags",
+        "Evaluation results: detection sensitivity and false-alarm rate across injected drift scenarios",
+        "Reusable drift-metric library and simulation harness"
+      ],
+      "plan": [
+        "Week 1 — Simulate enrollment with injectable drift scenarios",
+        "Week 2 — Implement drift metrics (standardized differences, PSI, tests)",
+        "Week 3 — Add alerting logic and thresholds",
+        "Week 4 — Build the dashboard and evaluate detection across scenarios"
+      ],
+      "skills": ["Applied statistics", "Distribution-drift metrics", "Simulation", "Data visualization"],
+      "impact": [
+        "Early warning on comparability issues during a live trial",
+        "A monitoring pattern that generalizes to safety and data-quality dashboards"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "dl-survival",
+      "track": "evidence",
+      "title": "Deep-Learning Survival Models",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Traditional Cox models struggle with high-dimensional and multimodal data, yet teams need better prognostic modeling without sacrificing interpretability.",
+      "build": "Implement and benchmark deep-learning survival models (e.g., DeepSurv, transformer-based) against a Cox baseline on public data, adding interpretability via SHAP or attention.",
+      "deliverables": [
+        "Dashboard comparing model risk predictions, survival curves, and feature attributions",
+        "Evaluation results: concordance index and calibration across models, with confidence intervals",
+        "Reproducible training/benchmark code and an interpretability analysis notebook"
+      ],
+      "plan": [
+        "Weeks 1–2 — Reproduce a Cox proportional-hazards baseline on a public dataset",
+        "Weeks 3–6 — Implement a DeepSurv / transformer survival model",
+        "Weeks 7–9 — Compare via concordance index and calibration",
+        "Weeks 10–12 — Add interpretability and build the comparison dashboard"
+      ],
+      "skills": ["Survival analysis", "PyTorch / deep learning", "Benchmarking & calibration", "Interpretability"],
+      "impact": [
+        "Better risk prediction for prognosis and patient selection",
+        "Protects the traditional-statistics rigor half of the program's balance"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "prognostic-covariate",
+      "track": "evidence",
+      "title": "Prognostic-Score Covariate Adjustment",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Trials need more statistical power without more patients. Prognostic covariate adjustment (PROCOVA-style, digital twins) is EMA-qualified but under-used, and its regulatory limits are poorly understood by newcomers.",
+      "build": "Train a prognostic model on historical control data, use it as a covariate in a simulated RCT analysis, and quantify the power gain while confirming type-I error control.",
+      "deliverables": [
+        "Dashboard visualizing power and type-I error across effect sizes and adjustment strategies",
+        "Evaluation results: power gain vs. unadjusted analysis and type-I error simulation tables",
+        "Reproducible simulation study and a short methods write-up on regulatory limits"
+      ],
+      "plan": [
+        "Weeks 1–3 — Train a prognostic model on historical/control data",
+        "Weeks 4–7 — Simulate RCTs and analyze with ANCOVA + prognostic covariate",
+        "Weeks 8–10 — Quantify power gain and run type-I error simulations",
+        "Weeks 11–12 — Summarize value/limits and build the simulation dashboard"
+      ],
+      "skills": ["Causal inference & covariate adjustment", "Simulation study design", "ML prognostic modeling"],
+      "impact": [
+        "Smaller, faster trials using an EMA/FDA-recognized method",
+        "Bridges machine learning and rigorous trial statistics"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "rwd-matching",
+      "track": "evidence",
+      "title": "RWD/RWE Patient–Trial Matching & Site Selection",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Intermediate",
+      "problem": "Patient recruitment is the single largest bottleneck in clinical research. Real-world data can identify eligible patients, rank sites, and check representativeness.",
+      "build": "Using a public claims/EHR-like dataset, build an eligibility matcher against trial criteria and a site-selection ranking based on eligible-patient density, plus representativeness metrics.",
+      "deliverables": [
+        "Dashboard mapping eligible-patient density and ranking candidate sites with representativeness views",
+        "Evaluation results: matching precision/recall vs. labeled cases and cohort representativeness metrics",
+        "Reusable eligibility-matching pipeline"
+      ],
+      "plan": [
+        "Weeks 1–3 — Encode a set of trial eligibility criteria; profile the dataset",
+        "Weeks 4–7 — Build structured + semantic matching against the data",
+        "Weeks 8–10 — Rank candidate sites by eligible-patient density",
+        "Weeks 11–12 — Compute representativeness metrics and build the site dashboard"
+      ],
+      "skills": ["Real-world data analytics", "Eligibility logic & semantic matching", "Cohort metrics"],
+      "impact": [
+        "Faster enrollment and reduced per-trial recruitment cost",
+        "Better, more representative trial populations"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "research-agent",
+      "track": "evidence",
+      "title": "Literature-to-Hypothesis Research Agent",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "The literature grows faster than any researcher can read. Identifying gaps, generating hypotheses, and tracking evidence is manual and slow.",
+      "build": "An agent that ingests abstracts (PubMed / Europe PMC), summarizes a field, identifies gaps, proposes candidate hypotheses, and links supporting evidence — judged by a human-quality rubric.",
+      "deliverables": [
+        "Dashboard exploring the evidence map: topics, gaps, proposed hypotheses, and supporting citations",
+        "Evaluation results: human-rated quality/novelty scores with inter-rater agreement",
+        "Reusable ingestion + summarization + hypothesis-generation pipeline"
+      ],
+      "plan": [
+        "Weeks 1–2 — Scope a disease/target area; pull abstracts via a public API",
+        "Weeks 3–5 — Build retrieval + summarization and gap identification",
+        "Weeks 6–8 — Generate hypotheses and link supporting evidence",
+        "Weeks 9–12 — Define a quality rubric, run human evaluation, and build the evidence-map dashboard"
+      ],
+      "skills": ["Retrieval & summarization", "Agentic workflows", "Scientific evaluation design"],
+      "impact": [
+        "Compresses background research and surfaces non-obvious connections",
+        "A springboard for target identification and mechanism discovery"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "generative-trial-design",
+      "track": "evidence",
+      "title": "Generative Models for Trial Design & Patient Selection",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Exploring trial-design and patient-selection choices is slow and often limited to a handful of scenarios, so promising options go unexplored.",
+      "build": "Use generative/diffusion models to synthesize realistic virtual patients and explore how design and selection choices affect operating characteristics, validated against real distributions.",
+      "deliverables": [
+        "Dashboard comparing synthetic vs. real covariate distributions and design trade-offs",
+        "Evaluation results: fidelity metrics (e.g., distributional distance) and privacy/utility checks",
+        "Reproducible generative-model code and a virtual-patient dataset generator"
+      ],
+      "plan": [
+        "Weeks 1–3 — Assemble a public dataset and profile real distributions",
+        "Weeks 4–7 — Train a generative/diffusion model for virtual patients",
+        "Weeks 8–10 — Validate fidelity and run design/selection scenarios",
+        "Weeks 11–12 — Build the comparison dashboard and document limits"
+      ],
+      "skills": ["Generative / diffusion models", "Synthetic data validation", "Trial simulation"],
+      "impact": [
+        "Explore many more design options before committing resources",
+        "Enables privacy-conscious data sharing and prototyping"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "multimodal-fusion",
+      "track": "evidence",
+      "title": "Multimodal Data Fusion Prototype",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Digital pathology, wearables, and labs each carry signal, but they are usually analyzed in isolation, leaving predictive value on the table.",
+      "build": "A prototype that fuses two or more public modalities (e.g., imaging + tabular labs) into a single predictive model, with an ablation showing each modality's contribution.",
+      "deliverables": [
+        "Dashboard visualizing per-modality contributions and fused predictions",
+        "Evaluation results: single-modality vs. fused performance with an ablation table",
+        "Reproducible multimodal training pipeline"
+      ],
+      "plan": [
+        "Weeks 1–3 — Select public modalities and build per-modality baselines",
+        "Weeks 4–7 — Implement a fusion architecture",
+        "Weeks 8–10 — Run ablations quantifying each modality's contribution",
+        "Weeks 11–12 — Build the contribution dashboard and write up findings"
+      ],
+      "skills": ["Multimodal modeling", "Representation learning", "Ablation study design"],
+      "impact": [
+        "Higher predictive value from data already being collected",
+        "A template for combining emerging data sources"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "gono-go",
+      "track": "evidence",
+      "title": "Go/No-Go Phase 2 to Phase 3 Prediction",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Progression decisions from Phase 2 to Phase 3 are high-stakes and often rely on static, point-in-time reads that miss signal in richer data.",
+      "build": "A progression-scoring model that predicts Phase 3 success from Phase 2 data on a public/simulated dataset, with calibrated probabilities and clear decision thresholds.",
+      "deliverables": [
+        "Dashboard turning model scores into calibrated go/no-go probabilities with threshold controls",
+        "Evaluation results: discrimination (AUC), calibration, and decision-curve analysis",
+        "Reproducible modeling pipeline and a decision-rule write-up"
+      ],
+      "plan": [
+        "Weeks 1–3 — Assemble a public/simulated Phase 2 to Phase 3 dataset",
+        "Weeks 4–7 — Build and tune the progression-scoring model",
+        "Weeks 8–10 — Calibrate probabilities and evaluate decision rules",
+        "Weeks 11–12 — Build the decision dashboard and document thresholds"
+      ],
+      "skills": ["Predictive modeling", "Probability calibration", "Decision analysis"],
+      "impact": [
+        "More consistent, evidence-based progression decisions",
+        "Applicable across oncology and non-oncology indications"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "external-control",
+      "track": "evidence",
+      "title": "External Control Arm Feasibility Explorer",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "External control arms can accelerate trials, but their validity depends on comparability and bias control that teams struggle to assess up front.",
+      "build": "A workflow that constructs an external control arm from public data, balances it against a treated cohort, and quantifies residual bias and sensitivity.",
+      "deliverables": [
+        "Dashboard visualizing covariate balance before/after weighting and sensitivity to unmeasured confounding",
+        "Evaluation results: balance diagnostics, estimated effect with confidence intervals, and bias sensitivity analysis",
+        "Reproducible external-control construction and analysis code"
+      ],
+      "plan": [
+        "Weeks 1–3 — Define the target estimand; assemble treated and external cohorts",
+        "Weeks 4–7 — Balance cohorts (matching/weighting) and check overlap",
+        "Weeks 8–10 — Estimate effects and run sensitivity/bias analyses",
+        "Weeks 11–12 — Build the feasibility dashboard and summarize regulatory limits"
+      ],
+      "skills": ["Causal inference", "Propensity methods", "Sensitivity analysis"],
+      "impact": [
+        "Faster trials where a concurrent control is hard to enroll",
+        "Clear-eyed assessment of when external controls are credible"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "eval-harness",
+      "track": "trust",
+      "title": "Trust Benchmark for Non-Deterministic AI",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "The same prompt can yield different answers, so AI cannot be trusted or validated for GxP work. This is the single most-named blocker across the advisory interviews.",
+      "build": "A benchmark for one concrete clinical-stats task, with an evaluation matrix, repeated-run reproducibility measurement, and majority-vote scoring.",
+      "deliverables": [
+        "Dashboard visualizing accuracy, rationale quality, and run-to-run reproducibility across models",
+        "Evaluation results: an evaluation matrix and majority-vote scoring with reproducibility statistics",
+        "Reusable benchmark harness and gold-standard test set"
+      ],
+      "plan": [
+        "Week 1 — Define one bounded task and build a small gold-standard set",
+        "Week 2 — Build the evaluation harness and metrics (accuracy / rationale / latency)",
+        "Week 3 — Run multiple models and seeds; log all outputs",
+        "Week 4 — Build the reproducibility + accuracy dashboard with majority-vote scoring"
+      ],
+      "skills": ["Evaluation & benchmark design", "Reproducibility statistics", "Experiment tracking"],
+      "impact": [
+        "Provides the evidence base needed for validation and regulatory acceptance",
+        "Turns 'we can't trust it' into a measurable, defensible metric"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "hitl-signoff",
+      "track": "trust",
+      "title": "Human-in-the-Loop Sign-off Workflow",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "When AI drafts analyses or documents, accountability blurs. Teams need a clear review-and-sign-off flow that records who approved what and why.",
+      "build": "A lightweight review workflow that routes AI outputs to a human reviewer, captures decisions and rationale, and produces an auditable sign-off trail.",
+      "deliverables": [
+        "Dashboard showing review queue status, approval rates, and turnaround time",
+        "Evaluation results: reviewer agreement and time-to-sign-off metrics on a sample set",
+        "Reusable review workflow with an auditable decision log"
+      ],
+      "plan": [
+        "Week 1 — Define the review states, roles, and audit fields",
+        "Week 2 — Build the routing and decision-capture flow",
+        "Week 3 — Add the auditable sign-off trail and export",
+        "Week 4 — Build the status dashboard and evaluate on sample outputs"
+      ],
+      "skills": ["Workflow design", "Audit/traceability", "Lightweight app building"],
+      "impact": [
+        "Keeps accountability with humans as AI adoption grows",
+        "A reusable pattern for GxP-aligned AI use"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "error-propagation",
+      "track": "trust",
+      "title": "Error-Propagation Tracker",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "Small errors introduced early (raw to SDTM to ADaM to TLF) can silently propagate and amplify, and teams lack visibility into where they originate.",
+      "build": "A demo pipeline that injects controlled errors upstream and traces how they propagate to downstream outputs, quantifying amplification at each stage.",
+      "deliverables": [
+        "Dashboard visualizing error propagation from source to final outputs across the flow",
+        "Evaluation results: stage-by-stage error amplification metrics under injected-error scenarios",
+        "Reproducible mini-pipeline with an error-injection harness"
+      ],
+      "plan": [
+        "Week 1 — Build a small raw to SDTM to ADaM to TLF demo pipeline",
+        "Week 2 — Add a controlled error-injection harness",
+        "Week 3 — Trace and quantify propagation at each stage",
+        "Week 4 — Build the propagation dashboard and summarize findings"
+      ],
+      "skills": ["Data pipelines", "CDISC flow", "Error analysis", "Visualization"],
+      "impact": [
+        "Shows where QC effort has the highest leverage",
+        "Makes the case for checkpoints at the right stages"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "fda-credibility",
+      "track": "regulatory",
+      "title": "FDA 'Good AI Practice' Credibility Assessor",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "The FDA's 2025/2026 AI guidances define a risk-based credibility framework, but teams lack practical tooling to apply it to a specific use-case.",
+      "build": "An interactive credibility-assessment tool that walks a use-case through the framework, assigns a risk tier, and generates a documentation artifact, with retrieval-backed citations.",
+      "deliverables": [
+        "Interactive dashboard that scores a use-case and visualizes its risk tier across framework dimensions",
+        "Evaluation results: consistency of tiering across sample use-cases and reviewers",
+        "Generated credibility-assessment report template with guidance citations"
+      ],
+      "plan": [
+        "Week 1 — Digest the guidances into structured principles and questions",
+        "Week 2 — Build a questionnaire that maps answers to a model-risk tier",
+        "Week 3 — Generate a credibility-assessment report template",
+        "Week 4 — Add retrieval over the guidance docs and build the scoring dashboard"
+      ],
+      "skills": ["Regulatory science", "Structured decision logic", "Retrieval-augmented generation"],
+      "impact": [
+        "Accelerates compliant AI adoption inside statistics/regulatory teams",
+        "Produces artifacts teams can attach to submissions"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "define-quality",
+      "track": "regulatory",
+      "title": "Submission & Define-Document Quality Checker",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intermediate",
+      "problem": "Define documents and derivations are hard to review for completeness and provenance, and quality issues surface late in the submission process.",
+      "build": "A checker that reviews a define.xml-style package for missing derivations, provenance gaps, and inconsistencies, and reports quality issues with severities.",
+      "deliverables": [
+        "Dashboard visualizing quality issues by type and severity across the package",
+        "Evaluation results: precision/recall of issue detection against a seeded set of known problems",
+        "Reusable quality-check rules and report generator"
+      ],
+      "plan": [
+        "Week 1 — Model a sample define package and catalog quality checks",
+        "Week 2 — Implement provenance/completeness/consistency checks",
+        "Week 3 — Seed known issues and measure detection",
+        "Week 4 — Build the quality dashboard and issue report"
+      ],
+      "skills": ["Metadata/define standards", "Rule-based + LLM checks", "Data quality"],
+      "impact": [
+        "Catches submission issues early, reducing review cycles",
+        "Improves derivation and variable provenance quality"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "reg-alignment",
+      "track": "regulatory",
+      "title": "Global Regulatory Alignment Tracker",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "FDA, EMA, and PMDA positions on AI evolve independently, and teams lack a single, structured view of where they align and diverge.",
+      "build": "A structured, comparable knowledge base of FDA/EMA/PMDA AI guidance with a side-by-side view of alignment and gaps across key topics.",
+      "deliverables": [
+        "Interactive dashboard comparing agency positions topic-by-topic with alignment indicators",
+        "Evaluation results: coverage and reviewer-checked accuracy of the structured entries",
+        "Structured, source-linked dataset that can be maintained over time"
+      ],
+      "plan": [
+        "Week 1 — Define comparison topics and a structured schema",
+        "Week 2 — Populate FDA/EMA/PMDA entries from public sources",
+        "Week 3 — Build the side-by-side alignment view",
+        "Week 4 — Review accuracy and finalize the comparison dashboard"
+      ],
+      "skills": ["Regulatory research", "Knowledge structuring", "Comparative analysis"],
+      "impact": [
+        "A single reference for multi-region AI strategy",
+        "Reduces surprises when aligning global submissions"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "ai-native-submission",
+      "track": "regulatory",
+      "title": "AI-Native Submission Prototype",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Submissions are document-heavy PDFs; derivations and variable provenance are hard to trace, and review is slow.",
+      "build": "A prototype that represents analysis results and provenance as ARD-aligned YAML/JSON, with a retrieval agent that answers reviewer questions using traceable citations.",
+      "deliverables": [
+        "Dashboard for reviewers to query results and see traceable provenance for each answer",
+        "Evaluation results: answer accuracy and citation-traceability rate on a reviewer question set",
+        "Structured, machine-readable submission package with a provenance graph"
+      ],
+      "plan": [
+        "Weeks 1–3 — Model ARD-aligned outputs and a provenance graph for a toy analysis",
+        "Weeks 4–7 — Build the structured submission package with derivations linked",
+        "Weeks 8–10 — Add a retrieval agent over the package",
+        "Weeks 11–12 — Build the reviewer Q&A dashboard and evaluate traceability"
+      ],
+      "skills": ["Data provenance / lineage", "Knowledge graphs", "Agents", "ARD / define"],
+      "impact": [
+        "Advances the review-time compression aspiration",
+        "Audit-ready, machine-readable submission content"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "safety-monitoring",
+      "track": "regulatory",
+      "title": "Real-Time Trial Safety Monitoring",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Advanced",
+      "problem": "Safety signals can emerge mid-trial, but monitoring is often periodic and manual, delaying detection of important events.",
+      "build": "A safety-first monitoring prototype that continuously scans simulated accumulating trial data for signals and surfaces them with statistical support and clear caveats.",
+      "deliverables": [
+        "Real-time safety dashboard with signal alerts, trends, and drill-down by event",
+        "Evaluation results: detection timeliness and false-signal rate across simulated scenarios",
+        "Reusable signal-detection logic and simulation harness"
+      ],
+      "plan": [
+        "Weeks 1–3 — Simulate accumulating trial safety data with planted signals",
+        "Weeks 4–7 — Implement continuous signal-detection methods",
+        "Weeks 8–10 — Tune sensitivity and control false alarms",
+        "Weeks 11–12 — Build the safety dashboard and evaluate timeliness"
+      ],
+      "skills": ["Sequential/safety statistics", "Signal detection", "Monitoring dashboards"],
+      "impact": [
+        "Earlier detection of safety signals with statistical rigor",
+        "A safety-first template that respects regulatory caution"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "skills-tool",
+      "track": "workforce",
+      "title": "AI-Skills Competency & Upskilling-Path Tool",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "Statisticians need to know what to learn for the next 3–10 years as roles converge across stats, ML, and domain expertise — but there is no structured, personalized path.",
+      "build": "A competency framework plus a self-assessment that identifies gaps and recommends a tailored upskilling path with concrete resources.",
+      "deliverables": [
+        "Interactive dashboard visualizing a person's competency profile and recommended path",
+        "Evaluation results: face-validity feedback from sample personas and reviewers",
+        "Reusable competency framework and self-assessment instrument"
+      ],
+      "plan": [
+        "Week 1 — Define the competency framework from advisory themes and literature",
+        "Week 2 — Build the self-assessment questionnaire",
+        "Week 3 — Implement gap-to-resource recommendation logic",
+        "Week 4 — Build the profile dashboard and test with sample personas"
+      ],
+      "skills": ["Framework/taxonomy design", "Product thinking", "Lightweight app building"],
+      "impact": [
+        "Directly serves the PharmaDS talent program and its mentees",
+        "A shareable resource for career development across the community"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "dm-to-de",
+      "track": "workforce",
+      "title": "Data Manager to Data Engineer Transition Kit",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "As data management shifts toward data engineering, practitioners lack a concrete, hands-on bridge from their current skills to the new ones.",
+      "build": "A guided transition kit: a skills map plus a small, realistic hands-on project that takes a learner from data-management tasks to a modern data-engineering workflow.",
+      "deliverables": [
+        "Dashboard tracking progress through the transition project and skills acquired",
+        "Evaluation results: pre/post skills-check outcomes from a small pilot",
+        "Reusable curriculum, skills map, and hands-on project template"
+      ],
+      "plan": [
+        "Week 1 — Map data-management to data-engineering skills and gaps",
+        "Week 2 — Design a small hands-on data-engineering project",
+        "Week 3 — Build guided materials and a pre/post skills check",
+        "Week 4 — Pilot with a learner and build the progress dashboard"
+      ],
+      "skills": ["Curriculum design", "Data engineering basics", "Assessment design"],
+      "impact": [
+        "A concrete path for a workforce transition already underway",
+        "Reduces ramp time into data-engineering roles"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "vendor-landscape",
+      "track": "strategy",
+      "title": "AI-in-Pharma-DS Vendor Landscape",
+      "horizon": "Short-term",
+      "duration": "4 weeks",
+      "level": "Intro",
+      "problem": "The vendor and startup landscape is moving fast, and it is hard to track capabilities, gaps, and partnership opportunities.",
+      "build": "A categorized landscape of AI tools/vendors for pharma DS with a structured comparison and a short opportunity analysis.",
+      "deliverables": [
+        "Interactive dashboard to filter and compare vendors by function and capability",
+        "Evaluation results: coverage of the space and a reviewer-checked gap analysis",
+        "Structured, source-linked landscape dataset the community can maintain"
+      ],
+      "plan": [
+        "Week 1 — Define a taxonomy by function (doc-gen, programming, RWE, regulatory, ...)",
+        "Week 2 — Collect and structure vendor data from public sources",
+        "Week 3 — Build a comparison and filtering view",
+        "Week 4 — Analyze gaps/opportunities and finalize the dashboard"
+      ],
+      "skills": ["Market/landscape research", "Data structuring", "Analysis & synthesis", "Visualization"],
+      "impact": [
+        "Informs build-vs-buy and partnership decisions",
+        "A living reference the community can maintain"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    },
+    {
+      "id": "small-pharma-stack",
+      "track": "strategy",
+      "title": "Minimal AI Environment for Small/Mid Pharma",
+      "horizon": "Long-term",
+      "duration": "10–12 weeks",
+      "level": "Intermediate",
+      "problem": "Small biotechs and CROs cannot afford large AI infrastructure, yet still need a reproducible, compliant environment to run AI-assisted analyses.",
+      "build": "A reference open-source AI environment — open LLM + retrieval + evaluation + GxP-style audit logging — packaged as a deployable template with a cost/benefit analysis and adoption playbook.",
+      "deliverables": [
+        "Dashboard summarizing cost, performance, and usage of the reference stack",
+        "Evaluation results: cost/performance benchmarks vs. a hosted baseline",
+        "Deployable open-source template and an adoption playbook"
+      ],
+      "plan": [
+        "Weeks 1–3 — Assemble an open-source stack (open LLM, vector store, eval)",
+        "Weeks 4–7 — Add audit logging and versioning for GxP-style traceability",
+        "Weeks 8–10 — Benchmark cost and performance vs. a hosted baseline",
+        "Weeks 11–12 — Write the adoption playbook and build the cost dashboard"
+      ],
+      "skills": ["MLOps & open LLM deployment", "Cost/benefit analysis", "Compliance & audit logging"],
+      "impact": [
+        "Democratizes AI for organizations without big budgets",
+        "Enables the AI + CRO model to serve small biotech"
+      ],
+      "roles": { "mentor": "To be identified", "students": "To be identified" }
+    }
+  ]
+}
