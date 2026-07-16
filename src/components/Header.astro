@@ -1,11 +1,24 @@
 ---
 import site from "../data/site.json";
 
-const navItems = [
+type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
+const navItems: NavItem[] = [
   { label: "Program", href: "/program" },
   { label: "Short Courses", href: "/short-courses" },
   { label: "Call for Presentations", href: "/call-for-presentations" },
-  { label: "Career & Networking", href: "/career-growth" },
+  {
+    label: "Career & Networking",
+    href: "/career-growth",
+    children: [
+      { label: "Mentorship & Networking", href: "/career-growth" },
+      { label: "AI Projects", href: "/projects" },
+    ],
+  },
   { label: "Committee", href: "/committee" },
   { label: "Community", href: "/community" },
   { label: "Partnership", href: "/partnership" },
@@ -14,6 +27,8 @@ const navItems = [
 const { pathname } = Astro.url;
 const isActive = (href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
+const isGroupActive = (item: NavItem) =>
+  isActive(item.href) || (item.children ?? []).some((c) => isActive(c.href));
 ---
 
 <header class="site-header">
@@ -34,9 +49,28 @@ const isActive = (href: string) =>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         {navItems.map((item) => (
-          <li>
-            <a href={item.href} class={isActive(item.href) ? "active" : ""}>{item.label}</a>
-          </li>
+          item.children ? (
+            <li class="has-submenu">
+              <a
+                href={item.href}
+                class={isGroupActive(item) ? "active" : ""}
+                aria-haspopup="true"
+              >
+                {item.label}<span class="caret" aria-hidden="true">▾</span>
+              </a>
+              <ul class="submenu">
+                {item.children.map((c) => (
+                  <li>
+                    <a href={c.href} class={isActive(c.href) ? "active" : ""}>{c.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a href={item.href} class={isActive(item.href) ? "active" : ""}>{item.label}</a>
+            </li>
+          )
         ))}
       </ul>
       <a class="btn btn--primary btn--sm nav-cta" href="/registration">Register</a>
@@ -120,6 +154,38 @@ const isActive = (href: string) =>
   }
   .nav-cta { color: #fff !important; border-bottom: none !important; }
 
+  /* Dropdown submenu */
+  .has-submenu { position: relative; }
+  .caret { font-size: 0.7em; margin-left: 0.28em; color: currentColor; }
+  .site-nav .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0.35rem 0 0;
+    padding: 0.35rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    z-index: 60;
+  }
+  .has-submenu:hover > .submenu,
+  .has-submenu:focus-within > .submenu { display: flex; }
+  .site-nav .submenu li { border: none; }
+  .site-nav .submenu a {
+    display: block;
+    padding: 0.5rem 0.65rem;
+    border-radius: 6px;
+    border-bottom: none;
+    white-space: nowrap;
+  }
+  .site-nav .submenu a:hover { background: var(--bg-soft); }
+
   .nav-toggle { display: none; }
   .nav-burger {
     display: none;
@@ -164,6 +230,23 @@ const isActive = (href: string) =>
       padding: 0.9rem clamp(1rem, 4vw, 2rem);
       font-size: 1rem;
       border-bottom: none;
+    }
+    .caret { display: none; }
+    .site-nav .submenu {
+      display: flex;
+      position: static;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .site-nav .submenu li { border-top: 1px solid var(--border); }
+    .site-nav .submenu a {
+      padding: 0.8rem clamp(2rem, 8vw, 3rem);
+      font-size: 0.95rem;
+      color: var(--text-soft);
     }
     .nav-cta {
       margin: 1rem clamp(1rem, 4vw, 2rem) 0;
