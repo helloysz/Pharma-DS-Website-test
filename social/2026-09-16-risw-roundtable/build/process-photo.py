@@ -23,5 +23,5 @@ def finish(crop, name, width=2400):
     print(name, c.size)
 
 
-finish(im.crop((0, int(0.125 * H), W, int(0.795 * H))), 'group_wide.jpg')  # drops table + ceiling
+finish(im.crop((0, int(0.125 * H), W, int(0.775 * H))), 'group_wide.jpg')  # drops table + ceiling
 finish(im.crop((0, int(0.055 * H), W, int(0.860 * H))), 'group_full.jpg')  # gentler crop

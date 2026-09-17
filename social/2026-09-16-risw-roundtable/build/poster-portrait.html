@@ -1,80 +1,52 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="poster.css">
 <style>
   .poster{width:1080px;height:1350px;}
-  .topbar{padding:40px 52px 26px;align-items:center;}
-  .mark{width:56px;height:56px;font-size:22px;}
-  .wordmark{font-size:30px;}
-  .hostline{font-size:14px;}
+  .topbar{padding:44px 48px 26px;}
+  .textblock,.next,.footline{margin-left:48px;margin-right:48px;}
+  .topbar .wordmark{font-size:30px;}
   .sitechip{font-size:15px;padding:11px 20px;}
-  /* full-width photo band, nobody cropped out */
-  .hero{position:relative;flex:0 0 auto;}
-  .hero img{width:100%;display:block;}
-  .hero::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(to top, rgba(6,12,38,.92) 0%, rgba(6,12,38,.30) 22%, rgba(6,12,38,0) 44%);}
-  .hero::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;z-index:3;
-    background:linear-gradient(90deg,#18c2c9 0%,#4257e0 55%,#ffb648 100%);}
-  .caption{z-index:3;padding:0 52px 22px;}
-  .caption b{font-size:19px;}
-  .caption i{font-size:15px;margin-top:4px;}
-  .zoomtag{padding:8px 15px;font-size:13px;}
-  .body{padding:34px 52px 40px;display:flex;flex-direction:column;flex:1;}
+  .shot{border-radius:0;}
+  .stamp{padding:8px 15px;font-size:13.5px;}
+  .meta{font-size:15.5px;margin-top:16px;text-align:center;}
+  .textblock{margin-top:auto;}
   .eyebrow{font-size:16px;}
-  h1{font-size:66px;margin-top:14px;}
-  .sub{font-size:20.5px;margin-top:18px;max-width:50ch;}
-  .facts{gap:24px;margin-top:auto;}
-  .fact b{font-size:23px;min-height:56px;}
-  .fact span{font-size:11.5px;margin-top:2px;}
-  .cta{margin-top:24px;padding:22px 26px;}
-  .cta .lead{font-size:23px;}
-  .cta .note{font-size:14.5px;}
-  .pill{padding:15px 26px;font-size:16px;}
-  .tags{font-size:14px;margin-top:16px;text-align:center;}
+  h1{font-size:72px;margin-top:16px;}
+  .sub{font-size:20.5px;margin-top:20px;max-width:44ch;}
+  .next{margin-top:30px;padding:14px 22px;font-size:17px;}
+  .footline{margin-top:26px;padding-top:20px;margin-bottom:38px;font-size:15px;}
 </style></head><body>
 <div class="poster">
-  <div class="topbar">
+  <div class="bg" style="background-image:url('../assets/group-photo-poster-crop.jpg')"></div>
+  <div class="veil"></div>
+
+  <div class="layer topbar">
     <div class="brand">
-      <div class="mark">DS</div>
+      <img src="../assets/pharmads-logo.svg" width="58" height="58" alt="PharmaDS">
       <div>
-        <div class="wordmark">Pharma<span>DS</span></div>
-        <div class="hostline">Hosted by the New England Statistical Society</div>
+        <div class="wordmark">PharmaDS</div>
+        <div class="hostline">A community of the New England Statistical Society</div>
       </div>
     </div>
     <div class="sitechip">phds.nestat.org</div>
   </div>
 
-  <div class="hero">
+  <div class="layer shot">
+    <div class="rule"></div>
     <img src="../assets/group-photo-poster-crop.jpg" alt="PharmaDS Community Roundtable group photo">
-    <div class="caption">
-      <div>
-        <b>PharmaDS Community Roundtable</b>
-        <i>Sept 16, 2026 · ASA Regulatory-Industry Statistics Workshop · Bethesda, MD</i>
-      </div>
-      <div class="zoomtag"><span class="dot"></span>+ joined on Zoom</div>
-    </div>
+    <div class="stamp"><span class="dot"></span>+ joined on Zoom</div>
+  </div>
+  <div class="layer meta">PharmaDS Community Roundtable · Sept 16, 2026 · RISW 2026 · Bethesda, MD</div>
+
+  <div class="layer textblock">
+    <div class="eyebrow">Thank you</div>
+    <h1>You filled the room.<br>So <em>let's fill 2027.</em></h1>
+    <p class="sub">No slides, no panel — three and a half hours of people saying what they're
+      really seeing in their own work, and where pharma AI should go next.</p>
   </div>
 
-  <div class="body">
-    <div class="eyebrow">Roundtable recap · RISW 2026</div>
-    <h1>This is where<br>PharmaDS 2027 <em>starts.</em></h1>
-    <p class="sub">Thank you to everyone who gave us their Day 1 — in the room and on Zoom.
-      Nobody came with slides. Everyone came with what they're seeing in their own work.
-      That is exactly the community we set out to build.</p>
-
-    <div class="facts">
-      <div class="fact"><b>3.5 hours</b><span>Of unscripted discussion</span></div>
-      <!-- swap-in if you want to highlight the mix of attendees:
-      <div class="fact"><b>Industry · Agency<br>· Academia</b><span>Around one table</span></div> -->
-      <div class="fact"><b>In the room<br>+ on Zoom</b><span>Hybrid by design</span></div>
-      <div class="fact"><b>The 2027 theme</b><span>Shaped by this room</span></div>
-    </div>
-
-    <div class="cta">
-      <div>
-        <div class="lead">A kickoff, not a finish line.</div>
-        <div class="note">Next up: what the room actually told us — the survey results.</div>
-      </div>
-      <div class="pill">Follow PharmaDS →</div>
-    </div>
-    <div class="tags">#PharmaDS · #RISW2026 · #PharmaAI · #DataScience · #Biostatistics</div>
+  <div class="layer next"><span class="tick">▸</span> Coming soon: what the room told us</div>
+  <div class="layer footline">
+    <span>Follow PharmaDS · phds.nestat.org</span>
+    <span class="tags">#PharmaDS · #RISW2026 · #PharmaAI</span>
   </div>
 </div></body></html>

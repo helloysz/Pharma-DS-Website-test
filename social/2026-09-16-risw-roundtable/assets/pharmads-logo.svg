@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b4aff"/><stop offset="1" stop-color="#1f28d8"/>
+    </linearGradient>
+    <linearGradient id="bars" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fb4ff"/><stop offset="1" stop-color="#5ad7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#tile)"/>
+  <!-- density curve: long left tail, sharp peak, short right tail, sitting on a baseline -->
+  <path fill="#ffffff"
+        d="M13 44 h5 c3.2 0 4.6-1.1 5.6-3.4 C25.6 34 26.8 20 30.2 20 c3.4 0 4.5 13.8 6.4 20.4 C37.4 43 38.6 44 41 44 h1 v3.2 H13 Z"/>
+  <!-- ascending bars -->
+  <rect x="44"   y="40.4" width="3.4" height="6.8" rx="1.7" fill="url(#bars)"/>
+  <rect x="49.6" y="33.2" width="3.4" height="14"  rx="1.7" fill="url(#bars)"/>
+  <rect x="55.2" y="25.6" width="3.4" height="21.6" rx="1.7" fill="url(#bars)"/>
+</svg>
