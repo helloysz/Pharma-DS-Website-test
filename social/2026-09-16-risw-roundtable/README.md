@@ -24,27 +24,22 @@ or a printed program uses.
 
 The group photo runs full-bleed at the top like a printed plate — a thin gold hairline rule above
 and below it — graded toward the same ink/parchment/gold palette (see below) rather than left as a
-flat phone photo, with a Bethesda/date stamp underneath in italic serif and the PharmaDS mark set
-directly into a bare patch of wall in the photo (top right), like a stamp rather than a UI badge.
-The two content sections below it are hairline-ruled, tracked-caps labels in the announcement's
-own hierarchy pattern ("Thank you for joining us at" / **RISW 2026** / event name / strapline in
-quotes):
+flat phone photo, with a Bethesda/date stamp underneath in italic serif. The two content sections
+below it are hairline-ruled, tracked-caps labels in the announcement's own hierarchy pattern
+("Thank you for joining us at" / **RISW 2026** / event name / strapline in quotes):
 
 - **"What the room gave us"** — three em-dash lines on what actually happened in the room.
 - **"What's coming next"** — a roman-numeral table of contents (I / II / III) for the next three
   posts, deliberately worded as headlines rather than restating the same two nouns as the list
   above it.
 
-The poster closes with the thank-you line, a small "phds.nestat.org" credit, and the hashtags —
-no logo card at the foot; the only logo on the poster is the PharmaDS mark on the photo itself.
+The foot keeps the announcement's own white logo panel — a plain hairline-bordered card, not a
+drop-shadowed one — carrying the RISW/ASA logo and the PharmaDS lockup. It's the only branding on
+the poster; no logo sits on the photo itself.
 
 It carries only what the announcement didn't: what came out of the room, and what's coming next.
 Date, time, room, Zoom details, agenda and facilitators are all left off on purpose — the
 announcement post already had them.
-
-`assets/risw-asa-logo.png` (the RISW/ASA logo, cropped from the announcement poster's own footer
-panel) isn't used on this poster anymore, but is kept in `assets/` in case a later post in the
-series wants it.
 
 ## The photo grade
 
@@ -68,12 +63,11 @@ unsharp mask for LinkedIn's downscaling. Nobody is cropped out of frame.
 tile, white ECG trace, three ascending bars in `#b6adfb` / `#7db1fd` / `#02c0d1`, geometry and
 colours measured off the artwork.
 
-On the poster it appears alone (no wordmark) as a small watermark set into the empty wall space
-at the top right of the group photo, `.shot .brandmark` in `build/poster.css`/the per-format
-`<style>` block — a drop shadow keeps it legible against the room's own lighting. Position is
-hand-tuned per format (the portrait and square crops show different parts of the photo), so if you
-re-crop or re-grade the photo, re-check that patch of wall is still clear before re-rendering. If
-you have the original logo vector, drop it in at `assets/pharmads-logo.svg` and re-render.
+The lockup next to it follows the event poster's logo: two-tone wordmark in Montserrat ExtraBold
+(`Pharma` white, `DS` lavender `#a99bff` — the light-background original is navy `#003078` +
+violet `#5448d8`) over the tagline "Data-driven. Future-defining." If you have the original logo
+vector, drop it in at `assets/pharmads-logo.svg` and re-render; the wordmark lives in
+`build/poster.css` (`.wordmark`).
 
 ## Re-rendering the posters
 

@@ -90,9 +90,8 @@ what's the one pharma AI question you'd want this group to take on next?
 
 **On it (new, or identity):** the thank-you headline, the event name, the strapline
 *"Shape the Future of Pharma AI · Build the Community · Get Involved"*, a "Bethesda, MD ·
-September 16, 2026" stamp, the PharmaDS mark set into the wall in the photo itself (top right),
-three lines under "What the room gave us," a three-entry table of contents for what's coming, the
-ASA thank-you, and a closing "phds.nestat.org" credit.
+September 16, 2026" stamp, three lines under "What the room gave us," a three-entry table of
+contents for what's coming, the ASA thank-you, and the RISW + PharmaDS logo panel at the foot.
 
 **Deliberately left off, because the announcement already said it:** the time (1:00–4:30 PM EST),
 Room White Oak B, the Bethesda North Marriott, the Zoom ID and passcode, the two agenda items,
@@ -108,11 +107,10 @@ tagged.
 - *"Agreement to open pharma AI beyond statisticians"* — a genuinely broad consensus (Jimeng,
   Stephen, Shui Xianjun, Qin Ji Liu and others all raised it independently). The poster keeps
   it to that one line; who exactly it should include is a bigger conversation than a bullet.
-- *"People teaming up to grow pharma AI, with PharmaDS as the ground field — webinars,
-  mentorship"* — the two growth workstreams given named owners in the minutes (Jeen Liu on
-  webinars, Yuqian on the mentorship program), not an unattributed aspiration. Eric Scott's
-  proposed AI-benchmarking initiative is real too, but the line reads better naming two examples
-  than three.
+- *"People teaming up to grow pharma AI, with PharmaDS as the ground field"* — reflects the
+  growth workstreams given named owners in the minutes (Jeen Liu on webinars, Yuqian on the
+  mentorship program, Eric Scott on an AI-benchmarking initiative), without listing them by name
+  on the poster itself.
 
 The "what's coming next" table of contents keeps its job as a preview of posts 2–4, but now
 carries one real fact from the minutes: the 2027 theme decision is expected **within two weeks**
