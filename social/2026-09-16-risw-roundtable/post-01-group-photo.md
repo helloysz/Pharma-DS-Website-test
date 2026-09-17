@@ -105,9 +105,9 @@ tagged.
   the Future of Pharma") and Theme B ("AI-Enabled Drug Development") were both presented; Option C,
   a hybrid, was the direction most participants leaned toward, though no final call was made in
   the room.
-- *"Agreement to open pharma AI beyond statisticians — to programmers, clinicians, data managers,
-  and more"* — a genuinely broad consensus (Jimeng, Stephen, Shui Xianjun, Qin Ji Liu and others
-  all raised it independently).
+- *"Agreement to open pharma AI beyond statisticians"* — a genuinely broad consensus (Jimeng,
+  Stephen, Shui Xianjun, Qin Ji Liu and others all raised it independently). The poster keeps
+  it to that one line; who exactly it should include is a bigger conversation than a bullet.
 - *"People teaming up to grow pharma AI, with PharmaDS as the ground field — webinars, mentorship,
   benchmarking"* — the three growth workstreams actually discussed and given named owners in the
   minutes (Jeen Liu on webinars, Yuqian on the mentorship program, Eric Scott on an AI-benchmarking
