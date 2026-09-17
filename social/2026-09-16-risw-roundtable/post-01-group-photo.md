@@ -19,12 +19,13 @@ out of the room, and what's coming next. The one exception is a small "Bethesda,
 
 The PharmaDS committee just met for the first time — in person, at RISW 2026. 🎉
 
-Not a kickoff meeting. The start of the community. What happened is in the picture.
+This wasn't just a conversation. People teamed up to grow pharma AI, with PharmaDS as the
+ground field. See what came out of it — and what's next — in the picture.
 
-Thank you to everyone who showed up in Bethesda and on Zoom, and to the ASA Biopharmaceutical
+Thank you to everyone who joined us in Bethesda and on Zoom, and to the ASA Biopharmaceutical
 Section for hosting us.
 
-This is Day One. Follow PharmaDS and be part of what's next → phds.nestat.org
+Follow PharmaDS and grow with us → phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI
 
