@@ -1,27 +1,30 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="poster.css">
 <style>
   .poster{width:1200px;height:1200px;}
-  .topbar{padding:40px 52px 24px;}
-  .textblock,.next,.footline{margin-left:52px;margin-right:52px;}
-  .topbar .wordmark{font-size:32px;}
-  .sitechip{font-size:15px;padding:11px 20px;}
-  .shot{border-radius:0;}
-  .stamp{padding:8px 15px;font-size:13.5px;}
-  .meta{font-size:15.5px;margin-top:16px;text-align:center;}
-  .textblock{margin-top:auto;}
-  .eyebrow{font-size:16px;}
-  h1{font-size:62px;margin-top:14px;}
-  .sub{font-size:20px;margin-top:18px;max-width:58ch;}
-  .next{margin-top:26px;padding:13px 21px;font-size:16.5px;}
-  .footline{margin-top:22px;padding-top:18px;margin-bottom:34px;font-size:14.5px;}
+  .topbar{padding:32px 46px 18px;}
+  .wordmark{font-size:29px;} .tagline{font-size:9.5px;} .sitechip{font-size:14px;padding:10px 18px;}
+  .shot{flex:0 0 auto;margin:0 46px;border-radius:14px;}
+  .caption{padding:16px 22px 14px;}
+  .caption b{font-size:18px;} .caption i{font-size:14.5px;margin-top:3px;}
+  .zoomtag{padding:7px 14px;font-size:13px;}
+  .body{padding:20px 46px 28px;display:flex;flex-direction:column;flex:1;}
+  .eyebrow{font-size:14.5px;}
+  h1{font-size:42px;margin-top:9px;}
+  .sub{font-size:17.5px;margin-top:11px;max-width:84ch;}
+  .strip{gap:20px;margin-top:18px;}
+  .strip span{font-size:10px;} .strip b{font-size:15.5px;}
+  .cols{gap:18px;margin-top:16px;}
+  .card{padding:16px 18px 17px;}
+  .card h2{font-size:11.5px;} .card li{font-size:15px;} .card ul{padding:0;}
+  .credits{font-size:13.5px;margin-top:15px;}
+  .cta{margin-top:auto;padding:16px 22px;}
+  .cta .lead{font-size:20px;} .cta .note{font-size:14px;} .pill{padding:13px 22px;font-size:15px;}
+  .tags{font-size:13px;margin-top:12px;}
 </style></head><body>
 <div class="poster">
-  <div class="bg" style="background-image:url('../assets/group-photo-poster-crop.jpg')"></div>
-  <div class="veil"></div>
-
-  <div class="layer topbar">
+  <div class="topbar">
     <div class="brand">
-      <img src="../assets/pharmads-logo.svg" width="58" height="58" alt="PharmaDS">
+      <img src="../assets/pharmads-logo.svg" width="54" height="54" alt="PharmaDS">
       <div>
         <div class="wordmark">Pharma<span class="ds">DS</span></div>
         <div class="tagline">Data-driven. Future-defining.</div>
@@ -30,23 +33,58 @@
     <div class="sitechip">phds.nestat.org</div>
   </div>
 
-  <div class="layer shot">
+  <div class="shot">
     <div class="rule"></div>
-    <img src="../assets/group-photo-poster-crop.jpg" alt="PharmaDS Community Roundtable group photo">
-    <div class="stamp"><span class="dot"></span>+ joined on Zoom</div>
-  </div>
-  <div class="layer meta">PharmaDS Community Roundtable · Sept 16, 2026 · RISW 2026 · Bethesda, MD</div>
-
-  <div class="layer textblock">
-    <div class="eyebrow">Thank you</div>
-    <h1>You filled the room. So <em>let's fill 2027.</em></h1>
-    <p class="sub">No slides, no panel — three and a half hours of people saying what they're
-      really seeing in their own work, and where pharma AI should go next.</p>
+    <img src="../assets/group-photo-poster-crop.jpg" alt="PharmaDS committee and community members at the first round table">
+    <div class="caption">
+      <div>
+        <b>First PharmaDS Committee Meet-Up & Community Round Table</b>
+        <i>“Shape the Future of Pharma AI · Build the Community · Get Involved”</i>
+      </div>
+      <div class="zoomtag"><span class="dot"></span>+ joined on Zoom</div>
+    </div>
   </div>
 
-  <div class="layer next"><span class="tick">▸</span> Coming soon: what the room told us</div>
-  <div class="layer footline">
-    <span>A community of the New England Statistical Society · phds.nestat.org</span>
-    <span class="tags">#PharmaDS · #RISW2026 · #PharmaAI</span>
+  <div class="body">
+    <div class="eyebrow">Thank you for joining us</div>
+    <h1>Our committee met in person for the <em>first time.</em></h1>
+    <p class="sub">Committee members, advisors and community joined us at RISW 2026 — in the room and on Zoom.</p>
+
+    <div class="strip">
+      <div><span>When</span><b>Wed, Sept 16, 2026<br>1:00 – 4:30 PM EST</b></div>
+      <div><span>Where</span><b>White Oak B, Bethesda<br>North Marriott · + Zoom</b></div>
+      <div><span>Hosted within</span><b>RISW 2026, by the ASA<br>Biopharmaceutical Section</b></div>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <h2>On the agenda</h2>
+        <ul>
+          <li><i>01</i><span>The 2027 conference theme</span></li>
+          <li><i>02</i><span>How to build a pharma AI community together</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="violet">Coming next</h2>
+        <ul>
+          <li><i>01</i><span>Survey results from the room</span></li>
+          <li><i>02</i><span>The 2027 theme &amp; topics</span></li>
+          <li><i>03</i><span>What makes PharmaDS different</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="credits">Facilitated by <b>Yuqian Shen</b> (Sanofi) · <b>Jeen Liu</b> (Regeneron) ·
+      <b>Eric Zhang</b> (Eikon Therapeutics) · <b>Peng Zhang</b> (CIMS Global). Thank you to the
+      ASA Biopharmaceutical Section for hosting the venue.</p>
+
+    <div class="cta">
+      <div>
+        <div class="lead">Want a say in PharmaDS 2027?</div>
+        <div class="note">Follow us on LinkedIn — the survey results land first.</div>
+      </div>
+      <div class="pill">phds.nestat.org →</div>
+    </div>
+    <div class="tags">#PharmaDS · #RISW2026 · #PharmaAI · #Biostatistics · #DataScience</div>
   </div>
 </div></body></html>

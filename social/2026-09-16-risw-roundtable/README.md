@@ -14,12 +14,13 @@ Follow-up campaign for the PharmaDS Community Roundtable (Sept 16, 2026, RISW 20
 - `build/` — poster source (HTML + CSS, `render.sh`, `fetch-fonts.py`, `process-photo.py`)
   so posts 2–4 can reuse the layout
 
-## The poster is the photo
+## Poster layout
 
-The group shot runs full-bleed across the top, and the same shot — blurred and darkened — fills
-the space behind the text, so the whole canvas is the picture rather than a photo dropped into a
-coloured card. Branding stays light: logo and site top, event caption under the photo, thank-you
-headline, one soft "coming soon" line.
+Brand lockup and site at the top, the group photo full-bleed with the event title and strapline
+over it, then the information: a thank-you headline, a three-up logistics strip (when / where /
+hosted within), two cards side by side ("On the agenda" and "Coming next"), the facilitator and
+sponsor credits, and a follow CTA. Everything a reader needs is on the image — the caption adds
+warmth and tags, not facts.
 
 ## Photo edits applied to the original
 
