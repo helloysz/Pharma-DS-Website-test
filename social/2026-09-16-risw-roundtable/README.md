@@ -31,9 +31,13 @@ unsharp mask for LinkedIn's downscaling. Nobody is cropped out of frame.
 
 `assets/pharmads-logo.svg` is the PharmaDS mark rebuilt as vector from the deck: navy `#003889`
 tile, white ECG trace, three ascending bars in `#b6adfb` / `#7db1fd` / `#02c0d1`, geometry and
-colours measured off the slide. The wordmark beside it is set in Tinos (Times-metric serif) to
-match the lockup. If you have the original vector, drop it in at that path and re-render —
-nothing else needs to change.
+colours measured off the artwork.
+
+The lockup next to it follows the event poster's logo: two-tone wordmark in Montserrat ExtraBold
+(`Pharma` white, `DS` lavender `#a99bff` — the light-background original is navy `#003078` +
+violet `#5448d8`) over the tagline "Data-driven. Future-defining." If you have the original logo
+vector, drop it in at `assets/pharmads-logo.svg` and re-render; the wordmark lives in
+`build/poster.css` (`.wordmark`).
 
 ## Re-rendering the posters
 

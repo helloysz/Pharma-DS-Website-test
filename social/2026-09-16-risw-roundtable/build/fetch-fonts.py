@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Download the brand webfonts (latin subset) used by the posters into ./fonts.
 
-Inter + Space Grotesk for the poster typography, Tinos for the logo wordmark
-(Times-metric serif, matching the PharmaDS lockup).
+Inter + Space Grotesk for the poster typography, Montserrat ExtraBold for the
+PharmaDS wordmark in the logo lockup.
 """
 import os
 import re
@@ -11,7 +11,7 @@ import subprocess
 URL = ("https://fonts.googleapis.com/css2?"
        "family=Inter:wght@400;500;600;700;800;900"
        "&family=Space+Grotesk:wght@500;600;700"
-       "&family=Tinos:wght@400;700&display=swap")
+       "&family=Montserrat:wght@700;800&display=swap")
 # The full Chrome UA matters: with a short UA, Google Fonts serves legacy TTF instead of woff2.
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/120.0.0.0 Safari/537.36")

@@ -20,14 +20,21 @@ This is the room.
 Yesterday afternoon, on Day 1 of RISW 2026, the first PharmaDS Community Roundtable filled a room
 in Bethesda — plus a Zoom link full of people who didn't want to miss it.
 
-No slides. No panel. Three and a half hours of people from across the pharma world saying what
-they are actually seeing in their own work, and where this field should go next.
+No slides. No panel. Three and a half hours on one question with three parts — shape the future
+of pharma AI, build the community, get involved — and a room full of people saying what they are
+actually seeing in their own work.
+
+Two things were on the agenda: the theme for the 2027 conference, and how we build a pharma AI
+community together. Both of them needed the room more than they needed us.
 
 Thank you to everyone in this photo, and to everyone who joined us online. You gave us your Day 1
 afternoon at a busy workshop, and in return you gave this community its starting point.
 
 Thank you to the **ASA Biopharmaceutical Section** for sponsoring the venue and making the room
-possible, and to the **ASA Regulatory-Industry Statistics Workshop** for hosting us on Day 1.
+possible, and to the **Regulatory-Industry Statistics Workshop** for giving us Day 1 of the week.
+
+Facilitated by Yuqian Shen (Sanofi), Jeen Liu (Regeneron), Eric Zhang (Eikon Therapeutics) and
+Peng Zhang (CIMS Global).
 
 We left with more than a good conversation: a live survey of what this community actually cares
 about, and the first shape of a theme for PharmaDS 2027. We'll start sharing what came out of that
@@ -51,8 +58,9 @@ inside pharma right now, and where this field needs to go next.
 Thank you to everyone in this photo and everyone who joined online. You didn't come with answers,
 you came with what you're seeing in your own work. That's what made the room work.
 
-Thank you also to the **ASA Biopharmaceutical Section** for sponsoring the venue, and to the ASA
-Regulatory-Industry Statistics Workshop for giving us Day 1.
+Thank you also to the **ASA Biopharmaceutical Section** for sponsoring the venue, and to the
+Regulatory-Industry Statistics Workshop for giving us Day 1. Facilitated by Yuqian Shen (Sanofi),
+Jeen Liu (Regeneron), Eric Zhang (Eikon Therapeutics) and Peng Zhang (CIMS Global).
 
 There's more from that room to share — the survey results first, then where 2027 is heading.
 Follow PharmaDS and you won't miss it. phds.nestat.org
@@ -78,6 +86,9 @@ Zoom): what's the one pharma AI question you'd want a room like this to take on 
       credit shows up on their page too. Same for the American Statistical Association and the
       New England Statistical Society. (Deliberately *not* on the poster — tagging only works in
       the post text.)
+- [ ] **Tag the four facilitators and their companies** on the credit line — Sanofi, Regeneron,
+      Eikon Therapeutics, CIMS Global. You're on that line yourself; reword it in the third person
+      or drop your own name if you'd rather not self-credit in your own post.
 - [ ] Add alt text on upload: *"Fourteen PharmaDS Community Roundtable participants standing
       together in front of the event slide at RISW 2026, Bethesda, MD."*
 - [ ] Reply to every comment in the first 2 hours; that window decides how far it travels.
@@ -86,10 +97,18 @@ Zoom): what's the one pharma AI question you'd want a room like this to take on 
 - [ ] Keep the "what's next" soft, as written. The point of post 1 is gratitude — the teaser is
       just a reason to follow, not an agenda.
 
-## Facts used in the poster (verified against the event announcement)
+## Facts used in the poster (verified against the event poster and announcement)
 
-- PharmaDS Community Roundtable, Wednesday **Sept 16, 2026, 1:00–4:30 PM ET** ("three and a half hours")
-- Room White Oak B, Bethesda North Marriott, Rockville MD — Day 1 of the **ASA
-  Regulatory-Industry Statistics Workshop (RISW) 2026**
+- PharmaDS Community Roundtable, Wednesday **Sept 16, 2026, 1:00–4:30 PM EST** ("three and a half hours")
+- Roundtable strapline: *"Shape the Future of Pharma AI • Build the Community • Get Involved"*
+- Room White Oak B, **Bethesda North Marriott Hotel & Conference Center**, Rockville MD — Day 1 of
+  the **Regulatory-Industry Statistics Workshop (RISW) 2026**, Sept 16–18, hosted by the ASA
+  Biopharmaceutical Section
 - Hybrid: in-person **+ Zoom** ("+ joined on Zoom")
-- Agenda: the theme for PharmaDS 2027 and the direction of the pharma AI field
+- On the agenda: the 2027 conference theme, and how to build a pharma AI community together
+- Facilitators: Yuqian Shen, Ph.D. (Co-Chair, Statistical Project Leader, Sanofi) · Jeen Liu, Ph.D.
+  (Leading Advisor; VP & Head of Biostatistics and Data Management, Regeneron) · Eric Zhang, Ph.D.
+  (Theme & Session Planning Stream Lead; Senior Director of Biostatistics, Eikon Therapeutics) ·
+  Peng Zhang, Ph.D. (Speaker & Instructor Invitation Stream Lead; Associate Director, CIMS Global)
+- Brand lockup on the poster follows the event poster's logo: two-tone wordmark (Montserrat
+  ExtraBold) and the tagline "Data-driven. Future-defining."
