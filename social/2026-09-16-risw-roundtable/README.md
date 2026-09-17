@@ -11,7 +11,8 @@ Follow-up campaign for the PharmaDS Community Roundtable (Sept 16, 2026, RISW 20
   - `group-photo-enhanced.jpg` — the group photo on its own, cropped and colour-corrected
   - `group-photo-poster-crop.jpg` — the wide crop used inside the posters
   - `pharmads-logo.svg` — logo mark (density curve + ascending bars), see caveat below
-- `build/` — poster source (HTML + CSS + render script) so posts 2–4 can reuse the layout
+- `build/` — poster source (HTML + CSS, `render.sh`, `fetch-fonts.py`, `process-photo.py`)
+  so posts 2–4 can reuse the layout
 
 ## The poster is the photo
 
@@ -26,12 +27,13 @@ Cropped out the cable-covered foreground table and the excess ceiling, so the fr
 group; brightness +11%, contrast +12%, saturation +8% to lift the dim hotel-meeting-room light;
 unsharp mask for LinkedIn's downscaling. Nobody is cropped out of frame.
 
-## Logo caveat
+## Logo
 
-`assets/pharmads-logo.svg` is a **redrawn** version of the logo on the event slide (blue rounded
-tile, white density curve, three ascending bars) — the repo had no logo file to use, so it was
-rebuilt from the photo. If you have the original vector or PNG, drop it in at that path and
-re-render; nothing else needs to change.
+`assets/pharmads-logo.svg` is the PharmaDS mark rebuilt as vector from the deck: navy `#003889`
+tile, white ECG trace, three ascending bars in `#b6adfb` / `#7db1fd` / `#02c0d1`, geometry and
+colours measured off the slide. The wordmark beside it is set in Tinos (Times-metric serif) to
+match the lockup. If you have the original vector, drop it in at that path and re-render —
+nothing else needs to change.
 
 ## Re-rendering the posters
 
