@@ -14,14 +14,27 @@ Follow-up campaign for the PharmaDS Community Roundtable (Sept 16, 2026, RISW 20
 - `build/` — poster source (HTML + CSS, `render.sh`, `fetch-fonts.py`, `process-photo.py`)
   so posts 2–4 can reuse the layout
 
-## Poster layout
+## Poster layout — an editorial/print treatment, not a tech-dashboard one
 
-Built as a sibling of the announcement poster, so the two read as one series: a single
-photographic field (the group shot sharp at the top, the same shot blurred behind the type below),
-white left-aligned headings in the announcement's hierarchy ("Thank you for joining us at" /
-**RISW 2026** / event name), the strapline in italics, hairline rules with letterspaced section
-labels, a translucent bordered panel for "What's coming next", and the announcement's own white
-logo panel at the foot carrying the RISW/ASA logo and the PharmaDS lockup.
+Redesigned around a museum-catalog mood: a deep ink-navy canvas, warm parchment-cream type, and
+antique gold as the one accent color — no neon glows, no rounded UI cards. Typography is Fraunces
+(a serif built for this kind of display work, italic for the strapline, the caption and the
+thank-you line) paired with Inter for labels and body copy, the same pairing a gallery invitation
+or a printed program uses.
+
+The group photo runs full-bleed at the top like a printed plate — a thin gold hairline rule above
+and below it — graded toward the same ink/parchment/gold palette (see below) rather than left as a
+flat phone photo, with a Bethesda/date stamp underneath in italic serif. The two content sections
+below it are hairline-ruled, tracked-caps labels in the announcement's own hierarchy pattern
+("Thank you for joining us at" / **RISW 2026** / event name / strapline in quotes):
+
+- **"What the room gave us"** — three em-dash lines on what actually happened in the room.
+- **"What's coming next"** — a roman-numeral table of contents (I / II / III) for the next three
+  posts, deliberately worded as headlines rather than restating the same two nouns as the list
+  above it.
+
+The foot keeps the announcement's own white logo panel — now a plain hairline-bordered card, not a
+drop-shadowed one — carrying the RISW/ASA logo and the PharmaDS lockup.
 
 It carries only what the announcement didn't: what came out of the room, and what's coming next.
 Date, time, room, Zoom details, agenda and facilitators are all left off on purpose — the
@@ -29,6 +42,16 @@ announcement post already had them.
 
 `assets/risw-asa-logo.png` is cropped from the announcement poster's own footer panel and
 upscaled; replace it with the original ASA/RISW logo file if you have one.
+
+## The photo grade
+
+`assets/group-photo-fineart.jpg` is the group photo run through a fine-art grade rather than left
+as a corrected phone photo: a light desaturation, a soft duotone (ink-navy shadows → warm
+parchment highlights) blended in at ~22%, a gentle vignette, and fine print grain — a printed
+photograph, not a screen grab. `build/process-photo.py` does the whole pipeline from the original
+photo (crop → colour-correct → grade); run it and copy `group_fineart.jpg` over this file to
+regenerate. `assets/grain-tile.png` is a small tileable noise texture laid over the whole poster
+at low opacity (`.grain`, `mix-blend-mode: overlay`) for the same printed-paper feel.
 
 ## Photo edits applied to the original
 

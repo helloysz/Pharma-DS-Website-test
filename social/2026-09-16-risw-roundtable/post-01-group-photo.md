@@ -90,15 +90,22 @@ what's the one pharma AI question you'd want this group to take on next?
 
 **On it (new, or identity):** the thank-you headline, the event name, the strapline
 *"Shape the Future of Pharma AI · Build the Community · Get Involved"*, a "Bethesda, MD ·
-September 16, 2026" stamp, "in the room + on Zoom", three lines on what came out of the room,
-the three follow-up posts, the ASA thank-you, and the RISW + PharmaDS logo panel.
+September 16, 2026" stamp, "in the room + on Zoom", three lines under "What the room gave us,"
+a three-entry table of contents for what's coming, the ASA thank-you, and the RISW + PharmaDS
+logo panel.
 
 **Deliberately left off, because the announcement already said it:** the time (1:00–4:30 PM EST),
 Room White Oak B, the Bethesda North Marriott, the Zoom ID and passcode, the two agenda items,
 and the facilitator line-up. Facilitators are in the first comment instead, where they can be
 tagged.
 
-**Check before the room's claims go out:** the three "what came out of the room" lines say a live
-survey was run, the 2027 theme took its first shape, and people signed up to keep building between
-conferences. Reword any that overstate what actually happened — they're in
-`build/poster-portrait.html`, one `<li>` each.
+**"What the room gave us" vs. "what's coming" — kept deliberately distinct.** The first list is
+about the room itself: real-time input on what the community needs, a first sketch of the 2027
+theme, and people teaming up to grow pharma AI with PharmaDS as the ground field. The second is a
+table of contents for the next three posts, phrased as headlines rather than restating the same
+nouns — "What the room told us," "Introducing the 2027 theme," "Where PharmaDS stands" — so a
+reader doesn't hit the same sentence twice.
+
+**Check before the room's claims go out:** the first list says live input was gathered, the 2027
+theme took its first sketch, and people teamed up to keep growing this. Reword any that overstate
+what actually happened — they're in `build/poster-portrait.html`, under "What the room gave us.
