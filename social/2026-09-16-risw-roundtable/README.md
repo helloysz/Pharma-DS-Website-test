@@ -3,16 +3,22 @@
 Follow-up campaign for the PharmaDS Community Roundtable (Sept 16, 2026, RISW 2026, Bethesda MD).
 
 - `post-01-group-photo.md` — post 1 copy (two versions), first comment, pre-flight checklist
+- `post-02-survey-results.md` — post 2 copy, same structure, plus a note on where each number
+  and quote on the poster came from
 - `series-plan.md` — the four-post sequence and what each one needs
 - `assets/` — upload-ready images
-  - `poster-portrait-1080x1350.jpg` — **primary LinkedIn asset**
-  - `poster-square-1200x1200.jpg` — square variant
-  - `poster-portrait-2160x2700.png`, `poster-square-2400x2400.png` — hi-res originals (print / reuse)
+  - `poster-portrait-1080x1350.jpg` / `post-02-poster-portrait-1080x1350.jpg` — **primary
+    LinkedIn asset** for each post
+  - `poster-square-1200x1200.jpg` / `post-02-poster-square-1200x1200.jpg` — square variants
+  - `*-2160x2700.png`, `*-2400x2400.png` — hi-res originals (print / reuse)
   - `group-photo-enhanced.jpg` — the group photo on its own, cropped and colour-corrected
-  - `group-photo-poster-crop.jpg` — the wide crop used inside the posters
+  - `group-photo-fineart.jpg` — the fine-art-graded crop used inside post 1's poster
   - `pharmads-logo.svg` — logo mark (density curve + ascending bars), see caveat below
-- `build/` — poster source (HTML + CSS, `render.sh`, `fetch-fonts.py`, `process-photo.py`)
-  so posts 2–4 can reuse the layout
+  - `risw-asa-logo.png` — RISW/ASA logo, cropped from the announcement's footer panel
+- `build/` — poster source: `poster.css` (shared design system, including post 2's `.stat` /
+  `.ladder` / `.words` components), `poster-portrait.html` / `poster-square.html` (post 1),
+  `poster2-portrait.html` / `poster2-square.html` (post 2), `render.sh`, `fetch-fonts.py`,
+  `process-photo.py` — so posts 3–4 can reuse the same layout
 
 ## Poster layout — an editorial/print treatment, not a tech-dashboard one
 

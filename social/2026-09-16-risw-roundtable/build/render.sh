@@ -30,3 +30,5 @@ PY
 
 render poster-portrait.html 1080 1350 poster_portrait.png
 render poster-square.html   1200 1200 poster_square.png
+render poster2-portrait.html 1080 1350 poster2_portrait.png
+render poster2-square.html   1200 1200 poster2_square.png

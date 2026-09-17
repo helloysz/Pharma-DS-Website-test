@@ -82,3 +82,34 @@ h1 small{display:block;font-family:"Fraunces",serif;font-weight:400;font-style:i
 .footpanel .wordmark .ds{color:#8a6a2e;}
 .footpanel .url{font-family:"Inter",sans-serif;font-weight:600;color:#5c4a20;margin-top:5px;letter-spacing:.01em;}
 .tags{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.03em;color:var(--gold-soft);text-align:center;}
+
+/* ============================================================
+   Post 2 additions: lead stat, maturity ladder, quote grid —
+   same design system (ink / parchment / gold, Fraunces + Inter)
+   ============================================================ */
+
+/* ---- hero stat: the single number, not a summary ---- */
+.stat{display:flex;align-items:baseline;gap:22px;}
+.stat .num{font-family:"Fraunces",serif;font-weight:600;color:var(--gold);letter-spacing:-.02em;line-height:.9;}
+.stat .cap{font-family:"Inter",sans-serif;color:var(--cream-dim);line-height:1.32;}
+.stat .cap b{display:block;color:var(--cream);font-weight:600;}
+
+/* ---- maturity ladder: categorical stages, no invented percentages ---- */
+.ladder{display:flex;}
+.ladder .rung{flex:1;text-align:center;position:relative;padding-top:20px;}
+.ladder .rung .bar{height:6px;border-radius:3px;background:rgba(243,236,218,.14);margin:0 4px;}
+.ladder .rung.live .bar{background:linear-gradient(90deg,var(--gold),rgba(205,168,106,.55));}
+.ladder .rung .tick{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:12px;background:var(--rule);}
+.ladder .rung .stage{font-family:"Inter",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--cream-faint);margin-top:10px;}
+.ladder .rung.live .stage{color:var(--cream);}
+.ladder .rung .note{font-family:"Fraunces",serif;font-style:italic;color:var(--gold);margin-top:4px;}
+.ladder .rung .note.dim{color:var(--cream-faint);font-style:italic;}
+
+/* ---- quote grid: verbatim room responses, grouped, equal weight (no size = no false frequency) ---- */
+.words{display:grid;grid-template-columns:repeat(3,1fr);}
+.words .col + .col{border-left:1px solid rgba(243,236,218,.14);}
+.words .col h3{font-family:"Inter",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--gold);}
+.words .col p{font-family:"Fraunces",serif;font-style:italic;color:var(--cream-dim);line-height:1.36;}
+.words .col p + p{border-top:1px solid rgba(243,236,218,.1);}
