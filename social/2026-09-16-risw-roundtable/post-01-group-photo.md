@@ -1,99 +1,84 @@
-# Post 1 of 4 — first committee meet-up (group photo poster)
+# Post 1 of 4 — first committee meet-up (short post + poster)
 
-**Goal:** celebrate the first PharmaDS committee meet-up, thank the people who showed up (in the
-room and on Zoom) and the ASA Biopharmaceutical Section for the venue, give a heads-up on what's
-coming next, and ask people to follow.
+**Goal:** celebrate the first PharmaDS committee meet-up, thank the people who joined and the ASA,
+point people at the poster, and ask for the follow. The poster carries the detail — date, room,
+hybrid format, agenda, what's coming next, facilitators — so the text stays short on purpose.
 
-**Asset:** `assets/poster-portrait-1080x1350.jpg` (primary — portrait fills the most feed space)
-or `assets/poster-square-1200x1200.jpg`. The poster carries the actual details: date, time, room,
-hybrid format, both agenda items, what's coming next, and the facilitators.
-`assets/group-photo-enhanced.jpg` is the plain cleaned-up photo if you'd rather post it bare.
+**Asset:** `assets/poster-portrait-1080x1350.jpg` (primary) or
+`assets/poster-square-1200x1200.jpg`. `assets/group-photo-enhanced.jpg` is the plain photo.
 
 **Suggested timing:** within 24–48h of the event, Tue–Thu, 8–10am ET.
 
 ---
 
-## Version A — main (recommended)
+## Version A — main (recommended, ~65 words)
 
-Yesterday the PharmaDS committee met in person for the first time.
+Our first committee meet-up, in one picture.
 
-We spent the Day 1 afternoon of RISW 2026 in Room White Oak B at the Bethesda North Marriott —
-committee members, advisors and community members in the room, more joining on Zoom, 1:00 to
-4:30 PM.
+The PharmaDS committee met in person for the first time on Day 1 of RISW 2026 — in the room and on
+Zoom. The agenda, the afternoon and what's coming next are all in the poster.
 
-Two things were on the agenda, and both of them needed the room more than they needed us:
+Thank you to everyone who joined us, and to the American Statistical Association and its
+Biopharmaceutical Section for hosting us within RISW.
 
-• the theme for the PharmaDS 2027 conference
-• how we build a pharma AI community together
-
-We also ran a short survey during the session, so the priorities we carry forward are the room's
-and not the organizers'.
-
-Thank you to everyone who joined us, in Bethesda and online — you gave up a Day 1 afternoon at a
-busy workshop to help start something. And thank you to the ASA Biopharmaceutical Section for
-hosting us within RISW 2026 and providing the room.
-
-Facilitated by Yuqian Shen (Sanofi), Jeen Liu (Regeneron), Eric Zhang (Eikon Therapeutics) and
-Peng Zhang (CIMS Global).
-
-Coming over the next few weeks:
-
-• the survey results — what this community says matters most
-• the 2027 conference theme and topics, as they take shape
-• where PharmaDS sits among pharma AI communities, and what we're doing differently
-
-If you'd like to be part of 2027, follow PharmaDS here — all of it lands here first. More at
-phds.nestat.org
+The survey results come next — follow PharmaDS so you catch them. phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI #Biostatistics #DataScience
 
 ---
 
-## Version B — shorter
+## Version B — shortest (~40 words)
 
-The PharmaDS committee met in person for the first time yesterday — Day 1 of RISW 2026, Room
-White Oak B, 1:00 to 4:30 PM, with a Zoom link full of people who didn't want to miss it.
+First PharmaDS committee meet-up. Everything about it is in the picture.
 
-On the agenda: the theme for the PharmaDS 2027 conference, and how we build a pharma AI community
-together. We ran a survey in the room so the priorities on record came from the people doing the
-work, not from the organizers.
+Thank you to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
+Association and its Biopharmaceutical Section for the room.
 
-Thank you to everyone who joined, in Bethesda and online, and to the ASA Biopharmaceutical Section
-for hosting us within RISW. Facilitated by Yuqian Shen (Sanofi), Jeen Liu (Regeneron), Eric Zhang
-(Eikon Therapeutics) and Peng Zhang (CIMS Global).
+Survey results next. Follow PharmaDS · phds.nestat.org
 
-Next up: the survey results, then the 2027 theme and topics. Follow PharmaDS to see them first —
-phds.nestat.org
+#PharmaDS #RISW2026 #PharmaAI
 
-#PharmaDS #RISW2026 #PharmaAI #Biostatistics #DataScience
+---
+
+## Version C — one line plus thanks (~30 words)
+
+Fourteen people in a room, plus a Zoom link, deciding what pharma AI should do next. Our first
+committee meet-up — details in the picture.
+
+Thank you to all who joined, and to the ASA Biopharmaceutical Section for hosting us at RISW 2026.
+
+Follow PharmaDS · phds.nestat.org
+
+#PharmaDS #RISW2026 #PharmaAI
 
 ---
 
 ## First comment (post right after publishing)
 
-Couldn't make it to Bethesda? The 2027 program, the community workstreams and the open calls all
-live at phds.nestat.org. And if you were in the room or on Zoom: what's the one pharma AI question
-you'd want this group to take on next?
+With short post text, the tags belong here:
+
+Thank you to the people in the picture — @… @… @… — and to our facilitators @Yuqian Shen (Sanofi),
+@Jeen Liu (Regeneron), @Eric Zhang (Eikon Therapeutics) and @Peng Zhang (CIMS Global). The 2027
+program, workstreams and open calls live at phds.nestat.org. If you were in the room or on Zoom:
+what's the one pharma AI question you'd want this group to take on next?
 
 ---
 
 ## Before you hit post
 
-- [ ] **Tag the people in the photo** (biggest single driver of reach). Add a line at the end:
-      "Thank you to @… @… @…". Ask permission first if anyone is camera-shy — otherwise name them
-      in the comments instead of the caption.
-- [ ] **Tag the ASA Biopharmaceutical Section** on the thank-you line so the venue credit reaches
-      their page, plus the American Statistical Association and the New England Statistical
-      Society. Tagging only works in the post text, which is why the sponsor credit is there and
-      not on the poster.
-- [ ] **Tag the facilitators and their companies** — Sanofi, Regeneron, Eikon Therapeutics, CIMS
-      Global. You're on that line yourself; reword it in the third person or drop your own name if
-      you'd rather not self-credit in your own post.
+- [ ] **Tag the people in the photo and the facilitators in the first comment**, not the post —
+      that's how the text stays short and the reach still works. Ask permission first if anyone
+      is camera-shy.
+- [ ] **Tag the American Statistical Association and its Biopharmaceutical Section** on the
+      thank-you line in the post itself (sponsor credit is worth the two lines), plus the New
+      England Statistical Society.
 - [ ] Add alt text on upload: *"PharmaDS committee and community members at the first committee
       meet-up and round table, RISW 2026, Bethesda, MD."*
+- [ ] Post the portrait version — at 1080×1350 the text inside the poster stays readable on a
+      phone. Check it on your own phone before posting; that's where the detail either works or
+      doesn't.
 - [ ] Reply to every comment in the first 2 hours; that window decides how far it travels.
-- [ ] Ask each person in the photo to reshare with one line of their own takeaway. Fourteen
-      reshares beat any paid boost we have.
+- [ ] Ask each person in the photo to reshare with one line of their own takeaway.
 
 ## Facts on the poster (verified against the event poster and announcement)
 
