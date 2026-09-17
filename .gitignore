@@ -30,3 +30,8 @@ pnpm-debug.log*
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# generated poster renders / fetched webfonts
+social/**/build/fonts/
+social/**/build/*.png
+social/**/build/*_1x.jpg
