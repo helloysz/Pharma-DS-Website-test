@@ -15,15 +15,16 @@ out of the room, and what's coming next. The one exception is a small "Bethesda,
 
 ---
 
-## Version A — main (recommended, ~40 words, human tone + short)
+## Version A — main (recommended, ~45 words, human tone + clear takeaway)
 
-We did it — our first committee meet-up, held during RISW 2026! 🎉 Day One of something we're
-building together. What happened is in the picture.
+The PharmaDS committee just met for the first time — in person, at RISW 2026. 🎉
 
-Thanks to everyone who squeezed us into their RISW schedule, in Bethesda and on Zoom, and to
-the ASA Biopharmaceutical Section for hosting us.
+Not a kickoff meeting. The start of the community. What happened is in the picture.
 
-More soon — follow PharmaDS → phds.nestat.org
+Thank you to everyone who showed up in Bethesda and on Zoom, and to the ASA Biopharmaceutical
+Section for hosting us.
+
+This is Day One. Follow PharmaDS and be part of what's next → phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI
 
