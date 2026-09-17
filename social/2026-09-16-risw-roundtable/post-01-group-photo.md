@@ -108,10 +108,11 @@ tagged.
 - *"Agreement to open pharma AI beyond statisticians"* — a genuinely broad consensus (Jimeng,
   Stephen, Shui Xianjun, Qin Ji Liu and others all raised it independently). The poster keeps
   it to that one line; who exactly it should include is a bigger conversation than a bullet.
-- *"People teaming up to grow pharma AI, with PharmaDS as the ground field — webinars, mentorship,
-  benchmarking"* — the three growth workstreams actually discussed and given named owners in the
-  minutes (Jeen Liu on webinars, Yuqian on the mentorship program, Eric Scott on an AI-benchmarking
-  initiative), not an unattributed aspiration.
+- *"People teaming up to grow pharma AI, with PharmaDS as the ground field — webinars,
+  mentorship"* — the two growth workstreams given named owners in the minutes (Jeen Liu on
+  webinars, Yuqian on the mentorship program), not an unattributed aspiration. Eric Scott's
+  proposed AI-benchmarking initiative is real too, but the line reads better naming two examples
+  than three.
 
 The "what's coming next" table of contents keeps its job as a preview of posts 2–4, but now
 carries one real fact from the minutes: the 2027 theme decision is expected **within two weeks**
