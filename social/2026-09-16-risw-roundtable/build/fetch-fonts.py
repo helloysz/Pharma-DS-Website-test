@@ -9,7 +9,7 @@ import re
 import subprocess
 
 URL = ("https://fonts.googleapis.com/css2?"
-       "family=Inter:wght@400;500;600;700;800;900"
+       "family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700"
        "&family=Space+Grotesk:wght@500;600;700"
        "&family=Montserrat:wght@700;800&display=swap")
 # The full Chrome UA matters: with a short UA, Google Fonts serves legacy TTF instead of woff2.
@@ -26,7 +26,12 @@ for block in re.findall(r'@font-face\s*\{(.*?)\}', css, re.S):
         continue
     family = re.search(r"font-family:\s*'([^']+)'", block).group(1).replace(' ', '')
     weight = re.search(r'font-weight:\s*([^;]+);', block).group(1).strip().split()[-1]
+    style = re.search(r'font-style:\s*([^;]+);', block)
+    style = style.group(1).strip() if style else 'normal'
     url = re.search(r'url\((https://[^)]+)\)', block).group(1)
-    for name in ('fonts/%s.woff2' % family, 'fonts/%s-%s.woff2' % (family, weight)):
+    suffix = '' if style == 'normal' else '-italic'
+    names = ['fonts/%s%s.woff2' % (family, suffix),
+             'fonts/%s%s-%s.woff2' % (family, suffix, weight)]
+    for name in names:
         subprocess.run(['curl', '-sS', '-o', name, url], check=True)
-    print('font %s %s' % (family, weight))
+    print('font %s %s %s' % (family, style, weight))

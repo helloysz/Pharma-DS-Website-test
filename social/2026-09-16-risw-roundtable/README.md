@@ -16,11 +16,19 @@ Follow-up campaign for the PharmaDS Community Roundtable (Sept 16, 2026, RISW 20
 
 ## Poster layout
 
-Brand lockup and site at the top, the group photo full-bleed with the event title and strapline
-over it, then the information: a thank-you headline, a three-up logistics strip (when / where /
-hosted within), two cards side by side ("On the agenda" and "Coming next"), the facilitator and
-sponsor credits, and a follow CTA. Everything a reader needs is on the image — the caption adds
-warmth and tags, not facts.
+Built as a sibling of the announcement poster, so the two read as one series: a single
+photographic field (the group shot sharp at the top, the same shot blurred behind the type below),
+white left-aligned headings in the announcement's hierarchy ("Thank you for joining us at" /
+**RISW 2026** / event name), the strapline in italics, hairline rules with letterspaced section
+labels, a translucent bordered panel for "What's coming next", and the announcement's own white
+logo panel at the foot carrying the RISW/ASA logo and the PharmaDS lockup.
+
+It carries only what the announcement didn't: what came out of the room, and what's coming next.
+Date, time, room, Zoom details, agenda and facilitators are all left off on purpose — the
+announcement post already had them.
+
+`assets/risw-asa-logo.png` is cropped from the announcement poster's own footer panel and
+upscaled; replace it with the original ASA/RISW logo file if you have one.
 
 ## Photo edits applied to the original
 

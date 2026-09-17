@@ -8,7 +8,7 @@ CHROME="${CHROME:-/opt/pw-browsers/chromium-1194/chrome-linux/chrome}"
 [ -n "$CHROME" ] || { echo "No Chrome/Chromium found; set CHROME=/path/to/chrome"; exit 1; }
 
 # Brand fonts (Inter + Space Grotesk + Tinos) - fetched once, not committed.
-if [ ! -f fonts/Inter.woff2 ] || [ ! -f fonts/SpaceGrotesk.woff2 ] || [ ! -f fonts/Montserrat-800.woff2 ]; then
+if [ ! -f fonts/Inter.woff2 ] || [ ! -f fonts/SpaceGrotesk.woff2 ] || [ ! -f fonts/Montserrat-800.woff2 ] || [ ! -f fonts/Inter-italic.woff2 ]; then
   python3 fetch-fonts.py
 fi
 

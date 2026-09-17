@@ -1,8 +1,12 @@
 # Post 1 of 4 — first committee meet-up (short post + poster)
 
 **Goal:** celebrate the first PharmaDS committee meet-up, thank the people who joined and the ASA,
-point people at the poster, and ask for the follow. The poster carries the detail — date, room,
-hybrid format, agenda, what's coming next, facilitators — so the text stays short on purpose.
+point people at the picture, and ask for the follow. Text stays short on purpose.
+
+**Nothing here repeats the announcement.** The announcement post already carried the date, time,
+room, Zoom details, agenda and facilitators — so the poster carries only what's new: what came
+out of the room, and what's coming next. The one exception is a small "Bethesda, MD · September
+16, 2026" stamp on the photo, which a recap needs as a timestamp.
 
 **Asset:** `assets/poster-portrait-1080x1350.jpg` (primary) or
 `assets/poster-square-1200x1200.jpg`. `assets/group-photo-enhanced.jpg` is the plain photo.
@@ -11,41 +15,41 @@ hybrid format, agenda, what's coming next, facilitators — so the text stays sh
 
 ---
 
-## Version A — main (recommended, ~65 words)
+## Version A — main (recommended, ~55 words)
 
-Our first committee meet-up, in one picture.
+Our first committee meet-up happened — and the room made it.
 
-The PharmaDS committee met in person for the first time on Day 1 of RISW 2026 — in the room and on
-Zoom. The agenda, the afternoon and what's coming next are all in the poster.
+What came out of it, and what's coming next, is in the picture.
 
-Thank you to everyone who joined us, and to the American Statistical Association and its
-Biopharmaceutical Section for hosting us within RISW.
+Thank you to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
+Association and its Biopharmaceutical Section for hosting us within RISW 2026.
 
-The survey results come next — follow PharmaDS so you catch them. phds.nestat.org
+The survey results come first. Follow PharmaDS to catch them → phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI #Biostatistics #DataScience
 
 ---
 
-## Version B — shortest (~40 words)
+## Version B — shortest (~35 words)
 
-First PharmaDS committee meet-up. Everything about it is in the picture.
+First PharmaDS committee meet-up. What came out of the room is in the picture.
 
-Thank you to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
-Association and its Biopharmaceutical Section for the room.
+Thank you to everyone who joined, in Bethesda and on Zoom, and to the American Statistical
+Association and its Biopharmaceutical Section for hosting us.
 
-Survey results next. Follow PharmaDS · phds.nestat.org
+Survey results next → phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI
 
 ---
 
-## Version C — one line plus thanks (~30 words)
+## Version C — hook first (~40 words)
 
-Fourteen people in a room, plus a Zoom link, deciding what pharma AI should do next. Our first
-committee meet-up — details in the picture.
+A room of people who came to argue about where pharma AI is heading. Our first committee meet-up —
+what came out of it is in the picture.
 
-Thank you to all who joined, and to the ASA Biopharmaceutical Section for hosting us at RISW 2026.
+Thank you to everyone who joined, and to the American Statistical Association and its
+Biopharmaceutical Section for hosting us at RISW 2026.
 
 Follow PharmaDS · phds.nestat.org
 
@@ -80,17 +84,19 @@ what's the one pharma AI question you'd want this group to take on next?
 - [ ] Reply to every comment in the first 2 hours; that window decides how far it travels.
 - [ ] Ask each person in the photo to reshare with one line of their own takeaway.
 
-## Facts on the poster (verified against the event poster and announcement)
+## What's on the poster, and what was left off
 
-- First PharmaDS Committee Meet-Up & Community Round Table, Wednesday **Sept 16, 2026,
-  1:00–4:30 PM EST** — three and a half hours
-- Strapline: *"Shape the Future of Pharma AI · Build the Community · Get Involved"*
-- **Room White Oak B, Bethesda North Marriott Hotel & Conference Center**, Rockville MD — Day 1 of
-  the **Regulatory-Industry Statistics Workshop (RISW) 2026**, Sept 16–18, hosted by the ASA
-  Biopharmaceutical Section
-- Hybrid: in-person **+ Zoom**
-- On the agenda: the 2027 conference theme, and how to build a pharma AI community together
-- Facilitators: Yuqian Shen, Ph.D. (Co-Chair, Statistical Project Leader, Sanofi) · Jeen Liu, Ph.D.
-  (Leading Advisor; VP & Head of Biostatistics and Data Management, Regeneron) · Eric Zhang, Ph.D.
-  (Theme & Session Planning Stream Lead; Senior Director of Biostatistics, Eikon Therapeutics) ·
-  Peng Zhang, Ph.D. (Speaker & Instructor Invitation Stream Lead; Associate Director, CIMS Global)
+**On it (new, or identity):** the thank-you headline, the event name, the strapline
+*"Shape the Future of Pharma AI · Build the Community · Get Involved"*, a "Bethesda, MD ·
+September 16, 2026" stamp, "in the room + on Zoom", three lines on what came out of the room,
+the three follow-up posts, the ASA thank-you, and the RISW + PharmaDS logo panel.
+
+**Deliberately left off, because the announcement already said it:** the time (1:00–4:30 PM EST),
+Room White Oak B, the Bethesda North Marriott, the Zoom ID and passcode, the two agenda items,
+and the facilitator line-up. Facilitators are in the first comment instead, where they can be
+tagged.
+
+**Check before the room's claims go out:** the three "what came out of the room" lines say a live
+survey was run, the 2027 theme took its first shape, and people signed up to keep building between
+conferences. Reword any that overstate what actually happened — they're in
+`build/poster-portrait.html`, one `<li>` each.
