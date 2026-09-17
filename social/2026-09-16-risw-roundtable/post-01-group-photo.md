@@ -15,24 +15,27 @@ out of the room, and what's coming next. The one exception is a small "Bethesda,
 
 ---
 
-## Version A — main (recommended, ~55 words)
+## Version A — main (recommended, ~60 words, enthusiastic)
 
-Our first committee meet-up happened — and the room made it.
+We did it — our first committee meet-up! 🎉
 
-What came out of it, and what's coming next, is in the picture.
+This is Day One of something we're building together. What came out of the room, and what's
+coming next, is in the picture.
 
-Thank you to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
+Huge thanks to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
 Association and its Biopharmaceutical Section for hosting us within RISW 2026.
 
-The survey results come first. Follow PharmaDS to catch them → phds.nestat.org
+The survey results are coming first — follow PharmaDS so you don't miss where this goes →
+phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI #Biostatistics #DataScience
 
 ---
 
-## Version B — shortest (~35 words)
+## Version B — shortest (~35 words, enthusiastic)
 
-First PharmaDS committee meet-up. What came out of the room is in the picture.
+Our first committee meet-up is in the books! 🎉 What came out of the room is in the picture —
+and it's just the start.
 
 Thank you to everyone who joined, in Bethesda and on Zoom, and to the American Statistical
 Association and its Biopharmaceutical Section for hosting us.
@@ -43,15 +46,15 @@ Survey results next → phds.nestat.org
 
 ---
 
-## Version C — hook first (~40 words)
+## Version C — hook first (~45 words, enthusiastic)
 
-A room of people who came to argue about where pharma AI is heading. Our first committee meet-up —
-what came out of it is in the picture.
+Mark the date — our first committee meet-up just happened, and it felt like the start of
+something real. A room of people who showed up to shape where pharma AI is heading.
 
 Thank you to everyone who joined, and to the American Statistical Association and its
 Biopharmaceutical Section for hosting us at RISW 2026.
 
-Follow PharmaDS · phds.nestat.org
+This is only the beginning — follow PharmaDS · phds.nestat.org
 
 #PharmaDS #RISW2026 #PharmaAI
 
