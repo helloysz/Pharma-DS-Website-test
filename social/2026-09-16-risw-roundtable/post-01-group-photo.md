@@ -15,20 +15,17 @@ out of the room, and what's coming next. The one exception is a small "Bethesda,
 
 ---
 
-## Version A — main (recommended, ~60 words, enthusiastic)
+## Version A — main (recommended, ~30 words, enthusiastic + short)
 
-We did it — our first committee meet-up! 🎉
+We did it — our first committee meet-up! 🎉 Day One of something we're building together.
+What happened is in the picture.
 
-This is Day One of something we're building together. What came out of the room, and what's
-coming next, is in the picture.
+Thank you to everyone who joined, in Bethesda and on Zoom, and to the American Statistical
+Association and its Biopharmaceutical Section for hosting us.
 
-Huge thanks to everyone who joined us in Bethesda and on Zoom, and to the American Statistical
-Association and its Biopharmaceutical Section for hosting us within RISW 2026.
+More soon — follow PharmaDS → phds.nestat.org
 
-The survey results are coming first — follow PharmaDS so you don't miss where this goes →
-phds.nestat.org
-
-#PharmaDS #RISW2026 #PharmaAI #Biostatistics #DataScience
+#PharmaDS #RISW2026 #PharmaAI
 
 ---
 
