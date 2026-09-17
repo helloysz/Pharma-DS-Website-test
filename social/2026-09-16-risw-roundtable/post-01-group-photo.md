@@ -99,13 +99,25 @@ Room White Oak B, the Bethesda North Marriott, the Zoom ID and passcode, the two
 and the facilitator line-up. Facilitators are in the first comment instead, where they can be
 tagged.
 
-**"What the room gave us" vs. "what's coming" — kept deliberately distinct.** The first list is
-about the room itself: real-time input on what the community needs, a first sketch of the 2027
-theme, and people teaming up to grow pharma AI with PharmaDS as the ground field. The second is a
-table of contents for the next three posts, phrased as headlines rather than restating the same
-nouns — "What the room told us," "Introducing the 2027 theme," "Where PharmaDS stands" — so a
-reader doesn't hit the same sentence twice.
+**Both lists are now grounded in the meeting minutes**, not placeholder language:
 
-**Check before the room's claims go out:** the first list says live input was gathered, the 2027
-theme took its first sketch, and people teamed up to keep growing this. Reword any that overstate
-what actually happened — they're in `build/poster-portrait.html`, under "What the room gave us.
+- *"Two theme directions for 2027 on the table, with a hybrid taking the lead"* — Theme A ("Mapping
+  the Future of Pharma") and Theme B ("AI-Enabled Drug Development") were both presented; Option C,
+  a hybrid, was the direction most participants leaned toward, though no final call was made in
+  the room.
+- *"Agreement to open pharma AI beyond statisticians — to programmers, clinicians, data managers,
+  and more"* — a genuinely broad consensus (Jimeng, Stephen, Shui Xianjun, Qin Ji Liu and others
+  all raised it independently).
+- *"People teaming up to grow pharma AI, with PharmaDS as the ground field — webinars, mentorship,
+  benchmarking"* — the three growth workstreams actually discussed and given named owners in the
+  minutes (Jeen Liu on webinars, Yuqian on the mentorship program, Eric Scott on an AI-benchmarking
+  initiative), not an unattributed aspiration.
+
+The "what's coming next" table of contents keeps its job as a preview of posts 2–4, but now
+carries one real fact from the minutes: the 2027 theme decision is expected **within two weeks**
+of the roundtable, so "Introducing the 2027 theme" reads as a promise with a timeline.
+
+**One judgment call left to you:** the minutes say the theme is *not yet decided* — Option C is
+the leading direction, not a confirmed choice. If the committee finalizes on Option A or B instead
+before this posts, update "a hybrid taking the lead" and "decision due within two weeks" in
+`build/poster-portrait.html` (and `poster-square.html`) before publishing.
