@@ -90,9 +90,9 @@ what's the one pharma AI question you'd want this group to take on next?
 
 **On it (new, or identity):** the thank-you headline, the event name, the strapline
 *"Shape the Future of Pharma AI · Build the Community · Get Involved"*, a "Bethesda, MD ·
-September 16, 2026" stamp, "in the room + on Zoom", three lines under "What the room gave us,"
-a three-entry table of contents for what's coming, the ASA thank-you, and the RISW + PharmaDS
-logo panel.
+September 16, 2026" stamp, the PharmaDS mark set into the wall in the photo itself (top right),
+three lines under "What the room gave us," a three-entry table of contents for what's coming, the
+ASA thank-you, and a closing "phds.nestat.org" credit.
 
 **Deliberately left off, because the announcement already said it:** the time (1:00–4:30 PM EST),
 Room White Oak B, the Bethesda North Marriott, the Zoom ID and passcode, the two agenda items,

@@ -36,9 +36,7 @@ body{font-family:"Inter",Arial,sans-serif;-webkit-font-smoothing:antialiased;bac
 .shot .stamp{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:flex-end;
   justify-content:space-between;gap:14px;font-family:"Fraunces",serif;font-style:italic;font-weight:400;
   color:var(--cream-dim);}
-.shot .stamp .live{display:flex;align-items:center;gap:8px;font-family:"Inter",sans-serif;font-style:normal;
-  font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.shot .brandmark{position:absolute;z-index:3;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));}
 
 /* ---- headline block: serif display, exhibition-placard hierarchy ---- */
 .kicker{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
@@ -74,14 +72,7 @@ h1 small{display:block;font-family:"Fraunces",serif;font-weight:400;font-style:i
 .thanks{font-family:"Fraunces",serif;font-style:italic;font-weight:400;color:var(--cream-dim);line-height:1.5;}
 .thanks b{font-weight:600;font-style:normal;color:var(--cream);}
 
-/* ---- colophon: a simple printed insert, hairline border rather than a UI shadow ---- */
-.footpanel{background:#fbfaf5;border:1px solid rgba(10,15,36,.08);display:flex;align-items:center;
-  justify-content:space-between;gap:18px;}
-.footpanel .risw{display:block;filter:saturate(.92);}
-.footpanel .brand{display:flex;align-items:center;gap:12px;}
-.footpanel .brand img{display:block;border-radius:22%;}
-.footpanel .wordmark{font-family:"Montserrat",sans-serif;font-weight:800;letter-spacing:-.022em;
-  line-height:1;color:#0a1226;}
-.footpanel .wordmark .ds{color:#8a6a2e;}
-.footpanel .url{font-family:"Inter",sans-serif;font-weight:600;color:#5c4a20;margin-top:5px;letter-spacing:.01em;}
+/* ---- closing line: site credit + tags, no colophon card ---- */
+.site{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);text-align:center;}
 .tags{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.03em;color:var(--gold-soft);text-align:center;}
